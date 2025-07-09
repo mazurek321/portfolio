@@ -56,13 +56,15 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Message" required />
-          <button type="submit">
-            {sending ? (
-              <div className="spinner"></div>
-            ) : (
-              "Send"
-            )}
-          </button>
+          {sending ? 
+            <button type="submit" disabled>
+                <div className="spinner"></div>
+            </button>
+            :
+            <button type="submit">
+                "Send"
+            </button>  
+          }
         </form>
         <div className="right">
           <div className="item">
