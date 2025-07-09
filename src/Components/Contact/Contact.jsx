@@ -41,6 +41,8 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
       (error) => {
         showNotification("error", "Something went wrong during sending email.");
         setSending(false)
+        
+        console.error('EmailJS error:', error.text);
       }
     );
   };
