@@ -3,7 +3,7 @@ import Notification from "./Components/Notification/Notification";
 
 import Home from "./Components/Home/Home";
 import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
@@ -20,7 +20,7 @@ function App() {
     }, []);
 
   return (
-    <BrowserRouter>
+    <Router>
       {notification && (
         <Notification
           type={`${notification.type} ${isVisible ? 'visible' : ''}`}
@@ -42,7 +42,7 @@ function App() {
         />
         <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
