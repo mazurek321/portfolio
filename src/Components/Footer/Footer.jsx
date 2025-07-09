@@ -21,8 +21,8 @@ const Footer = ({lightMode}) => {
         </div>
         <div className="middle">
             <h3>CV</h3>
-            <a href="/data/[en]CV-Bartlomiej-Mazurkiewicz.pdf" download>[ en ] Download my CV</a>
-            <a href="/data/[pl]CV-Bartlomiej-Mazurkiewicz.pdf" download>[ pl ] Download my CV</a>
+            <a href="/portfolio/data/[en]CV-Bartlomiej-Mazurkiewicz.pdf" download>[ en ] Download my CV</a>
+            <a href="/portfolio/data/[pl]CV-Bartlomiej-Mazurkiewicz.pdf" download>[ pl ] Download my CV</a>
         </div>
         <div className="right">
             <h3>Navigation</h3>
