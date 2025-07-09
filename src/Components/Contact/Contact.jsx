@@ -26,7 +26,7 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
     setSending(true);
 
     e.preventDefault();
-
+    
     emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
