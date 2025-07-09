@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Footer.css"
 import { personalInfo, education} from "../../data/about";
-
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Footer = ({lightMode}) => {
   return (
@@ -27,13 +27,13 @@ const Footer = ({lightMode}) => {
         <div className="right">
             <h3>Navigation</h3>
              <ul>
-                <li><a href="#MainContent">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Experience">Experience</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
-                <li><a href="#Footer">CV</a></li>
+                <li><Link smooth to="/#MainContent">Home</Link></li>
+                <li><Link smooth to="/#About">About</Link></li>
+                <li><Link smooth to="/#Skills">Skills</Link></li>
+                <li><Link smooth to="/#Experience">Experience</Link></li>
+                <li><Link smooth to="/#Projects">Projects</Link></li>
+                <li><Link smooth to="/#Contact">Contact</Link></li>
+                <li><Link smooth to="/#Footer">CV</Link></li>
             </ul>
         </div>
     </footer>

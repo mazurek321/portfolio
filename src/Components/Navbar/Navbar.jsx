@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import uk from "../../assets/img/uk.png"
 import pl from "../../assets/img/pl.png"
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Navbar = ({lightMode,setLightMode}) => {
   const [scrolled, setScrolled] = useState(0);
@@ -38,13 +39,13 @@ const Navbar = ({lightMode,setLightMode}) => {
       <div className="click-controler" onClick={()=>setShow(false)}></div>
       <div className={`background ${scrolled ? "scrolled" : ""} `}></div>
       <ul className="flex">
-        <li><a href="#MainContent">Home</a></li>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Experience">Experience</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="#Contact">Contact</a></li>
-        <li><a href="#Footer">CV</a></li>
+        <li><Link smooth to="/#MainContent">Home</Link></li>
+        <li><Link smooth to="/#About">About</Link></li>
+        <li><Link smooth to="/#Skills">Skills</Link></li>
+        <li><Link smooth to="/#Experience">Experience</Link></li>
+        <li><Link smooth to="/#Projects">Projects</Link></li>
+        <li><Link smooth to="/#Contact">Contact</Link></li>
+        <li><Link smooth to="/#Footer">CV</Link></li>
       </ul>
       <div className="selections flex">
         <div className="mode">

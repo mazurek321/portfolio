@@ -6,6 +6,7 @@ import github from "../../assets/icons/Github_icon.png"
 import WaveText from './WaveText'
 import StyledButton from '../StyledButton/StyledButton'
 import img from "../../assets/img/img.webp"
+import { HashLink as Link } from 'react-router-hash-link';
 
 const MainContent = ({lightMode}) => {
   return (
@@ -21,13 +22,13 @@ const MainContent = ({lightMode}) => {
                     <a href="https://github.com/mazurek321" target='_blank'><img src={github} alt="Github account" /></a>
                 </div>
                 <div className="button">
-                  <a href="#Projects">
+                  <Link smooth to="/#Projects">
                     <StyledButton 
                       variant={'first'} 
                       lightMode={lightMode}
                     >
                     </StyledButton>
-                  </a>
+                  </Link>
                 </div>
             </section>
         </div>
