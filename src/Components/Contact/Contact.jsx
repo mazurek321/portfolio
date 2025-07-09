@@ -62,7 +62,7 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
             </button>
             :
             <button type="submit">
-                "Send"
+                Send
             </button>  
           }
         </form>
