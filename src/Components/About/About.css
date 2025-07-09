@@ -1,0 +1,274 @@
+#About {
+  background: var(--background-gradient);
+  position: relative;
+  min-width: 100vh;
+}
+
+#About h1 {
+  text-align: center;
+  color: #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+#About .about-content {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#About .image img {
+  display: block;
+  border-radius: 7px;
+  box-shadow: 3px 3px 5px var(--button2);
+  background: var(--div-background);
+  padding: 50px 0;
+  object-fit: contain;
+}
+
+#About .info-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#About .description {
+  padding: 20px;
+  background: var(--div-background);
+  border-radius: 7px;
+  box-shadow: 3px 3px 5px var(--button2);
+  border: 1px solid grey;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+#About .description h4
+{
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+#About .panel-bottom {
+  flex-grow: 1;
+  display: flex;
+  border-radius: 7px;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#About .panel-bottom .caffel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 7px;
+  background: var(--div-background);
+  box-shadow: 3px 3px 5px var(--button2);
+  text-align: center;
+  overflow:  hidden;
+  position: relative;
+  padding: 20px;
+}
+
+#About .panel-bottom .cover {
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+#About .panel-bottom .cover span
+{
+    font-size: 3rem;
+}
+
+
+#About .panel-bottom .cover span.arrow
+{
+    font-size: 2rem;
+    position: absolute;
+    bottom: 10%;
+    color: grey;
+    transition: var(--animation) all linear;
+}
+
+#About .panel-bottom .content
+{
+    text-align: justify;
+}
+
+#About .panel-bottom table
+{
+    width: 100%;
+}
+
+#About .panel-bottom th
+{
+    padding: 5px 10px 5px 0;
+}
+
+#About .about-content .content
+{
+    position: absolute;
+    top: 100%;
+    transition: var(--animation) all linear;
+}
+
+
+
+#About .about-content .cover-title
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--animation) top linear;
+}
+
+
+#About .about-content .caffel:hover .cover-title
+{
+    top: 20px;
+    left: 0;
+    flex-direction: row;
+    font-size: 1rem;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#About .about-content .caffel:hover .cover-title span
+{
+    font-size: 2rem;
+}
+
+#About .about-content .caffel:hover .arrow
+{
+    bottom: 130%;
+}
+
+#About .about-content .caffel:hover .content
+{
+    top: 4em;
+}
+
+
+
+
+#About .split
+{
+    align-items: start;
+    margin: 1em 0;
+}
+
+#About .split .square
+{
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background: purple;
+}
+
+#About ul li
+{
+    list-style: none;
+    margin: 10px 20px;
+    position: relative;
+}
+
+#About ul li::before
+{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -25px;
+    top:2px;
+    background: orange;
+}
+
+
+
+#About.dark
+{
+  background: var(--background-gradient-dark);
+}
+
+#About.dark h1
+{
+  color:var(--dark-text);
+  border-bottom: 2px solid var(--dark-text);
+}
+
+#About.dark .image img,
+#About.dark .description,
+#About.dark .caffel
+{
+  background: var(--dark-text);
+  box-shadow: 3px 3px 5px var(--button2dark);
+}
+
+/* @media (min-width: 2000px) { */
+  /* #About h1 {
+    font-size: 2.5rem;
+  } */
+
+  /* #About .about-content {
+    gap: 40px;
+  }
+
+  #About .image {
+    height: 1000px;
+  }
+
+  #About .image img {
+    padding: 80px 0;
+  }
+
+  #About .description {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 60px;
+  }
+
+  #About .description h4 {
+    font-size: 2rem;
+  }
+
+  #About .panel-bottom .cover {
+    font-size: 1.5rem;
+  }
+
+  #About .panel-bottom .cover span {
+    font-size: 3rem;
+  }
+
+  #About .panel-bottom .cover span.arrow {
+    font-size: 40px;
+  }
+
+  #About .about-content .caffel:hover .cover-title
+  {
+    font-size: 24px;
+  }
+  #About .about-content .caffel:hover .cover-title span
+  {
+    font-size: 40px;
+  }
+
+  #About .panel-bottom .content
+  {
+    font-size: 24px;
+    flex-wrap: wrap;
+  }
+
+  #About ul li {
+    font-size: 20px;
+  }
+} */

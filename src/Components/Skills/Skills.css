@@ -1,0 +1,47 @@
+#Skills .list
+{
+    justify-content: center;
+    flex-direction: column;
+    gap: 5em;
+}
+
+#Skills .list img
+{
+    width: 4rem;
+    filter: drop-shadow(0 0 1px var(--dark-background));
+}
+
+#Skills.dark .list img
+{
+    filter: drop-shadow(0 0 1px silver);
+}
+
+#Skills .section
+{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+#Skills .item
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    gap: 7px;
+    font-size: 1rem;
+}
+
+
+#Skills.dark
+{
+    background: var(--dark-background);
+    color: var(--dark-text);
+}
+#Skills.dark h1
+{
+    border-bottom: 2px solid var(--dark-text);
+}
+

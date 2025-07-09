@@ -1,0 +1,93 @@
+#Experience .table
+{
+    position: relative;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#Experience table
+{
+    width: 100%;
+    padding: 20px;
+    border-spacing: 0.5em;
+}
+
+#Experience table tr
+{
+    background: var(--div-background);
+}
+
+#Experience table td, 
+#Experience table th
+{
+    padding: 2em;
+    border: 1px solid silver;
+    box-shadow: 3px 3px 5px black;
+}
+
+#Experience.dark table td, 
+#Experience.dark table th
+{
+    box-shadow: 3px 3px 5px var(--button2dark);
+}
+
+#Experience table th
+{
+    text-align: center;
+}
+
+#Experience .corners
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+#Experience .corners::before, 
+#Experience .corners::after
+{
+    content: '';
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    z-index: -1;
+    background: var(--background-gradient);
+}
+
+#Experience .corners::before
+{
+    left: 20px;
+    top: 20px;
+}
+
+#Experience .corners::after
+{
+    right: 20px;
+    bottom: 20px;
+}
+
+#Experience.dark
+{
+    background: var(--dark-background);
+    color: var(--dark-text);
+}
+
+#Experience.dark h1
+{
+    border-bottom: 2px solid var(--dark-text);
+}
+
+#Experience.dark table td,
+#Experience.dark table th
+{
+    background: var(--dark-text);
+    color: black;
+}
+
+
+#Experience.dark .corners::before, 
+#Experience.dark .corners::after
+{
+    background: var(--background-gradient-dark);
+}

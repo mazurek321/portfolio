@@ -1,0 +1,206 @@
+#MainContent{
+    height: 100vh;
+    /* contain: layout paint; */
+    overflow: hidden;
+    position: relative;
+    transition: var(--animation) all linear;
+}
+
+#MainContent.dark
+{
+    background: var(--dark-background);
+}
+
+#MainContent .left section{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#MainContent .left h4{
+    color: rgb(61, 61, 61);
+    font-weight: normal;
+}
+
+#MainContent.dark .left h4
+{
+    color: var(--dark-text);
+}
+
+#MainContent .left h1{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.1px;
+    text-shadow: 0 0 1px rgb(59, 3, 108);
+}
+
+#MainContent .left h1 span{
+    animation: wave 1s infinite;
+}
+@keyframes wave {
+    0%,100%{transform: translate(0px);}
+    50%{transform: translate(-8px);}
+}
+
+#MainContent.dark .left h1
+{
+    color: #f0f0f0;
+    text-shadow: 0 0 3px rgb(137, 9, 249);
+}
+
+
+
+#MainContent .left h3{
+    color: rgb(59, 3, 108);
+    font-weight: normal;
+}
+
+#MainContent.dark .left h3
+{
+    color: rgb(172, 78, 255);
+}
+
+#MainContent .left .icons{
+    margin: 2em 0;
+}
+
+
+#MainContent .left .icons a:hover
+{
+    scale: 0.97;
+    filter: drop-shadow(1px 1px 2px black);   
+}
+
+#MainContent.dark .left .icons a
+{
+  filter: drop-shadow(1px 1px 1px silver);  
+}
+
+#MainContent .left .icons a img{
+    width: 25px;
+    height: 25px;
+}
+
+
+#MainContent .right{
+    background: var(--background-gradient);
+    width: 50%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25px, -20%);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 10;
+}
+
+#MainContent .right-background{
+    background: var(--background-gradient);
+    opacity: 0.5;
+    filter: blur(10px);
+    width: 50%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    animation: moveBackground 15s linear infinite;
+    transform: translate(25px, -20%);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 0;
+}
+
+#MainContent .right,
+#MainContent .right-background
+{
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+#MainContent .right .image
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    position: relative;
+    margin-left: 10%;
+    /* padding-bottom: 10%; */
+}
+
+#MainContent .right img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
+    max-height: 100%;
+    display: block;
+}
+
+
+@keyframes moveBackground {
+    0%
+    {
+        right: 5px;
+    }
+
+    50%{
+        right: 30px;
+    }
+
+    100%
+    {
+        right: 5px;
+    }
+}
+
+#MainContent .button
+{
+    width: fit-content;
+}
+
+#MainContent.dark .right,
+#MainContent.dark .right-background
+{
+    background: var(--background-gradient-dark);
+}
+
+
+@media (min-width: 2000px) {
+    #MainContent
+    {
+        height: 75vh;
+    }
+
+    #MainContent .left h1 {
+        font-size: 3.5em;
+    }
+
+    #MainContent .left h3 {
+        font-size: 2em;
+    }
+
+    #MainContent .left h4 {
+        font-size: 1.5em;
+    }
+
+    #MainContent .left .icons a img {
+        width: 35px;
+        height: 35px;
+    }
+
+    #MainContent .right,
+    #MainContent .right-background {
+        width: 45%;
+        height: 130%;
+        transform: translate(50px, -10%);
+    }
+
+    /* #MainContent .right .image {
+        margin-left: 5%;
+        padding-bottom: %;
+    } */
+
+    #MainContent .right img {
+        width: 100%;
+    }
+}

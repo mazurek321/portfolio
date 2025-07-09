@@ -1,0 +1,153 @@
+:root{
+  /* --background: #6200c4; */
+  /* --background-gradient: linear-gradient(145deg, rgba(98, 0, 196, 1) 0%, rgba(184, 42, 42, 1) 100%); */
+  --background-gradient: linear-gradient(145deg, rgb(127, 7, 164), #ce6611);
+  --background-gradient-dark: linear-gradient(145deg, rgb(4, 52, 128), rgb(3, 123, 57));
+  --button1: linear-gradient(145deg, rgb(127, 7, 164), rgb(206, 102, 17));
+  --button2: rgb(133, 133, 233);
+  --button2dark: rgb(13, 124, 214);
+  /* --button2dark: rgb(197, 178, 67); */
+  /* --button2: #0c77dbcc; */
+  --container-padding: 3% 7%;
+  --div-background: rgb(228, 225, 225);
+  --dark-background: rgb(31, 31, 31);
+  --dark-text: #bfbfbf;
+  --animation: 200ms;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  
+}
+
+body{
+  font-family: sans-serif;
+  background: #f0f0f0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container *
+{
+  animation: appear linear;
+  /* animation-timeline: view();
+  animation-range: entry 0% cover 30%; */
+
+}
+@keyframes appear {
+    from{
+      opacity: 0.5;
+      transform: scale(0.5);
+    }
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container{
+  padding: var(--container-padding);
+  contain: layout paint;
+  /* min-height: 100vh; */
+}
+
+.container::before, .container::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 120%;
+    height: 3rem;
+    background: black;
+    opacity: 0.5;
+    filter: blur(50px);
+}
+
+.container::before
+{
+  top: -10px;
+}
+
+.container::after
+{
+  bottom: -10px;
+}
+
+.styledButton{
+  width: fit-content;
+}
+
+button{
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 7px;
+  box-shadow: 0 0 3px grey;
+  color: #fefe;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  text-shadow: 0 0 2px black;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 5px 5px 10px black;
+  transition: 75ms all;
+}
+
+.styledButton.first button
+{
+  background: var(--button1);
+}
+.styledButton.second button
+{
+  background: var(--button2);
+}
+
+.styledButton.first.dark button
+{
+  background: var(--background-gradient-dark);
+}
+.styledButton.second.dark button
+{
+  background: var(--button2dark);
+}
+
+button:hover{
+  box-shadow: 0 0 3px black;
+  scale: 0.97;
+}
+
+button::before
+{
+  filter:blur(1rem);
+  opacity: 0.5;
+}
+
+.material-symbols-outlined
+{
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container > h1
+{
+  border-bottom: 2px solid black;
+  margin: 1em 0;
+  text-align: center;
+  font-size: 2rem;
+}

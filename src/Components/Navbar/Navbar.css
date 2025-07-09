@@ -1,0 +1,161 @@
+nav {
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding: 1% 7%;
+  font-size: 1rem;
+}
+
+nav .background
+{
+  position: absolute;
+  background: transparent;
+  opacity: 0.75;
+  filter: blur(10px);
+  width: 120%;
+  height: 150%;
+  top: -20px;
+  left: -20px;
+  z-index: -1;
+  transition: var(--animation) all linear;
+}
+
+nav:hover .background
+{
+  opacity: 0.9;
+  filter: blur(0);
+  box-shadow: 0 5px 10px black;
+  background: #f0f0f0;
+}
+
+nav .background.scrolled
+{
+  background: #f0f0f0;
+}
+
+nav.dark .background
+{
+  background: black;
+}
+
+nav.hidden {
+  transform: translateY(-100%);
+  transition: transform var(--animation) ease-in-out;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  position: relative;
+  transition: var(--animation) all linear;
+  margin-right: 10px;
+}
+
+nav ul li::after
+{
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -10%;
+  width: 0;
+  height: 3px;
+  background: var(--background-gradient);
+  transition: var(--animation) all linear;
+}
+
+nav ul li:hover::after
+{
+  width: 120%;
+}
+
+nav.dark ul li
+{
+  color: #f0f0f0;
+}
+
+nav.dark .selections .mode span
+{
+  color: #f0f0f0;
+}
+
+nav.dark ul li::after
+{
+  background: var(--background-gradient-dark);
+}
+
+
+nav .menu
+{
+  position: fixed;
+  display: none;
+}
+
+nav .click-controler
+{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+    nav{
+      left: -100%;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      width: max-content; 
+    }
+
+    nav.shown .click-controler
+    {
+      display: block;
+    }
+
+    nav ul
+    {
+      flex-direction: column;
+    }
+
+    nav .background
+    {
+      display: none;
+    }
+    nav.shown .background
+    {
+      display: block;
+    }
+
+    nav .menu{
+      display: block;
+      left: 20px;
+      top: 20px;
+      background: transparent;
+
+    }
+
+    nav.dark .menu
+    {
+      color: #f0f0f0;
+    }
+
+    nav.shown{
+      left: 0;
+    }
+
+    nav.shown .mode
+    {
+      position: absolute;
+      top: 20px;
+      right: 5px;
+    }
+}
