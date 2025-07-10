@@ -5,7 +5,7 @@ import {skills} from '../../data/skills';
 
 const Skills = ({lightMode}) => {
   return (
-    <div className={`container ${lightMode ? 'light' : 'dark'}`} id='Skills'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Skills'>
       <h1>Skills</h1>
       <div className="list flex">
         

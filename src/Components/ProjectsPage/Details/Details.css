@@ -1,0 +1,81 @@
+.details
+{
+    width: 100%;
+    min-height: 100vh;
+    padding: 5% 20%;
+    border: 2px solid black;
+}
+
+.details.dark
+{
+    background: var(--dark-background-light);
+}
+
+.details hr
+{   
+    background: var(--background-gradient);
+    height: 5px;
+    margin-top: 0.5em;
+}
+
+.details.dark hr
+{
+    background: var(--background-gradient-dark);
+}
+
+.details h3
+{
+    font-size: 1rem;
+    margin: 0.25em 0;
+}
+
+.details.dark h3{
+    text-shadow: 0 0 1px black;
+}
+
+.details .section
+{
+    margin-top: 2em;
+}
+
+.details .technology
+{
+    margin-top: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.details .technology::before
+{
+    content: '';
+    position: absolute;
+    background: var(--background-gradient);
+    width: 10px;
+    height: 10px;
+    top: 4px;
+    left: 0;
+}
+
+.details.dark .technology::before
+{
+    background: var(--background-gradient-dark);
+    box-shadow: 0 0 2px white;
+}
+
+.details .sec h4
+{
+    margin-top: 2em;
+    color: var(--dark-background);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.details.dark .sec h4
+{
+    color: black;
+}
+
+.details .sec h4:first-child
+{
+    margin-top: 1em;
+}

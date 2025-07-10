@@ -5,7 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 const Footer = ({lightMode}) => {
   return (
-    <footer className={`container flex ${lightMode ? 'light' : 'dark'}`} id='Footer'>
+    <footer className={`container flex ${lightMode ? '' : 'dark'}`} id='Footer'>
         <div className="left">
             <h3>Information</h3>
             <table>

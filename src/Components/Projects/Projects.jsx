@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 const Projects = ({lightMode}) => {
   return (
-    <div className={`container ${lightMode ? 'light' : 'dark'}`} id='Projects'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Projects'>
       <h1>Projects</h1>
       <div className="list-of-projects">
 
-        {projects.map((item, index) => (
+        {projects.slice(0,3).map((item, index) => (
           <div className="project" key={index}>
             <h4>{item.title}</h4>
             <p>{item.shortDescription}</p>

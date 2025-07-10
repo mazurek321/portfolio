@@ -33,7 +33,7 @@ const Navbar = ({lightMode,setLightMode}) => {
 
   return (
     <nav 
-      className={`flex ${lightMode ? 'light':'dark'} ${show ? 'shown' : ''}`}
+      className={`flex ${lightMode ? '':'dark'} ${show ? 'shown' : ''}`}
     >
       <span className="material-symbols-outlined menu" onClick={()=>setShow(!show)}>menu</span>
       <div className="click-controler" onClick={()=>setShow(false)}></div>

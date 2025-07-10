@@ -48,7 +48,7 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
   };
 
   return (
-    <div className={`container ${lightMode ? 'light' : 'dark'}`} id='Contact'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Contact'>
       <h1>Contact</h1>
       <div className="flex">
         <form ref={form} onSubmit={sendEmail}>
@@ -77,14 +77,14 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
             <span className="material-symbols-outlined icon">email</span>
             <p>Email<br/> mazurek321.93@wp.pl</p>
           </div>
-          <div className="item">
+          <a href='https://github.com/mazurek321' className="item" target='_blank'>
               <img src={github} className='github icon'/>
               <p>Github<br/>mazurek321</p>
-          </div>
-          <div className="item">
+          </a>
+          <a href='https://www.instagram.com/_bartekmazurkiewicz/' className="item" target='_blank'>
             <img src={ig} className='instagram icon'/>
             <p>Instagram<br/>_bartekmazurkiewicz</p>
-          </div>
+          </a>
           <div className="item">
             <img src={bg2} alt="second decorative image" />
           </div>

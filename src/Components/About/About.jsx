@@ -7,7 +7,7 @@ import { aboutText, personalInfo, education, certificates, interests } from "../
 const About = ({lightMode}) => {
 
   return (
-    <div className={`container ${lightMode ? 'light' : 'dark'}`} id='About'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='About'>
       <h1>About me</h1>
       <div className="about-content flex" >
 

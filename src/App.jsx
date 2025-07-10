@@ -40,7 +40,11 @@ function App() {
             />
           }
         />
-        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects" element={
+          <ProjectsPage  
+            lightMode={lightMode}
+            setLightMode={setLightMode}
+          />} />
       </Routes>
     </Router>
   );

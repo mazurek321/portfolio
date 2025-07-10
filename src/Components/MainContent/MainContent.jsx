@@ -9,7 +9,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 const MainContent = ({lightMode}) => {
   return (
-    <div className={`flex container ${lightMode ? 'light' : 'dark'}`} id='MainContent'>
+    <div className={`flex container ${lightMode ? '' : 'dark'}`} id='MainContent'>
         <div className="left">
             <section>
                 <h4>Hi, I'm Bartek</h4>

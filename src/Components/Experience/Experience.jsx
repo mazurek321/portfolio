@@ -3,7 +3,7 @@ import "./Experience.css"
 
 const Experience = ({lightMode}) => {
   return (
-    <div className={`container ${lightMode ? 'light' : 'dark'}`} id='Experience'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Experience'>
         <h1>Experience</h1>
         <div className="table">
           <div className="corners"></div>
