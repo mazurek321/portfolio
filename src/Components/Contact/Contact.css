@@ -140,6 +140,7 @@
 #Contact .item h3
 {
     position: relative;
+    margin: 0;
 }
 
 #Contact .item h3,
