@@ -184,14 +184,14 @@
     {
         flex-direction: column-reverse;
         gap: 0;
-        height: auto;
+        height: 100vh;
     }
 
     #MainContent .left
     {
         width: 100%;
         text-align: center;
-        margin-bottom: 3em;
+        margin-bottom: 8em;
     }
     #MainContent .icons,
     #MainContent .button
@@ -204,7 +204,7 @@
 
     #MainContent .right
     {
-        margin: 3em;
+        margin-top: 7em;
         position: relative;
         width: 300px;
         height: 300px;

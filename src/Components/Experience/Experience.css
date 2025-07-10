@@ -102,6 +102,11 @@
         background: transparent;
     }
 
+    #Experience table tbody td,
+    #Experience table tbody th{
+        background: var(--div-background);
+    }
+
     #Experience table tbody tr:not(:first-child)
     {
         margin-top: 2em;

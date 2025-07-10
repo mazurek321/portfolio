@@ -41,6 +41,7 @@
   box-shadow: 3px 3px 5px var(--button2);
   padding: 1em;
   border-radius: 7px;
+  font-size: 1.2rem;
 }
 
 #About .panel-bottom
@@ -236,35 +237,11 @@
   #About .panel-bottom .caffel {
     width: 90%;
     margin: 1em auto;
-    height: auto;
   }
 
   #About .panel-bottom .caffels {
     flex-direction: column;
     align-items: center;
-  }
-
-  #About .about-content .caffel:hover .content {
-    position: static;
-  }
-
-  #About .about-content .cover-title,
-  #About .about-content .caffel:hover .cover-title {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 1rem;
-    gap: 10px;
-  }
-
-  #About .about-content .caffel:hover .arrow {
-    position: static;
-    font-size: 1.2rem;
-  }
-
-  #About .about-content .caffel:hover .content {
-    top: auto;
   }
 }
 
