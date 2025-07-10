@@ -9,6 +9,7 @@
   /* --button2dark: rgb(197, 178, 67); */
   /* --button2: #0c77dbcc; */
   --container-padding: 3% 7%;
+  --container-padding2: 1% 3%;
   --div-background: rgb(228, 225, 225);
   --dark-background: rgb(31, 31, 31);
   --dark-text: #bfbfbf;
@@ -150,4 +151,10 @@ a{
   margin: 1em 0;
   text-align: center;
   font-size: 2rem;
+}
+
+@media (width<768px) {
+    .container{
+      padding: var(--container-padding2);
+    }
 }

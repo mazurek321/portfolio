@@ -42,6 +42,7 @@
     width: 100%;
     height: 100%;
     content: '';
+    z-index: -1;
 }
 
 #Experience .corners::before, 
@@ -90,4 +91,19 @@
 #Experience.dark .corners::after
 {
     background: var(--background-gradient-dark);
+}
+
+@media (width<768px) {
+    #Experience table tbody tr
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        background: transparent;
+    }
+
+    #Experience table tbody tr:not(:first-child)
+    {
+        margin-top: 2em;
+    }
 }

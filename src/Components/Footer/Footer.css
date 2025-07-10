@@ -65,3 +65,20 @@ footer .middle
     flex-direction: column;
     gap: 15px;
 }
+
+@media (width < 768px) {
+    #Footer
+    {
+        padding: 5em 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+    }
+
+    #Footer div
+    {
+        width: 100%;
+    }
+}

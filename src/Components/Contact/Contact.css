@@ -104,6 +104,7 @@
     gap: 0.5em;
     row-gap: 1em;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 #Contact .item
@@ -191,4 +192,48 @@
 #Contact img.icon
 {
     filter: drop-shadow(0 0 5px var(--button));
+}
+
+
+@media (width<1024px) {
+    #Contact .flex
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #Contact form
+    {
+        width: 100%;
+    }
+
+    #Contact .right
+    {
+        width: 100%;
+    }
+}
+
+@media (width < 768px) {
+    #Contact .right span.icon
+    {
+        font-size: 1.5rem;
+    }
+    #Contact .right p
+    {
+        font-size: 0.75rem;   
+    }
+    #Contact .right img.icon{
+        width: 2rem;
+    }
+
+    #Contact .right
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #Contact .item
+    {
+        max-width: 45%;
+    }
 }

@@ -76,3 +76,16 @@
     background: var(--dark-text);
     box-shadow: 3px 3px 5px var(--button2dark);
 }
+
+@media (width<768px) {
+    #Projects .list-of-projects
+    {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    #Projects .button
+    {
+        justify-content: center;
+    }
+}

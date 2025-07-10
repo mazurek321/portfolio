@@ -1,14 +1,19 @@
 #MainContent{
     height: 100vh;
-    /* contain: layout paint; */
     overflow: hidden;
     position: relative;
     transition: var(--animation) all linear;
+    justify-content: space-between;
 }
 
 #MainContent.dark
 {
     background: var(--dark-background);
+}
+
+#MainContent .left
+{
+    width: 50%;
 }
 
 #MainContent .left section{
@@ -81,59 +86,50 @@
 }
 
 
-#MainContent .right{
-    background: var(--background-gradient);
+
+
+
+#MainContent .right
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
     width: 50%;
-    height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#MainContent .right-background
+{
+    width: 100%;
+    height: 150vh;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(25px, -20%);
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    z-index: 10;
-}
-
-#MainContent .right-background{
     background: var(--background-gradient);
-    opacity: 0.5;
-    filter: blur(10px);
-    width: 50%;
-    height: 150%;
-    position: absolute;
-    top: 0;
-    animation: moveBackground 15s linear infinite;
-    transform: translate(25px, -20%);
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    z-index: 0;
-}
-
-#MainContent .right,
-#MainContent .right-background
-{
-    backface-visibility: hidden;
-    will-change: transform;
+    border-radius: 50% 0 0 50%;
+    transform: translateY(-20%);
+    z-index: -1;
 }
 
 #MainContent .right .image
 {
+    height: 90%;
     width: 100%;
-    height: 100%;
     display: flex;
-    align-items:end;
+    align-items: end;
     justify-content: center;
-    position: relative;
-    margin-left: 10%;
-    /* padding-bottom: 10%; */
+    margin-right: -5em;
+    margin-top: auto;
 }
 
-#MainContent .right img {
-    width: 100%;
-    /* height: 100%; */
+#MainContent .right img
+{
     object-fit: contain;
-    max-height: 100%;
-    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -158,7 +154,6 @@
     width: fit-content;
 }
 
-#MainContent.dark .right,
 #MainContent.dark .right-background
 {
     background: var(--background-gradient-dark);
@@ -166,11 +161,6 @@
 
 
 @media (min-width: 2000px) {
-    #MainContent
-    {
-        height: 75vh;
-    }
-
     #MainContent .left h1 {
         font-size: 3.5em;
     }
@@ -187,20 +177,71 @@
         width: 35px;
         height: 35px;
     }
+}
 
-    #MainContent .right,
-    #MainContent .right-background {
-        width: 45%;
-        height: 130%;
-        transform: translate(50px, -10%);
+@media (width<=1024px) {
+    #MainContent
+    {
+        flex-direction: column-reverse;
+        gap: 0;
+        height: auto;
     }
 
-    /* #MainContent .right .image {
-        margin-left: 5%;
-        padding-bottom: %;
-    } */
-
-    #MainContent .right img {
+    #MainContent .left
+    {
         width: 100%;
+        text-align: center;
+        margin-bottom: 3em;
+    }
+    #MainContent .icons,
+    #MainContent .button
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #MainContent .right
+    {
+        margin: 3em;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        padding: 0;
+    }
+
+    #MainContent .right-background
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        transform: none;
+    }
+
+    #MainContent .image
+    {
+        position: relative;
+        /* background: red; */
+        margin: 0 !important;
+        padding: 0;
+        height: 100% !important;
+    }
+
+    #MainContent h4
+    {
+        font-size: 0.75rem;
+    }
+
+    #MainContent h3
+    {
+        font-size: 1rem;
+    }
+
+    #MainContent h1{
+        font-size: 2rem;
     }
 }

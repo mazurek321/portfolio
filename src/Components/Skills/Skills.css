@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 5em;
+    flex-wrap: wrap;
 }
 
 #Skills .list img
@@ -21,6 +22,7 @@
     display: flex;
     justify-content: center;
     gap: 5em;
+    flex-wrap: wrap;
 }
 
 #Skills .item

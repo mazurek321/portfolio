@@ -1,7 +1,8 @@
 #About {
   background: var(--background-gradient);
   position: relative;
-  min-width: 100vh;
+  /* width: 100vw; */
+  max-width: 100vw;
 }
 
 #About h1 {
@@ -10,54 +11,56 @@
   border-bottom: 2px solid #f0f0f0;
 }
 
-#About .about-content {
-  display: flex;
+#About .about-content
+{
   align-items: stretch;
-  gap: 20px;
 }
 
-#About .image img {
-  display: block;
-  border-radius: 7px;
-  box-shadow: 3px 3px 5px var(--button2);
+#About .about-content .image
+{
   background: var(--div-background);
-  padding: 50px 0;
+  width: 300px;
+  padding: 20px 0;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 5px var(--button2);
+}
+
+
+
+#About .about-content .image img
+{
   object-fit: contain;
 }
 
-#About .info-panel {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-#About .description {
-  padding: 20px;
-  background: var(--div-background);
-  border-radius: 7px;
-  box-shadow: 3px 3px 5px var(--button2);
-  border: 1px solid grey;
-  line-height: 20px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-#About .description h4
+#About .description
 {
-    font-size: 1.4rem;
-    margin: 10px 0;
+  background: var(--div-background);
+  box-shadow: 3px 3px 5px var(--button2);
+  padding: 1em;
+  border-radius: 7px;
 }
 
-#About .panel-bottom {
-  flex-grow: 1;
+#About .panel-bottom
+{
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: auto;
+}
+
+#About .panel-bottom .caffels
+{
   display: flex;
-  border-radius: 7px;
-  align-items: stretch;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 #About .panel-bottom .caffel {
-  flex: 1;
   display: flex;
   flex-direction: column;
   border: 1px solid grey;
@@ -68,6 +71,8 @@
   overflow:  hidden;
   position: relative;
   padding: 20px;
+  height: 350px;
+  min-width: 300px;
 }
 
 #About .panel-bottom .cover {
@@ -206,69 +211,95 @@
   border-bottom: 2px solid var(--dark-text);
 }
 
-#About.dark .image img,
-#About.dark .description,
-#About.dark .caffel
-{
-  background: var(--dark-text);
-  box-shadow: 3px 3px 5px var(--button2dark);
-}
 
-/* @media (min-width: 2000px) { */
-  /* #About h1 {
-    font-size: 2.5rem;
-  } */
-
-  /* #About .about-content {
-    gap: 40px;
+@media (max-width: 1024px) {
+  #About .about-content {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #About .image {
-    height: 1000px;
+  #About .about-content .image {
+    width: 80%;
+    margin-bottom: 1em;
   }
 
-  #About .image img {
-    padding: 80px 0;
+  #About .panel-bottom {
+    flex-direction: column;
+    align-items: center;
   }
 
   #About .description {
-    font-size: 25px;
-    line-height: 30px;
-    padding: 60px;
+    width: 90%;
+    margin: 1em auto;
   }
 
-  #About .description h4 {
-    font-size: 2rem;
+  #About .panel-bottom .caffel {
+    width: 90%;
+    margin: 1em auto;
+    height: auto;
   }
 
-  #About .panel-bottom .cover {
+  #About .panel-bottom .caffels {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #About .about-content .caffel:hover .content {
+    position: static;
+  }
+
+  #About .about-content .cover-title,
+  #About .about-content .caffel:hover .cover-title {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  #About .about-content .caffel:hover .arrow {
+    position: static;
+    font-size: 1.2rem;
+  }
+
+  #About .about-content .caffel:hover .content {
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #About h1 {
     font-size: 1.5rem;
   }
 
-  #About .panel-bottom .cover span {
-    font-size: 3rem;
+  #About .description {
+    font-size: 0.9rem;
+    padding: 1em;
   }
 
-  #About .panel-bottom .cover span.arrow {
-    font-size: 40px;
-  }
-
-  #About .about-content .caffel:hover .cover-title
-  {
-    font-size: 24px;
-  }
-  #About .about-content .caffel:hover .cover-title span
-  {
-    font-size: 40px;
-  }
-
-  #About .panel-bottom .content
-  {
-    font-size: 24px;
-    flex-wrap: wrap;
+  #About .panel-bottom .caffel {
+    font-size: 0.9rem;
+    padding: 15px;
   }
 
   #About ul li {
-    font-size: 20px;
+    font-size: 0.9rem;
   }
-} */
+
+  #About .about-content .image {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #About .panel-bottom table th,
+  #About .panel-bottom table td {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  #About .split .education-content span,
+  #About .split .education-content h5 {
+    font-size: 0.9rem;
+  }
+}

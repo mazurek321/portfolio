@@ -3,7 +3,6 @@ import "./MainContent.css"
 import inst from "../../assets/icons/Instagram_icon.png"
 import facebook from "../../assets/icons/Facebook_Logo.png"
 import github from "../../assets/icons/Github_icon.png"
-import WaveText from './WaveText'
 import StyledButton from '../StyledButton/StyledButton'
 import img from "../../assets/img/img.webp"
 import { HashLink as Link } from 'react-router-hash-link';
@@ -14,7 +13,7 @@ const MainContent = ({lightMode}) => {
         <div className="left">
             <section>
                 <h4>Hi, I'm Bartek</h4>
-                <WaveText text="Welcome to my website !"/>
+                <h1>Welcome to my website !</h1>
                 <h3>I'm a full-stack developer</h3>
                 <div className="icons flex">
                     <a href="https://www.instagram.com/_bartekmazurkiewicz/" target='_blank'><img src={inst} alt="Instagram account" /></a>
@@ -33,11 +32,11 @@ const MainContent = ({lightMode}) => {
             </section>
         </div>
         <div className="right">
+          <div className="right-background"></div>
           <div className="image">
             <img src={img} alt="Main Image" />
           </div>
         </div>
-         <div className="right-background"></div>
     </div>
   )
 }
