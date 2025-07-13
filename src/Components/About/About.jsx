@@ -36,8 +36,8 @@ const About = ({lightMode}) => {
                     <div className="square"></div>
                     <div className="education">
                       <p>{ed.years}</p>
-                      <p>{ed.school}</p>
-                      <p>{ed.major}</p>
+                      <h4>{ed.school}</h4>
+                      <p className='major'>{ed.major}</p>
                     </div>
                   </div>
                 ))}

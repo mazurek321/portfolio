@@ -83,11 +83,6 @@
   flex-wrap: wrap;
 }
 
-/* #About .caffel
-{
-  background: grey;
-} */
-
 #About .caffel p{
   margin: 0.5em 0;
 }
@@ -95,6 +90,11 @@
 #About .split
 {
  position: relative; 
+}
+
+#About .caffel .split:nth-child(3)
+{
+  margin-top: 2em;
 }
 
 #About .square
@@ -131,6 +131,11 @@
 {
   margin-left: 23px;
   max-width: 300px;
+}
+
+#About .education p.major
+{
+  font-style: italic;
 }
 
 #About .certificates p:nth-child(2)
