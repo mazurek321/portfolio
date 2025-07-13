@@ -34,15 +34,16 @@ export const personalInfo = [
 
 export const education = [
   {
-    years: "2018 - 2022",
-    school: "Technical high school in Leżajsk",
-    major: "Computer science",
-  },
-  {
     years: "2022 - Present",
     school: "Rzeszów University of Technology",
     major: "Computer science",
   },
+  {
+    years: "2018 - 2022",
+    school: "Technical high school in Leżajsk",
+    major: "Computer science",
+  },
+  
 ];
 
 export const certificates = [

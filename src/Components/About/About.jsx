@@ -10,97 +10,57 @@ const About = ({lightMode}) => {
     <div className={`container ${lightMode ? '' : 'dark'}`} id='About'>
       <h1>About me</h1>
       <div className="about-content flex" >
-
-          <div className="image">
-            <img src={img} alt="Image photo" />
-          </div>
-          
-          <div className="panel-bottom flex">
+        <div className="border"></div>
+         <div className="content">
             <div className="description">
-              <h4>{aboutText.heading}</h4>
-              <p>
-                {aboutText.description}
-              </p>
+              <h3>{aboutText.heading}</h3>
+              <p>{aboutText.description}</p>
             </div>
-            
-           <div className="caffels">
 
-            <div className="caffel">
-              <div className="cover">
-                <div className="cover-title">
-                  <span className="material-symbols-outlined">person</span>
-                  <p>Information</p>
-                </div>
-                <span className="material-symbols-outlined arrow">arrow_upward</span>
+            <div className="caffels flex">
+              <div className="caffel information">
+                <h3>Information</h3>
+                {personalInfo.map((info,index)=>(
+                  <div className="information flex" key={index}>
+                    <h4>{info.label}</h4>
+                    <p>{info.value}</p>
+                  </div>
+                ))
+                }
               </div>
-              <div className="content">
-
-              <table>
-                <tbody>
-                  {personalInfo.map((item) => (
-                    <tr key={item.label}>
-                      <th>{item.label}</th>
-                      <td>{item.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              </div>
-            </div>
 
               <div className="caffel">
-                <div className="cover">
-                  <div className="cover-title">
-                    <span className="material-symbols-outlined">school</span>
-                    <p>Education</p>
-                  </div>
-                  <span className="material-symbols-outlined arrow">arrow_upward</span>
-                </div>
-                <div className="content">
-                  {education.map((item, index)=>(
-                    <div className="split flex" key={index}>
-                      <div className="square"></div>
-                      <div className="education-content">
-                        <span>{item.years}</span>
-                        <h5>{item.school}</h5>
-                        <span>{item.major}</span>
-                      </div>
+                <h3>Education</h3>
+                {education.map((ed, index)=>(
+                  <div className="split" key={index}>
+                    <div className="square"></div>
+                    <div className="education">
+                      <p>{ed.years}</p>
+                      <p>{ed.school}</p>
+                      <p>{ed.major}</p>
                     </div>
-                  ))}
+                  </div>
+                ))}
+              </div>
 
-                  <h5>Certificates</h5>
-                  {certificates.map((item, index)=>(
-                    <div className="split flex" key={index}>
-                      <div className="square"></div>
-                      <div className="education-content">
-                        <h5>{item.title}</h5>
-                      </div>
+              <div className="caffel certificates">
+                <h3>Certificates</h3>
+                 {certificates.map((cert, index)=>(
+                  <div className="split" key={index}>
+                    <div className="square"></div>
+                    <div className="education">
+                      <p>{cert.title}</p>
+                      <p>{cert.description}</p>
                     </div>
-                  ))}
-                  
-                </div>
-              </div>
-              <div className="caffel">
-                <div className="cover">
-                  <div className="cover-title">
-                    <span className="material-symbols-outlined">interests</span>
-                    <p>Interests</p>
                   </div>
-                  <span className="material-symbols-outlined arrow">arrow_upward</span>
-                </div>
-                <div className="content">    
-                  <ul>
-                    {interests.map((interest) => (
-                      <li key={interest}>{interest}</li>
-                    ))}
-                  </ul>
-                </div>
+                ))}
               </div>
+
+
             </div>
-          </div>
-        </div>
+         </div>
       </div>
+    </div>
   )
 }
 

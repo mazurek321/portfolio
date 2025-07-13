@@ -90,3 +90,10 @@
         justify-content: center;
     }
 }
+
+@media (width > 1440px) {
+    #Projects
+    {
+        min-height: auto;
+    }
+}

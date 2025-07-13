@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Skills.css"
-import {skills} from '../../data/skills';
+import {skills, skillColors} from '../../data/skills';
 
 
 const Skills = ({lightMode}) => {
+
+  
   return (
     <div className={`container ${lightMode ? '' : 'dark'}`} id='Skills'>
       <h1>Skills</h1>
@@ -11,19 +13,24 @@ const Skills = ({lightMode}) => {
         
         {skills.map((section, index) => (
           <div className="section" key={index}>
-            {section.items.map((skill, i) => (
-              <div className="item" key={i}>
-                <img 
-                  src={skill.icon} 
-                  alt={skill.name} 
-                  title={skill.name}
-                />
-                <span>
-                  {skill.name}
-                </span>
-              </div>
-              
-            ))}
+            <h2>{section.category}</h2>
+            <div className="items">
+               {section.items.map((skill, i) => {
+                  const color = skillColors[skill.name] || "gray";
+
+                  const style = {
+                    border: `1px solid ${color}`,
+                    boxShadow: `0 0 3px ${color}, 0 0 10px ${color}80, 0 0 30px ${color}75`,
+                  };
+
+                  return (
+                    <div className="item" key={i} style={style}>
+                      <img src={skill.icon} alt={skill.name} title={skill.name} />
+                      <span>{skill.name}</span>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         ))}
         

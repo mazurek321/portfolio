@@ -6,7 +6,7 @@ import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useState(false);
   const [notification, setNotification] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 

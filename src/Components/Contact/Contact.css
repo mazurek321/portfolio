@@ -20,7 +20,7 @@
     flex-direction: column;
     width: 35%;
     gap: 2em;
-    background: var(--div-background);
+    background: var(--dark-text);
     padding: 20px 50px 40px 50px;
     border: 1px solid black;
     border-radius: 7px;
@@ -70,21 +70,20 @@
     outline: none;
     border-radius: 7px;
     box-shadow: 3px 3px 5px black;
+    background: var(--div-background);
+}
+
+#Contact form textarea{
+    height: 100%;
 }
 
 
 #Contact.dark form{
-    background: var(--dark-text);
     box-shadow: 5px 5px 7px var(--button2dark);
 }
 #Contact.dark form button
 {
     background: var(--button2dark);
-}
-#Contact.dark form input,
-#Contact.dark form textarea
-{
-    background: var(--div-background);
 }
 
 #Contact.dark form input::placeholder,
@@ -198,6 +197,14 @@
 #Contact img.icon
 {
     filter: drop-shadow(0 0 5px var(--button));
+}
+
+
+@media (width > 1440px) {
+    #Contact
+    {
+        min-height: auto;
+    }
 }
 
 

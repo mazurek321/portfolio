@@ -1,5 +1,30 @@
 
 const projects = [
+     {
+        title: 'Task Management System',
+        status: "In progress",
+        shortDescription:
+        "A task management app with notifications and productivity analysis, enabling users to track progress, set priorities, and visualize tasks.",
+        longDescription:
+        "Task Management System is a comprehensive productivity tool designed to help users effectively manage tasks, stay on top of deadlines, and analyze their efficiency over time. It provides features like customizable task creation, real-time notifications, calendar views, and detailed productivity reports. Users can monitor their daily progress, set priorities, and gain insights through visual analytics and time tracking. The system is suitable for individuals or teams looking to boost organization and performance.",
+        technology: [
+        "ASP.NET Core",
+        "EF Core",
+        "MySql",
+        "Outbox pattern",
+        "SignalR",
+        "Quartz.NET",
+        "SMTP",
+        "JWT",
+        "OAuth2",
+        "Swagger"
+        ],
+        section:[
+            {
+                
+            }
+        ]
+    },
     {
         title: 'Mobile application "FriendTag"',
         shortDescription:
@@ -59,26 +84,6 @@ const projects = [
             "Docker", 
             "JWT",
             "Swagger"
-        ]
-    },
-
-
-
-    {
-        title: 'Task Management System',
-        shortDescription:
-        "A task management app with notifications and productivity analysis, enabling users to track progress, set priorities, and visualize tasks.",
-        technology: [
-        "ASP.NET Core",
-        "EF Core",
-        "MySql",
-        "Outbox pattern",
-        "SignalR",
-        "Quartz.NET",
-        "SMTP",
-        "JWT",
-        "OAuth2",
-        "Swagger"
         ]
     }
 ]

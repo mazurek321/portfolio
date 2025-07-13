@@ -21,6 +21,7 @@
     position: fixed;
     left: 10px;
     top: 10px;
+    color: black;
 }
 
 .leftnav.dark{
@@ -104,6 +105,7 @@
         position: fixed;
         left: 10px;
         top: 10px;
+        color: black;
     }
 
     .leftnav.hide
@@ -113,5 +115,6 @@
     .leftnav.hide .menuicon
     {
         position: static;
+        color: inherit;
     }
 }

@@ -13,12 +13,17 @@ const Details = ({lightMode, project}) => {
 
   return (
     <div className={`details ${lightMode ? '' : 'dark'}`}>
-        {project?.title != null && (
-            <header>
-                <h3>Project name</h3>
-                {project.title}
-            </header>
-        )}
+        <div className="top">
+            {project?.title != null && (
+                <header>
+                    <h3>Project name</h3>
+                    {project.title}
+                </header>
+            )}
+            {project?.status != null && (
+                <h3 className='status'>{project.status}</h3>
+            )}
+        </div>
         <hr />
         {project?.longDescription != null ? (
             <div className="section">

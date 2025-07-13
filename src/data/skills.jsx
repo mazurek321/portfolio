@@ -20,7 +20,7 @@ import postgresql_icon from "../assets/icons/postgresql.png"
 
 export const skills = [
     {
-        category: 'Languages',
+        category: 'Languages & Core',
         items:[
             { name: "HTML", icon: html_icon },
             { name: "CSS", icon: css_icon },
@@ -34,15 +34,12 @@ export const skills = [
         ]
     },
     {
-        category: "Frameworks & Tools",
+        category: "Frameworks & Libraries",
         items: [
             { name: "Flutter", icon: flutter_icon },
             { name: "React", icon: react_icon },
             { name: ".NET", icon: net_icon },
             { name: "Spring Boot", icon: springboot_icon },
-            { name: "Swagger", icon: swagger_icon },
-            { name: "Docker", icon: docker_icon },
-            { name: "GitHub", icon: github_icon },
         ],
     },
     {
@@ -53,6 +50,37 @@ export const skills = [
             { name: "PostgreSQL", icon: postgresql_icon },
         ],
     },
+    {
+        category: "Tools & Platforms",
+        items: [
+            { name: "Swagger", icon: swagger_icon },
+            { name: "Docker", icon: docker_icon },
+            { name: "GitHub", icon: github_icon },
+        ],
+    },
 ]
+
+
+export const skillColors = {
+  HTML: "orange",
+  CSS: "blue",
+  JavaScript: "#f0db4f",
+  "C#": "#68217a",
+  "C++": "#00599C",
+  C: "#555555",
+  Java: "#b07219",
+  SQL: "#336791",
+  Python: "#3776AB",
+  Flutter: "#02569B",
+  React: "#61DAFB",
+  ".NET": "#512BD4",
+  "Spring Boot": "#6DB33F",
+  Swagger: "#85EA2D",
+  Docker: "#0db7ed",
+  GitHub: "#000000ff",
+  "SQL Server": "#CC2927",
+  MySQL: "#4479A1",
+  PostgreSQL: "#336791",
+};
 
 

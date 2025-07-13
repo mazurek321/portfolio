@@ -6,6 +6,20 @@
     border: 2px solid black;
 }
 
+.details .top
+{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.details .top h3.status
+{
+    color: rgb(135, 0, 0);
+    text-shadow: 0 0 1px black;
+    font-weight: normal;
+}
+
 .details.dark
 {
     background: var(--dark-background-light);
