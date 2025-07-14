@@ -143,3 +143,10 @@
   font-size: 12px;
   font-style: italic;
 }
+
+@media (width < 1024px) {
+  #About .caffels
+  {
+    gap: 5em;
+  }
+}

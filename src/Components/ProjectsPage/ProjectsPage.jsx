@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../../Components/Navbar/Navbar"
 import Leftnav from './Leftnav/Leftnav'
-import projects from '../../data/projects'
 import Details from './Details/Details'
+import projects from '../../data/projects';
 
 const ProjectsPage = ({lightMode, setLightMode}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);

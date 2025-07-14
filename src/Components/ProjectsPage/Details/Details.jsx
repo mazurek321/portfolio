@@ -66,6 +66,24 @@ const Details = ({lightMode, project}) => {
             </div>
         )}
 
+        {project?.code != null && (
+            <div className="section">
+                <h3>Code example</h3>
+                {
+                    project.code.map((codes, c) => (
+                        <details className='sec' key={c}>
+                            <summary>{codes.title}</summary>
+                            <div className="images">
+                                  {codes.images && codes.images.map((img, i) => (
+                                        <img src={img} key={i} className="code-image" />
+                                    ))}
+                            </div>  
+                        </details>
+                    ))
+                }
+            </div>
+        )}
+
         
     </div>
   )

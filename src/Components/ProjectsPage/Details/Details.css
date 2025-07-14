@@ -93,3 +93,35 @@
 {
     margin-top: 1em;
 }
+
+.details img
+{
+    width: 700px;
+}
+
+.details summary
+{
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+.details .images
+{
+    margin: 2em 3em;
+}
+
+@media (width<1024px) {
+    .details
+    {
+        padding: 3em;
+    }
+
+    .details .images
+    {
+        margin: 0;
+    }
+
+    .details img{
+        width: 100%;
+    }
+}

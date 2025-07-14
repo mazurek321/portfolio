@@ -184,7 +184,8 @@
     {
         flex-direction: column-reverse;
         gap: 0;
-        height: 100%;
+        height: auto;
+        min-height: 100vh;
         justify-content: center;
         align-items: center;
         gap: 3em;
