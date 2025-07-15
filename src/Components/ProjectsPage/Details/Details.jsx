@@ -78,7 +78,7 @@ const Details = ({lightMode, project}) => {
                                         <summary>Images</summary>
                                         <div className={`images ${project.type == 'mobile' && "mobile"}`}>
                                         {feature.img.map((image, index) => (
-                                            <img src={image} alt={`${feature.title}`} key={index}/>
+                                            <img loading="lazy" src={image} alt={`${feature.title}`} key={index}/>
                                         ))}
                                     </div>
                                     </details>
@@ -98,7 +98,7 @@ const Details = ({lightMode, project}) => {
                             <summary>{codes.title}</summary>
                             <div className="images">
                                   {codes.images && codes.images.map((img, i) => (
-                                        <img src={img} key={i} className="code" />
+                                        <img loading="lazy" src={img} key={i} className="code" />
                                     ))}
                             </div>  
                         </details>
