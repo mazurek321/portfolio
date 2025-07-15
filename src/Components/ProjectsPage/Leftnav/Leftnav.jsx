@@ -13,6 +13,7 @@ const Leftnav = ({lightMode, setLightMode, projectTitles, onSelect, selectedInde
   
   return (
     <div className={`leftnav ${lightMode ? '' : 'dark'} ${hide ? 'hide' : ''}`}>
+      <div className="back" onClick={()=>setHide(false)}></div>
       <div className="icons">
         <Link to="/" className='flex'>
           <span className="material-symbols-outlined">arrow_back_ios</span>

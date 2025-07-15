@@ -16,7 +16,7 @@ const Projects = ({lightMode}) => {
             <h4>{item.title}</h4>
             <p>{item.shortDescription}</p>
             <div className="technologies">
-              <p>Technologies used</p>
+              <p>Technologies</p>
                {item.technology.slice(0,5).map((tech, i) => (
                   <span key={i}>{tech}</span>
                 ))}

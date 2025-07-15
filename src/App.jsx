@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Notification from "./Components/Notification/Notification";
-
+import ScrollToTop from "./ScrollToTop";
 import Home from "./Components/Home/Home";
 import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
@@ -21,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop/>
       {notification && (
         <Notification
           type={`${notification.type} ${isVisible ? 'visible' : ''}`}

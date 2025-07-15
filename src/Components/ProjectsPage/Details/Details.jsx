@@ -20,11 +20,24 @@ const Details = ({lightMode, project}) => {
                     {project.title}
                 </header>
             )}
-            {project?.status != null && (
+
+        {project?.status != null && (
                 <h3 className='status'>{project.status}</h3>
             )}
         </div>
+
         <hr />
+
+        {project?.linkBE != null &&
+            <h4 className='link'>Link to backend: <a href={project.linkBE} target='_blank'>{project.linkBE}</a></h4>
+        }
+        {project?.linkFE != null &&
+            <h4 className='link'>Link to frontend: <a href={project.linkFE} target='_blank'>{project.linkFE}</a></h4>
+        }
+        {project?.link != null &&
+            <h4 className='link'>Link: <a href={project.link} target='_blank'>{project.link}</a></h4>
+        }
+
         {project?.longDescription != null ? (
             <div className="section">
                 <h3>Description</h3>
@@ -60,6 +73,16 @@ const Details = ({lightMode, project}) => {
                         <div className='sec' key={s}>
                             <h4>{feature.title}</h4>
                             <p>{feature.context}</p>
+                                {feature.img?.length > 0 && (
+                                    <details>
+                                        <summary>Images</summary>
+                                        <div className={`images ${project.type == 'mobile' && "mobile"}`}>
+                                        {feature.img.map((image, index) => (
+                                            <img src={image} alt={`${feature.title}`} key={index}/>
+                                        ))}
+                                    </div>
+                                    </details>
+                                )}
                         </div>
                     ))
                 }
@@ -75,7 +98,7 @@ const Details = ({lightMode, project}) => {
                             <summary>{codes.title}</summary>
                             <div className="images">
                                   {codes.images && codes.images.map((img, i) => (
-                                        <img src={img} key={i} className="code-image" />
+                                        <img src={img} key={i} className="code" />
                                     ))}
                             </div>  
                         </details>
