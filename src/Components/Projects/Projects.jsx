@@ -17,8 +17,8 @@ const Projects = ({lightMode}) => {
         {projects.slice(0,3).map((item, index) => {
           
           const [ref, isVisible] = useInView(); 
-          const animationClass =
-            index % 2 === 0 ? 'fade-in-left' : 'fade-in-right';
+          const directions = ['fade-in-left', 'fade-in-bottom', 'fade-in-right'];
+          const animationClass = directions[index % directions.length];
 
           return(
             <div className={`project ${animationClass} ${isVisible ? 'visible' : ''}`} key={index} ref={ref}>

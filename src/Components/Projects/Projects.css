@@ -36,10 +36,13 @@
 }
 
 #Projects .project.fade-in-left {
-    transform: translateX(80%);
+    transform: translateX(-80%);
+}
+#Projects .project.fade-in-bottom {
+    transform: translateY(80%);
 }
 #Projects .project.fade-in-right{
-    transform: translateX(-80%);
+    transform: translateX(80%);
 }
 
 #Projects .project.visible
