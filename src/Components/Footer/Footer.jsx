@@ -2,10 +2,14 @@ import React from 'react'
 import "./Footer.css"
 import { personalInfo, education} from "../../data/about";
 import { HashLink as Link } from 'react-router-hash-link';
+import useInView from '../../hooks/useInView';
+
 
 const Footer = ({lightMode}) => {
+    const [ref, isVisible] = useInView(); 
+
   return (
-    <footer className={`container flex ${lightMode ? '' : 'dark'}`} id='Footer'>
+    <footer className={`container flex ${lightMode ? '' : 'dark'}  ${isVisible ? 'visible' : ''}`} id='Footer' ref={ref}>
         <div className="left">
             <h3>Information</h3>
             <table>

@@ -25,6 +25,15 @@
     border: 1px solid black;
     border-radius: 7px;
     box-shadow: 5px 5px 7px black;
+    transform: translateX(-100%);
+    opacity: var(--startOpacity);
+    transition: var(--visible) all ease-out;
+}
+
+#Contact form.visible
+{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #Contact h3
@@ -109,6 +118,15 @@
     row-gap: 1em;
     justify-content: space-between;
     align-items: stretch;
+    transform: translateX(100%);
+    opacity: var(--startOpacity);
+    transition: var(--visible) all ease-out;
+}
+
+#Contact .right.visible
+{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #Contact .item

@@ -1,11 +1,14 @@
 import React from 'react'
 import "./Experience.css"
+import useInView from '../../hooks/useInView';
 
 const Experience = ({lightMode}) => {
+  const [ref, isVisible] = useInView(); 
+  
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='Experience'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Experience' ref={ref}>
         <h1>Experience</h1>
-        <div className="table">
+        <div className={`table ${isVisible ? 'visible' : ''}`}>
           <div className="corners"></div>
           <table>
             <tbody>

@@ -17,6 +17,15 @@
     grid-template-columns: repeat(3, 30%);
     justify-content: space-between;
     align-items: stretch;
+    opacity: var(--startOpacity);
+    transform: translateX(-100%);
+    transition: var(--visible) all ease-out;
+}
+
+#Projects .list-of-projects.visible
+{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #Projects .project
@@ -57,6 +66,15 @@
     margin: 2em 0;
     display: flex;
     justify-content: right;
+    transform: translateX(100%);
+    opacity: var(--startOpacity);
+    transition: var(--visible) all ease-out;
+}
+
+#Projects .button.visible
+{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 

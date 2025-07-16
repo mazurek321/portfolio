@@ -1,16 +1,19 @@
 import React from 'react'
 import "./About.css"
 import { aboutText, personalInfo, education, certificates, interests } from "../../data/about";
+import useInView from '../../hooks/useInView';
+
 
 
 const About = ({lightMode}) => {
+  const [ref, isVisible] = useInView();
 
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='About'>
+    <div className={`container ${lightMode ? '' : 'dark'} `} id='About' ref={ref}>
       <h1>About me</h1>
       <div className="about-content flex" >
         <div className="border"></div>
-         <div className="content">
+         <div className={`content ${isVisible ? 'visible' : ''}`}>
             <div className="description">
               <h3>{aboutText.heading}</h3>
               <p>{aboutText.description}</p>

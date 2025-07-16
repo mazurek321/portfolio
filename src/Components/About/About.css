@@ -50,7 +50,17 @@
   background: var(--div-background);
   width: 100%;
   margin: 1em;  
+  transform: translateX(100%);
+  transition: var(--visible) all ease-out;
+  opacity: var(--startOpacity);
 }
+
+#About .about-content .content.visible
+{
+  transform: translateX(0);
+  opacity: 1;
+}
+
 
 #About.dark .about-content .content
 {

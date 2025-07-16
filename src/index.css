@@ -17,6 +17,8 @@
   --dark-background-darker: rgb(20, 20, 20);
   --dark-text: #bfbfbf;
   --animation: 200ms;
+  --visible: 1s;
+  --startOpacity: 0;
 }
 
 *{

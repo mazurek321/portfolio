@@ -5,9 +5,13 @@ import bg from "../../assets/img/contact-background.webp"
 import bg2 from "../../assets/img/contact-background2.jpg"
 import github from "../../assets/icons/Github_icon.png"
 import ig from "../../assets/icons/Instagram_icon_black.png"
+import useInView from '../../hooks/useInView';
+
 
 
 const Contact = ({lightMode, setIsVisible, setNotification}) => {
+  const [formRef, formVisible] = useInView(); 
+  const [caffelsRef, caffelsVisible] = useInView(); 
 
   const form = useRef();
   const [sending, setSending] = useState();
@@ -48,10 +52,19 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
   };
 
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='Contact'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Contact'
+      ref={(el) => {
+        formRef.current = el;
+        caffelsRef.current = el;
+      }}
+    >
       <h1>Contact</h1>
-      <div className="flex">
-        <form ref={form} onSubmit={sendEmail}>
+      <div className='flex'>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className={`${formVisible ? 'visible' : ''}`}
+        >
           <h3>Send an email !</h3>
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
@@ -66,7 +79,7 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
             </button>  
           }
         </form>
-        <div className="right">
+        <div className={`right ${caffelsVisible ? 'visible' : ''}`}>
           <div className="item">
             <img src={bg} alt="first decorative image" />
           </div>

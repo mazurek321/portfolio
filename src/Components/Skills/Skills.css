@@ -16,6 +16,27 @@
     filter: drop-shadow(0 0 1px silver);
 }
 
+
+#Skills .section
+{
+    opacity: 0.5;
+    transition: var(--visible) all ease-out;
+}
+#Skills .section.fade-in-left {
+    transform: translateX(100%);
+}
+#Skills .section.fade-in-right{
+    transform: translateX(-100%);
+}
+
+#Skills .section.visible
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
 #Skills .section h2
 {
     margin: 1em 0;

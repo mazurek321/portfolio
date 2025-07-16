@@ -3,13 +3,17 @@ import "./Projects.css"
 import StyledButton from '../StyledButton/StyledButton'
 import projects from "../../data/projects"
 import { Link } from "react-router-dom";
+import useInView from '../../hooks/useInView';
+
 
 
 const Projects = ({lightMode}) => {
+  const [ref, isVisible] = useInView(); 
+
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='Projects'>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Projects'  ref={ref}>
       <h1>Projects</h1>
-      <div className="list-of-projects">
+      <div className={`list-of-projects ${isVisible ? 'visible' : ''}`} >
 
         {projects.slice(0,3).map((item, index) => (
           <div className="project" key={index}>
@@ -26,7 +30,7 @@ const Projects = ({lightMode}) => {
         ))}
 
       </div>
-      <div className="button">
+      <div className={`button ${isVisible ? 'visible' : ''}`}>
         
         <Link to="/projects">
           <StyledButton variant={'second'} lightMode={lightMode}></StyledButton>
