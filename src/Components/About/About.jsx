@@ -1,6 +1,5 @@
 import React from 'react'
 import "./About.css"
-import img from "../../assets/img/img2.webp"
 import { aboutText, personalInfo, education, certificates, interests } from "../../data/about";
 
 

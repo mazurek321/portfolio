@@ -4,7 +4,7 @@ import inst from "../../assets/icons/Instagram_icon.png"
 import facebook from "../../assets/icons/Facebook_Logo.png"
 import github from "../../assets/icons/Github_icon.png"
 import StyledButton from '../StyledButton/StyledButton'
-import img from "../../assets/img/img2.png"
+import img from "../../assets/img/img.png"
 import { HashLink as Link } from 'react-router-hash-link';
 
 const MainContent = ({lightMode}) => {

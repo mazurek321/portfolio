@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
-import uk from "../../assets/img/uk.png"
-import pl from "../../assets/img/pl.png"
 import { HashLink as Link } from 'react-router-hash-link';
 
 const Navbar = ({lightMode,setLightMode}) => {
