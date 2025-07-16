@@ -50,15 +50,6 @@
   background: var(--div-background);
   width: 100%;
   margin: 1em;  
-  transform: translateX(100%);
-  transition: var(--visible) all ease-out;
-  opacity: var(--startOpacity);
-}
-
-#About .about-content .content.visible
-{
-  transform: translateX(0);
-  opacity: 1;
 }
 
 
@@ -89,7 +80,7 @@
 {
   align-items: stretch;
   justify-content: center;
-  gap: 10em;
+  gap: 8em;
   flex-wrap: wrap;
 }
 
@@ -105,7 +96,7 @@
 #About .caffel .split:nth-child(3)
 {
   margin-top: 2em;
-}
+} 
 
 #About .square
 {
@@ -130,6 +121,52 @@
 #About.dark .caffel:nth-child(3) .square
 {
   background: green;
+}
+
+#About .description,
+#About .caffel.information,
+#About .caffel.education,
+#About .caffel.certificates
+{
+  transition: var(--visible) all ease-out;
+  opacity: var(--startOpacity);
+}
+#About .description
+{
+  transform: translateX(80%);
+}
+#About .description.visible
+{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#About .caffel.information
+{
+  transform: translateX(-80%);
+}
+#About .caffel.information.visible
+{
+  transform: translateX(0);
+  opacity: 1;
+}
+#About .caffel.education
+{
+  transform: translateY(50%);
+}
+#About .caffel.education.visible
+{
+  transform: translateY(0);
+  opacity: 1;
+}
+#About .caffel.certificates
+{
+  transform: translateX(80%);
+}
+#About .caffel.certificates.visible
+{
+  transform: translateX(0);
+  opacity: 1;
 }
 
 #About .information p{

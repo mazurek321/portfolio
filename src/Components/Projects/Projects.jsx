@@ -8,29 +8,35 @@ import useInView from '../../hooks/useInView';
 
 
 const Projects = ({lightMode}) => {
-  const [ref, isVisible] = useInView(); 
 
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='Projects'  ref={ref}>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Projects'>
       <h1>Projects</h1>
-      <div className={`list-of-projects ${isVisible ? 'visible' : ''}`} >
+      <div className='list-of-projects' >
 
-        {projects.slice(0,3).map((item, index) => (
-          <div className="project" key={index}>
-            <h4>{item.title}</h4>
-            <p>{item.shortDescription}</p>
-            <div className="technologies">
-              <p>Technologies</p>
-               {item.technology.slice(0,5).map((tech, i) => (
-                  <span key={i}>{tech}</span>
-                ))}
-                {item.technology.length > 5 && <span>...</span>}
+        {projects.slice(0,3).map((item, index) => {
+          
+          const [ref, isVisible] = useInView(); 
+          const animationClass =
+            index % 2 === 0 ? 'fade-in-left' : 'fade-in-right';
+
+          return(
+            <div className={`project ${animationClass} ${isVisible ? 'visible' : ''}`} key={index} ref={ref}>
+              <h4>{item.title}</h4>
+              <p>{item.shortDescription}</p>
+              <div className="technologies">
+                <p>Technologies</p>
+                {item.technology.slice(0,5).map((tech, i) => (
+                    <span key={i}>{tech}</span>
+                  ))}
+                  {item.technology.length > 5 && <span>...</span>}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+      })}
 
       </div>
-      <div className={`button ${isVisible ? 'visible' : ''}`}>
+      <div className={`button`}>
         
         <Link to="/projects">
           <StyledButton variant={'second'} lightMode={lightMode}></StyledButton>

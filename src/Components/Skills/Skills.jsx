@@ -5,20 +5,21 @@ import useInView from '../../hooks/useInView';
 
 
 const Skills = ({lightMode}) => {
-  const [ref, isVisible] = useInView();
 
   return (
-    <div className={`container ${lightMode ? '' : 'dark'}`} id='Skills' ref={ref}>
+    <div className={`container ${lightMode ? '' : 'dark'}`} id='Skills'>
       <h1>Skills</h1>
       <div className="list flex">
         
         {skills.map((section, index) => {
+
+          const [ref, isVisible] = useInView();
           
           const animationClass =
             index % 2 === 0 ? 'fade-in-left' : 'fade-in-right';
 
           return(
-            <div className={`section ${animationClass} ${isVisible ? 'visible' : ''}`} key={index}>
+            <div className={`section ${animationClass} ${isVisible ? 'visible' : ''}`} key={index}  ref={ref}>
               <h2>{section.category}</h2>
               <div className="items">
                 {section.items.map((skill, i) => {

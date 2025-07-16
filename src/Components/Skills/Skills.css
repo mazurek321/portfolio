@@ -23,10 +23,10 @@
     transition: var(--visible) all ease-out;
 }
 #Skills .section.fade-in-left {
-    transform: translateX(100%);
+    transform: translateX(80%);
 }
 #Skills .section.fade-in-right{
-    transform: translateX(-100%);
+    transform: translateX(-80%);
 }
 
 #Skills .section.visible

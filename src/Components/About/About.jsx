@@ -6,21 +6,25 @@ import useInView from '../../hooks/useInView';
 
 
 const About = ({lightMode}) => {
-  const [ref, isVisible] = useInView();
+  const [descRef, descVisible] = useInView();
+  const [infRef, infVisible] = useInView();
+  const [edRef, edVisible] = useInView();
+  const [certRef, certVisible] = useInView();
 
   return (
-    <div className={`container ${lightMode ? '' : 'dark'} `} id='About' ref={ref}>
+    <div className={`container ${lightMode ? '' : 'dark'} `} id='About'>
       <h1>About me</h1>
       <div className="about-content flex" >
         <div className="border"></div>
-         <div className={`content ${isVisible ? 'visible' : ''}`}>
-            <div className="description">
+         <div className={`content`}>
+            
+            <div className={`description ${descVisible ? 'visible' : ''}`} ref={descRef}>
               <h3>{aboutText.heading}</h3>
               <p>{aboutText.description}</p>
             </div>
 
             <div className="caffels flex">
-              <div className="caffel information">
+              <div className={`caffel information ${infVisible ? 'visible' : ''}`} ref={infRef}>
                 <h3>Information</h3>
                 {personalInfo.map((info,index)=>(
                   <div className="information flex" key={index}>
@@ -31,7 +35,7 @@ const About = ({lightMode}) => {
                 }
               </div>
 
-              <div className="caffel">
+              <div className={`caffel education ${edVisible ? 'visible' : ''}`} ref={edRef}>
                 <h3>Education</h3>
                 {education.map((ed, index)=>(
                   <div className="split" key={index}>
@@ -45,7 +49,7 @@ const About = ({lightMode}) => {
                 ))}
               </div>
 
-              <div className="caffel certificates">
+              <div className={`caffel certificates ${certVisible ? 'visible' : ''}`} ref={certRef}>
                 <h3>Certificates</h3>
                  {certificates.map((cert, index)=>(
                   <div className="split" key={index}>
