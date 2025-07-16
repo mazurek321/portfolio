@@ -81,7 +81,7 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
         </form>
         <div className={`right ${caffelsVisible ? 'visible' : ''}`}>
           <div className="item">
-            <img src={bg} alt="first decorative image" />
+            <img loading="lazy" src={bg} alt="first decorative image" />
           </div>
           <div className="item">
             <h3>Get in Touch</h3>
@@ -91,15 +91,15 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
             <p>Email<br/> mazurek321.93@wp.pl</p>
           </div>
           <a href='https://github.com/mazurek321' className="item" target='_blank'>
-              <img src={github} className='github icon'/>
+              <img loading="lazy" src={github} className='github icon'/>
               <p>Github<br/>mazurek321</p>
           </a>
           <a href='https://www.instagram.com/_bartekmazurkiewicz/' className="item" target='_blank'>
-            <img src={ig} className='instagram icon'/>
+            <img loading="lazy" src={ig} className='instagram icon'/>
             <p>Instagram<br/>_bartekmazurkiewicz</p>
           </a>
           <div className="item">
-            <img src={bg2} alt="second decorative image" />
+            <img loading="lazy" src={bg2} alt="second decorative image" />
           </div>
         </div>
       </div>

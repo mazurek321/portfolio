@@ -16,9 +16,9 @@ const MainContent = ({lightMode}) => {
                 <h1>Welcome to my website !</h1>
                 <h3>I'm a full-stack developer</h3>
                 <div className="icons flex">
-                    <a href="https://www.instagram.com/_bartekmazurkiewicz/" target='_blank'><img src={inst} alt="Instagram account" /></a>
-                    <a href="https://www.facebook.com/bartekmz" target='_blank'><img src={facebook} alt="Facebook account" /></a>
-                    <a href="https://github.com/mazurek321" target='_blank'><img src={github} alt="Github account" /></a>
+                    <a href="https://www.instagram.com/_bartekmazurkiewicz/" target='_blank'><img loading="lazy" src={inst} alt="Instagram account" /></a>
+                    <a href="https://www.facebook.com/bartekmz" target='_blank'><img loading="lazy" src={facebook} alt="Facebook account" /></a>
+                    <a href="https://github.com/mazurek321" target='_blank'><img loading="lazy" src={github} alt="Github account" /></a>
                 </div>
                 <div className="button">
                   <Link smooth to="/#Projects">
@@ -34,7 +34,7 @@ const MainContent = ({lightMode}) => {
         <div className="right">
           <div className="right-background"></div>
           <div className="image">
-            <img src={img} alt="Main Image" />
+            <img loading="lazy" src={img} alt="Main Image" />
           </div>
         </div>
     </div>

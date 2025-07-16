@@ -32,7 +32,7 @@ const Skills = ({lightMode}) => {
 
                     return (
                       <div className="item" key={i} style={style}>
-                        <img src={skill.icon} alt={skill.name} title={skill.name} />
+                        <img loading="lazy" src={skill.icon} alt={skill.name} title={skill.name} />
                         <span>{skill.name}</span>
                       </div>
                     );
