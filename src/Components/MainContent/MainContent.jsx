@@ -2,7 +2,7 @@ import React from 'react'
 import "./MainContent.css"
 import inst from "../../assets/icons/Instagram_icon.png"
 import facebook from "../../assets/icons/Facebook_Logo.png"
-import github from "../../assets/icons/Github_icon.png"
+import github from "../../assets/icons/Github_icon_black.png"
 import li from "../../assets/icons/li.png"
 import StyledButton from '../StyledButton/StyledButton'
 import img from "../../assets/img/img.png"

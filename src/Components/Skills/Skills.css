@@ -14,7 +14,7 @@
 
 #Skills .section
 {
-    opacity: 0.5;
+    opacity: var(--startOpacity);
     transition: var(--visible) all ease-out;
 }
 #Skills .section.fade-in-left {
