@@ -13,7 +13,7 @@ const Experience = ({lightMode}) => {
           <table>
             <tbody>
                 <tr>
-                    <th>Intership</th>
+                    <th>Trainee</th>
                     <td>
                         <h4>CetusPro</h4>
                         <span>Web application development using C# and the .NET platform</span>
