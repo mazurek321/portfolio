@@ -3,7 +3,7 @@ import "./Contact.css"
 import emailjs from '@emailjs/browser';
 import bg from "../../assets/img/contact-background.webp"
 import bg2 from "../../assets/img/contact-background2.jpg"
-import github from "../../assets/icons/Github_icon.png"
+import github from "../../assets/icons/Github_icon_black.png"
 // import ig from "../../assets/icons/Instagram_icon_black.png"
 import li from "../../assets/icons/li_black.png"
 import useInView from '../../hooks/useInView';
