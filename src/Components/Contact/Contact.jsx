@@ -4,7 +4,8 @@ import emailjs from '@emailjs/browser';
 import bg from "../../assets/img/contact-background.webp"
 import bg2 from "../../assets/img/contact-background2.jpg"
 import github from "../../assets/icons/Github_icon.png"
-import ig from "../../assets/icons/Instagram_icon_black.png"
+// import ig from "../../assets/icons/Instagram_icon_black.png"
+import li from "../../assets/icons/li_black.png"
 import useInView from '../../hooks/useInView';
 
 
@@ -92,11 +93,11 @@ const Contact = ({lightMode, setIsVisible, setNotification}) => {
           </div>
           <a href='https://github.com/mazurek321' className="item" target='_blank'>
               <img loading="lazy" src={github} className='github icon'/>
-              <p>Github<br/>mazurek321</p>
+              <p>GitHub<br/>mazurek321</p>
           </a>
-          <a href='https://www.instagram.com/_bartekmazurkiewicz/' className="item" target='_blank'>
-            <img loading="lazy" src={ig} className='instagram icon'/>
-            <p>Instagram<br/>_bartekmazurkiewicz</p>
+          <a href='https://www.linkedin.com/in/mazurek321/' className="item" target='_blank'>
+            <img loading="lazy" src={li} className='linkedin icon'/>
+            <p>LinkedIn<br/>mazurek321</p>
           </a>
           <div className="item">
             <img loading="lazy" src={bg2} alt="second decorative image" />

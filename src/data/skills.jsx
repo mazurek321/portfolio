@@ -17,6 +17,7 @@ import flutter_icon from "../assets/icons/flutter.png"
 import sqlserver_icon from "../assets/icons/sqlserver.png"
 import mysql_icon from "../assets/icons/mysql.png"
 import postgresql_icon from "../assets/icons/postgresql.png"
+import oracle_icon from "../assets/icons/oracle.png"
 
 export const skills = [
     {
@@ -48,6 +49,7 @@ export const skills = [
             { name: "SQL Server", icon: sqlserver_icon },
             { name: "MySQL", icon: mysql_icon },
             { name: "PostgreSQL", icon: postgresql_icon },
+            { name: "Oracle", icon: oracle_icon },
         ],
     },
     {
@@ -62,25 +64,26 @@ export const skills = [
 
 
 export const skillColors = {
-  HTML: "orange",
-  CSS: "blue",
-  JavaScript: "#f0db4f",
-  "C#": "#68217a",
-  "C++": "#00599C",
-  C: "#555555",
-  Java: "#b07219",
-  SQL: "#336791",
-  Python: "#3776AB",
-  Flutter: "#02569B",
-  React: "#61DAFB",
-  ".NET": "#512BD4",
-  "Spring Boot": "#6DB33F",
-  Swagger: "#85EA2D",
-  Docker: "#0db7ed",
-  GitHub: "#000000ff",
-  "SQL Server": "#CC2927",
-  MySQL: "#4479A1",
-  PostgreSQL: "#336791",
+    HTML: "#FFA500",
+    CSS: "#0000FF",
+    JavaScript: "#f0db4f",
+    "C#": "#68217a",
+    "C++": "#00599C",
+    C: "#555555",
+    Java: "#b07219",
+    SQL: "#336791",
+    Python: "#3776AB",
+    Flutter: "#02569B",
+    React: "#61DAFB",
+    ".NET": "#512BD4",
+    "Spring Boot": "#6DB33F",
+    Swagger: "#85EA2D",
+    Docker: "#0db7ed",
+    GitHub: "#000000",   
+    "SQL Server": "#CC2927",
+    MySQL: "#4479A1",
+    PostgreSQL: "#336791",
+    Oracle: "#FF0000"
 };
 
 
