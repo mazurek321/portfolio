@@ -32,6 +32,7 @@ const taskmanagmentsystem =
         technology: [
         "ASP.NET Core",
         "Entity Framework Core",
+        "REST Api",
         "MySql",
         "MVC",
         "Outbox pattern",

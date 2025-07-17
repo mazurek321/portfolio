@@ -37,6 +37,7 @@ const bookStore = {
         "Bookstore is a backend-focused .NET application built using a company-provided dotnetboilerplate. It follows Clean Architecture principles with a modular structure for scalable and maintainable development.",
     technology: [
         "ASP.NET Core",
+        "REST Api",
         "Entity Framework Core",
         "Docker",
         "Postgresql",

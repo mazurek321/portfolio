@@ -133,21 +133,21 @@
 }
 #About .description
 {
-  transform: translateX(80%);
+  transform: translateX(50%);
 }
 #About .description.visible
 {
-  transform: translateX(0);
+  transform: translate(0);
   opacity: 1;
 }
 
 #About .caffel.information
 {
-  transform: translateX(-80%);
+  transform: translateY(50%);
 }
 #About .caffel.information.visible
 {
-  transform: translateX(0);
+  transform: translate(0);
   opacity: 1;
 }
 #About .caffel.education
@@ -156,16 +156,16 @@
 }
 #About .caffel.education.visible
 {
-  transform: translateY(0);
+  transform: translate(0);
   opacity: 1;
 }
 #About .caffel.certificates
 {
-  transform: translateX(80%);
+  transform: translateY(50%);
 }
 #About .caffel.certificates.visible
 {
-  transform: translateX(0);
+  transform: translate(0);
   opacity: 1;
 }
 
@@ -196,4 +196,18 @@
   {
     gap: 5em;
   }
+
+  #About .caffel.information
+  {
+    transform: translateX(-80%);
+  }
+  #About .caffel.education
+  {
+    transform: translateX(80%);
+  }
+  #About .caffel.certificates
+  {
+    transform: translateX(-80%);
+  }
+
 }

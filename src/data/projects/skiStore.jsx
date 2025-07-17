@@ -32,6 +32,7 @@ const skiStore =
         technology: [
             "React",
             "ASP.NET core", 
+            "REST Api",
             "EF Core", 
             "Postgresql", 
             "Docker", 

@@ -97,4 +97,17 @@ footer .middle
     {
         width: 100%;
     }
+
+    footer .left
+    {
+        transform: translateX(-100%);
+    }
+    footer .middle
+    {
+        transform: translateX(100%);
+    }
+    footer .right
+    {
+        transform: translateX(-100%);
+    }
 }
