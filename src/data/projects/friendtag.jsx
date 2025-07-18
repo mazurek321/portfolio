@@ -57,6 +57,7 @@ const friendtag =
         ],
         technology: [
             "Flutter", 
+            "Dart",
             "ASP.NET core",
             "REST Api", 
             "Entity Framework Core", 

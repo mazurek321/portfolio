@@ -31,6 +31,8 @@ const skiStore =
         "Ski Store is a modern e-commerce app for browsing, buying, and managing products with a smooth and intuitive user experience. The project is not yet finished — some functionalities are still under development, and the images used are random placeholders.",
         technology: [
             "React",
+            "HTML",
+            "CSS",
             "ASP.NET core", 
             "REST Api",
             "EF Core", 

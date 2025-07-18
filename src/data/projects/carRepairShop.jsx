@@ -15,7 +15,9 @@ const carRepairShop = {
     shortDescription:
         "Car Repair Shop is a visually polished React-based UI concept for managing auto repair services, bookings, and customer interactions.",
     technology: [
-        "React"
+        "React",
+        "HTML",
+        "CSS"
     ],
     sections: [
         {
