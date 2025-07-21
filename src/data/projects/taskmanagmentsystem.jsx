@@ -30,6 +30,7 @@ const taskmanagmentsystem =
         longDescription:
         "Task Management System is a comprehensive productivity tool designed to help users effectively manage tasks, stay on top of deadlines, and analyze their efficiency over time. It provides features like customizable task creation, real-time notifications, calendar views, and detailed productivity reports. Users can monitor their daily progress, set priorities, and gain insights through visual analytics and time tracking. The system is suitable for individuals or teams looking to boost organization and performance.",
         technology: [
+        "Angular",
         "ASP.NET Core",
         "Entity Framework Core",
         "REST Api",
