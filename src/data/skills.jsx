@@ -9,6 +9,7 @@ import c_icon from "../assets/icons/c.png"
 import python_icon from "../assets/icons/python.png"
 import net_icon from "../assets/icons/net.png"
 import react_icon from "../assets/icons/react.png"
+import angular_icon from "../assets/icons/angular.png"
 import springboot_icon from "../assets/icons/springboot.png"
 import swagger_icon from "../assets/icons/swagger.png"
 import docker_icon from "../assets/icons/docker.png"
@@ -39,6 +40,7 @@ export const skills = [
         items: [
             { name: "Flutter", icon: flutter_icon },
             { name: "React", icon: react_icon },
+            { name: "Angular", icon: angular_icon },
             { name: ".NET", icon: net_icon },
             { name: "Spring Boot", icon: springboot_icon },
         ],
@@ -75,14 +77,15 @@ export const skillColors = {
     Python: "#3776AB",
     Flutter: "#02569B",
     React: "#61DAFB",
+    Angular: "#FF0000",
     ".NET": "#512BD4",
     "Spring Boot": "#6DB33F",
     Swagger: "#85EA2D",
     Docker: "#0db7ed",
     GitHub: "#000000",   
     "SQL Server": "#CC2927",
-    MySQL: "#4479A1",
-    PostgreSQL: "#336791",
+    MySQL: "#5996c4ff",
+    PostgreSQL: "#234867ff",
     Oracle: "#FF0000"
 };
 

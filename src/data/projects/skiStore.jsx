@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/skistore/mainImg.png"
 import img1 from "../../assets/img/skistore/img1.png"
 import img2 from "../../assets/img/skistore/img2.png"
 import img3 from "../../assets/img/skistore/img3.png"
@@ -27,8 +28,9 @@ const skiStore =
         title: 'Ski store',
         linkBE: "https://github.com/mazurek321/SkiStore",
         linkFE: "https://github.com/mazurek321/SkiStore_frontend",
+        mainImg: mainImg,
         shortDescription:
-        "Ski Store is a modern e-commerce app for browsing, buying, and managing products with a smooth and intuitive user experience. The project is not yet finished — some functionalities are still under development, and the images used are random placeholders.",
+        "Ski Store is a modern e-commerce app for browsing, buying, and managing products with a smooth and intuitive user experience. The project is not yet finished — some functionalities are still under development.",
         technology: [
             "React",
             "HTML",

@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/wyspaWilkow/mainImg.png"
 import img1 from "../../assets/img/wyspaWilkow/img1.png"
 import img2 from "../../assets/img/wyspaWilkow/img2.png"
 import img3 from "../../assets/img/wyspaWilkow/img3.png"
@@ -7,8 +8,9 @@ import img5 from "../../assets/img/wyspaWilkow/img5.png"
 const islandOfWolves = {
     title: 'Simulation Game "Island of Wolves"',
     link: "https://github.com/mazurek321/wyspawilkow",
+    mainImg: mainImg,
     shortDescription:
-        "Island of Wolves is a dynamic simulation game where wolves and rabbits interact within a living ecosystem. Wolves gain fat when they catch rabbits, and if a male and female rabbit meet, a new rabbit with a random gender is born.",
+        "Island of Wolves is a dynamic simulation game where wolves and rabbits interact within a living ecosystem. Wolves gain fat when they catch rabbits, and if a male and female meet, a new entity is born.",
     sections: [
         {
             title: "Main Menu & Navigation",

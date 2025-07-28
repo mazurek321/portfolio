@@ -1,9 +1,12 @@
 .details
 {
-    width: 100%;
+    width: 70%;
     min-height: 100vh;
-    padding: 5% 20%;
     border: 2px solid black;
+    background: var(--dark-background-darker);
+    margin: auto;
+    padding: 3% 7%;
+    color: var(--dark-text);
 }
 
 .details h4.link
@@ -25,14 +28,9 @@
 
 .details .top h3.status
 {
-    color: rgb(135, 0, 0);
+    color: rgb(255, 0, 0);
     text-shadow: 0 0 1px black;
     font-weight: normal;
-}
-
-.details.dark
-{
-    background: var(--dark-background-light);
 }
 
 .details hr
@@ -51,10 +49,6 @@
 {
     font-size: 1rem;
     margin: 0.25em 0;
-}
-
-.details.dark h3{
-    text-shadow: 0 0 1px black;
 }
 
 .details .section
@@ -94,14 +88,8 @@
 .details .sec h4
 {
     margin-top: 2em;
-    color: var(--dark-background);
     font-weight: 600;
     font-style: italic;
-}
-
-.details.dark .sec h4
-{
-    color: black;
 }
 
 .details .sec h4:first-child
@@ -148,14 +136,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--div-background);
     box-shadow: 3px 3px 5px var(--button2);
 }
 
 .details.dark details
 {
     background: var(--background-gradient-dark);
-    color: var(--dark-text);
     box-shadow: 3px 3px 5px var(--button2dark);
 }
 
@@ -163,6 +149,12 @@
     .details
     {
         padding: 3em;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .details a{
+        font-size: 10px;
     }
 
     .details .images

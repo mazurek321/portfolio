@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Home.css"
 import MainContent from "../../Components/MainContent/MainContent"
 import Navbar from "../../Components/Navbar/Navbar"
 import About from "../../Components/About/About";
@@ -12,13 +13,21 @@ const Home = ({lightMode, setLightMode, setIsVisible, setNotification}) => {
   return (
     <>
         <Navbar lightMode = {lightMode} setLightMode = {setLightMode}/>
-        <MainContent lightMode = {lightMode}/>
-        <About lightMode={lightMode}/>
-        <Skills lightMode={lightMode}/>
-        <Experience lightMode={lightMode}/>
-        <Projects lightMode={lightMode}/>
-        <Contact lightMode={lightMode} setIsVisible={setIsVisible} setNotification={setNotification}/>
-        <Footer lightMode={lightMode}/>
+        <main>
+          <div className="background">
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+          </div>
+          <MainContent lightMode = {lightMode}/>
+          <About lightMode={lightMode}/>
+          <Skills lightMode={lightMode}/>
+          <Experience lightMode={lightMode}/>
+          <Projects lightMode={lightMode}/>
+          <Contact lightMode={lightMode} setIsVisible={setIsVisible} setNotification={setNotification}/>
+          <Footer lightMode={lightMode}/>
+        </main>
     </>
   )
 }

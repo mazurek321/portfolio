@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/bookstore/mainImg.png"
 import img1 from "../../assets/img/bookstore/img1.png"
 import img2 from "../../assets/img/bookstore/img2.png"
 import img3 from "../../assets/img/bookstore/img3.png"
@@ -33,6 +34,7 @@ import img31 from "../../assets/img/bookstore/img31.png"
 const bookStore = {
     title: 'Book store',
     link: "https://github.com/iAttaquer/BookStore",
+    mainImg: mainImg,
     shortDescription:
         "Bookstore is a backend-focused .NET application built using a company-provided dotnetboilerplate. It follows Clean Architecture principles with a modular structure for scalable and maintainable development.",
     technology: [

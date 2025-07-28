@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/systemzarzadzania/mainImg.png"
 import usermodel1 from "../../assets/img/systemzarzadzania/usermodel.png"
 import usermodel2 from "../../assets/img/systemzarzadzania/usermodel2.png"
 import usermodel3 from "../../assets/img/systemzarzadzania/usermodel3.png"
@@ -24,7 +25,9 @@ const taskmanagmentsystem =
      {
         title: 'Task Management System',
         status: "In progress",
-        link: "https://github.com/mazurek321/SystemZarzadzania",
+        linkBE: "https://github.com/mazurek321/SystemZarzadzania",
+        linkFE: "https://github.com/mazurek321/SystemZarzadzaniaFrontend",
+        mainImg: mainImg,
         shortDescription:
         "A task management app with notifications and productivity analysis, enabling users to track progress, set priorities, and visualize tasks.",
         longDescription:

@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/friendtag/img1.png"
 import img1 from "../../assets/img/friendtag/img1.jpg"
 import img2 from "../../assets/img/friendtag/img2.jpg"
 import img3 from "../../assets/img/friendtag/img3.jpg"
@@ -13,6 +14,7 @@ const friendtag =
         title: 'Mobile application "FriendTag"',
         linkFE: "https://github.com/mazurek321/FriendTag",
         linkBE: "https://github.com/mazurek321/FriendTagBackend",
+        mainImg: mainImg,
         shortDescription:
         "FriendTag is a social app for organizing spontaneous meetups and connecting with people nearby.",
         longDescription: "FriendTag is a modern social app designed for people who value spontaneity, real-life connections, and the ease of organizing meetups. It’s the perfect tool to quickly invite friends for a hangout or join local events happening around you.",

@@ -20,7 +20,7 @@ const Leftnav = ({lightMode, setLightMode, projectTitles, onSelect, selectedInde
           Go back
         </Link>
         <div className="right">
-          <span className="material-symbols-outlined" onClick={handleLightModeChange}>dark_mode</span>
+          {/* <span className="material-symbols-outlined" onClick={handleLightModeChange}>dark_mode</span> */}
           <span className="material-symbols-outlined menuicon" onClick={()=>setHide(!hide)}>menu</span>
         </div>
       </div>

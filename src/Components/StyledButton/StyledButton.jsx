@@ -1,9 +1,9 @@
 import React from 'react'
 
-const StyledButton = ({variant, lightMode}) => {
+const StyledButton = ({message, variant, lightMode}) => {
   return (
     <div className={`styledButton ${variant} ${lightMode ? 'light' : 'dark'}`}>
-      <button>See more</button>
+      <button>{message}</button>
     </div>
   )
 }

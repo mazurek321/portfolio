@@ -20,11 +20,6 @@
     border-spacing: 0.5em;
 }
 
-#Experience table tr
-{
-    background: var(--div-background);
-}
-
 #Experience table td, 
 #Experience table th
 {
@@ -78,7 +73,6 @@
 
 #Experience.dark
 {
-    background: var(--dark-background);
     color: var(--dark-text);
 }
 

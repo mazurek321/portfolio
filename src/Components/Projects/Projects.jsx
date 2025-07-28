@@ -14,7 +14,7 @@ const Projects = ({lightMode}) => {
       <h1>Projects</h1>
       <div className='list-of-projects' >
 
-        {projects.slice(0,3).map((item, index) => {
+        {projects.slice(0,6).map((item, index) => {
           
           const [ref, isVisible] = useInView(); 
           const directions = ['fade-in-left', 'fade-in-bottom', 'fade-in-right'];
@@ -22,15 +22,15 @@ const Projects = ({lightMode}) => {
 
           return(
             <div className={`project ${animationClass} ${isVisible ? 'visible' : ''}`} key={index} ref={ref}>
-              <h4>{item.title}</h4>
-              <p>{item.shortDescription}</p>
-              <div className="technologies">
-                <p>Technologies</p>
-                {item.technology.slice(0,5).map((tech, i) => (
-                    <span key={i}>{tech}</span>
-                  ))}
-                  {item.technology.length > 5 && <span>...</span>}
+              {item.mainImg &&
+                <img src={item.mainImg} alt="Main image of project" />
+              }
+              
+              <div className="text">
+                <h4>{item.title}</h4>
+                <p>{item.shortDescription}</p>
               </div>
+
             </div>
           )
       })}
@@ -39,7 +39,7 @@ const Projects = ({lightMode}) => {
       <div className={`button`}>
         
         <Link to="/projects">
-          <StyledButton variant={'second'} lightMode={lightMode}></StyledButton>
+          <StyledButton message={"See more"} variant={'second'} lightMode={lightMode}></StyledButton>
         </Link>
       </div>
     </div>

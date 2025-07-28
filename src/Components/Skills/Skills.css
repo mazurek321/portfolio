@@ -1,7 +1,7 @@
 #Skills .list
 {
     justify-content: center;
-    gap: 5em;
+    gap: 4em;
     flex-wrap: wrap;
 }
 
@@ -63,7 +63,6 @@
     border-radius: 10px;
     height: 7rem;
     width: 7rem;
-    background: var(--div-backgroundDarker);
     color: black;
 }
 
@@ -75,7 +74,7 @@
 
 #Skills.dark
 {
-    background: var(--dark-background);
+    /* background: var(--dark-background); */
 }
 #Skills.dark h1
 {

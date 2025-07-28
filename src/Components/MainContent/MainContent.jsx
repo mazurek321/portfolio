@@ -25,11 +25,12 @@ const MainContent = ({lightMode}) => {
                 <div className="button">
                   <Link smooth to="/#Projects">
                     <StyledButton 
+                      message={"See more"}
                       variant={'first'} 
                       lightMode={lightMode}
                     >
                     </StyledButton>
-                  </Link>
+                  </Link> 
                 </div>
             </section>
         </div>

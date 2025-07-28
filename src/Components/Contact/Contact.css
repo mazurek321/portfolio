@@ -3,11 +3,6 @@
     min-height: 100vh;
 }
 
-#Contact.dark
-{
-    background: var(--dark-background);
-}
-
 #Contact.dark h1
 {
     color: var(--dark-text);
@@ -45,7 +40,6 @@
 
 #Contact form button
 {
-    background: var(--background-gradient);
     margin-top: 3em;
 }
 
@@ -79,7 +73,7 @@
     outline: none;
     border-radius: 7px;
     box-shadow: 3px 3px 5px black;
-    background: var(--div-background);
+    background: lightgrey;
 }
 
 #Contact form textarea{
@@ -181,7 +175,7 @@
 #Contact.dark .item h3,
 #Contact.dark .item h3 span
 {
-    background: var(--background-gradient-dark);
+    background: var(--color-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

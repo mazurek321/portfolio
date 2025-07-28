@@ -1,0 +1,67 @@
+main .background
+{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background: var(--dark-background);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main .bubble
+{
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    content: '';
+    filter: blur(100px);
+    position: absolute;
+    margin: 2em;
+}
+
+main .bubble:first-child
+{
+    background: rgb(171, 6, 222);
+    top: 0; left: 0;
+    animation: moveBubble1 var(--bubbleAnimation) ease-in-out infinite;
+}
+main .bubble:nth-child(2)
+{
+    background: rgb(0, 113, 113);
+    top: 0; right: 15%;
+    animation: moveBubble2 var(--bubbleAnimation) ease-in-out infinite;
+}
+main .bubble:nth-child(3)
+{
+    background: rgb(8, 8, 159);
+    bottom: 0; left: 15%;
+    animation: moveBubble3 var(--bubbleAnimation) ease-in-out infinite;
+}
+main .bubble:last-child
+{
+    background: rgb(152, 6, 84);
+    bottom: 0; right: 0;
+    animation: moveBubble4 var(--bubbleAnimation) ease-in-out infinite;
+}
+
+@keyframes moveBubble1 {
+  0%, 100% { left: 0; top: 0;}
+  25%, 75% {top: 5%;}
+  50% { left: 20%; top: 0;}
+}
+@keyframes moveBubble2 {
+  0%, 100% { right: 15%; top: 0;}
+  25%, 75% {top: 5%;}
+  50% { right: 20%; top: 0;}
+}
+@keyframes moveBubble3 {
+  0%, 100% { left: 15%; bottom: 0;}
+  25%, 75% {bottom: 5em;}
+  50% { left: 0%; bottom: 0;}
+}
+@keyframes moveBubble4 {
+  0%, 100% { right: 3%; bottom: 0;}
+  25%, 75% {bottom: 5em;}
+  50% { right: 20%; bottom: 0;}
+}

@@ -45,11 +45,11 @@ const Navbar = ({lightMode,setLightMode}) => {
         <li><Link smooth to="/#Contact">Contact</Link></li>
         <li><Link smooth to="/#Footer">CV</Link></li>
       </ul>
-      <div className="selections flex">
+      {/* <div className="selections flex">
         <div className="mode">
           <span className="material-symbols-outlined" onClick={handleLightModeChange}>dark_mode</span>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 };

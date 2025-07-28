@@ -16,7 +16,15 @@ const ProjectsPage = ({lightMode, setLightMode}) => {
           onSelect={(index) => setSelectedIndex(index)}
           selectedIndex = {selectedIndex}
        />
-       <Details lightMode = {lightMode} project={projects[selectedIndex]}/>
+       <main>
+        <div className="background">
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+          </div>
+        <Details lightMode = {lightMode} project={projects[selectedIndex]}/>
+       </main>
     </>
   )
 }

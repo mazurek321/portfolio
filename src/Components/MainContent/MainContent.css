@@ -6,11 +6,6 @@
     justify-content: space-between;
 }
 
-#MainContent.dark
-{
-    background: var(--dark-background);
-}
-
 #MainContent .left
 {
     width: 50%;
@@ -19,6 +14,19 @@
 #MainContent .left section{
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+#MainContent .left {
+  transition: var(--animation) linear all;
+}
+#MainContent .left.hidden {
+  transform: translateX(-100%);
+  opacity: var(--startOpacity);
+}
+
+#MainContent .left.visible{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #MainContent .left h4{
@@ -36,14 +44,6 @@
     margin-bottom: 0.5em;
     letter-spacing: 0.1px;
     text-shadow: 0 0 1px rgb(59, 3, 108);
-}
-
-#MainContent .left h1 span{
-    animation: wave 1s infinite;
-}
-@keyframes wave {
-    0%,100%{transform: translate(0px);}
-    50%{transform: translate(-8px);}
 }
 
 #MainContent.dark .left h1
@@ -107,11 +107,32 @@
     height: 150vh;
     position: absolute;
     top: 0;
-    right: 0;
-    background: var(--background-gradient);
+    right: -5em;
+    background: var(--background-gradient-darker);
     border-radius: 50% 0 0 50%;
     transform: translateY(-20%);
     z-index: -1;
+}
+
+#MainContent .right-background::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--background-gradient-darker);
+    border-radius: 50% 0 0 50%;
+    z-index: -10;
+    animation: backgroundBlur 5s linear infinite;
+}
+
+@keyframes backgroundBlur {
+    0%,100%{
+        filter: blur(0px);
+    }
+    50%{
+        filter: blur(50px);
+    }
 }
 
 #MainContent .right .image
@@ -121,7 +142,7 @@
     display: flex;
     align-items: end;
     justify-content: center;
-    margin-right: -10em;
+    margin-right: -15em;
     margin-top: auto;
 }
 
@@ -131,7 +152,6 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    /* filter: drop-shadow(5px 0 5px black); */
 }
 
 
@@ -154,11 +174,6 @@
 #MainContent .button
 {
     width: fit-content;
-}
-
-#MainContent.dark .right-background
-{
-    background: var(--background-gradient-dark);
 }
 
 
@@ -224,6 +239,11 @@
         height: 100%;
         border-radius: 20px;
         transform: none;
+    }
+
+    #MainContent .right-background::after
+    {
+        border-radius: 20px;
     }
 
     #MainContent .image

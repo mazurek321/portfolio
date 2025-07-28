@@ -27,7 +27,7 @@ const Skills = ({lightMode}) => {
 
                     const style = {
                       border: `1px solid ${color}`,
-                      boxShadow: `0 0 3px ${color}, 0 0 10px ${color}80, 0 0 30px ${color}75`,
+                      boxShadow: `0 0 3px ${color}, 0 0 5px ${color}80, 0 0 10px ${color}75`,
                     };
 
                     return (

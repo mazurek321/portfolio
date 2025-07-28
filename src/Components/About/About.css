@@ -1,5 +1,4 @@
 #About {
-  background: var(--div-backgroundDarker);
   position: relative;
   /* width: 100vw; */
   max-width: 100vw;
@@ -9,7 +8,6 @@
 
 #About.dark
 {
-  background: var(--dark-background-darker);
   color: var(--dark-text);  
 }
 
@@ -110,17 +108,17 @@
 
 #About .caffel:nth-child(3) .square
 {
-  background: orange;
+  background: rgb(1, 73, 73);
 }
 
 #About.dark .square
 {
-  background: blue;
+  background: rgb(9, 9, 196);
 }
 
 #About.dark .caffel:nth-child(3) .square
 {
-  background: green;
+  background: rgb(4, 94, 123);
 }
 
 #About .description,

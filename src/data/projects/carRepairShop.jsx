@@ -1,3 +1,4 @@
+import mainImg from "../../assets/img/carrepairshop/mainImg.png"
 import img1 from "../../assets/img/carrepairshop/img1.png"
 import img2 from "../../assets/img/carrepairshop/img2.png"
 import img3 from "../../assets/img/carrepairshop/img3.png"
@@ -12,6 +13,7 @@ import img10 from "../../assets/img/carrepairshop/img10.png"
 const carRepairShop = {
     title: 'Car Repair Shop',
     linkFE: "https://github.com/mazurek321/CarRepairShop",
+    mainImg: mainImg,
     shortDescription:
         "Car Repair Shop is a visually polished React-based UI concept for managing auto repair services, bookings, and customer interactions.",
     technology: [
