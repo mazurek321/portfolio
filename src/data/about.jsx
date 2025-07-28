@@ -15,7 +15,7 @@
 
 export const aboutText = {
   heading: "Description",
-  description: `My name is Bartek and I'm a Computer Science student
+  description: `My name is Bartek and I'm an Information Technology student
   at Rzeszów University of Technology. I have completed my third
   year of studies and am currently preparing to defend
   my engineering thesis. I'm passionate about
