@@ -22,48 +22,17 @@ const carRepairShop = {
         "CSS"
     ],
     sections: [
-        {
-            title: "Landing Page & Navigation",
-            context:
-                "A clean and modern homepage with intuitive navigation to different service sections like diagnostics, repairs, and contact.",
-            img: [img1, img2, img6, img8]
-        },
-        {
-            title: "Service Categories",
-            context:
-                "Clear visual sections highlighting different repair services such as engine diagnostics, tire services, and oil changes.",
-            img: [img3]
-        },
-        {
-            title: "Customer Reviews",
-            context:
-                "Dedicated section showcasing customer testimonials and ratings for various services, enhancing trust and engagement.",
-            img: [img4, img7]
-        },
-        {
-            title: "Booking Form (UI Only)",
-            context:
-                "Interactive UI component for booking appointments with form fields for user input. No backend integration — purely for demonstration.",
-            img: [img5]
-        },
-        {
-            title: "Responsive Design",
-            context:
-                "The layout is responsive and adapts smoothly to various screen sizes for an optimal viewing experience on desktop and mobile devices."
-        },
-        {
-            title: "Admin - Pending Appointments",
-            context:
-                "Admin view includes a UI section to preview and manage incoming (pending) service appointments. Focused on layout only — no functional data handling.",
-            img: [img9]  
-        },
-        {
-            title: "Admin - Appointment History",
-            context:
-                "A dedicated UI for admins to browse through past customer appointments, allowing organized display of completed service history.",
-            img:[img10]
-        }
-    ]
+    { title: "Main Page" },
+    { title: "Appointment Creation Form" },
+    { title: "Pending Appointments List" },
+    { title: "Completed Appointments List" },
+    { title: "Admin Dashboard" },
+    { title: "Appointment History" },
+    { title: "Appointment Management Panel" }
+  ],
+  images:[
+    img1, img2, img3, img4, img5, img6, img7, img8, img9 ,img10
+  ]
 }
 
 export default carRepairShop;

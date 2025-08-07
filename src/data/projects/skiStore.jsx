@@ -44,31 +44,18 @@ const skiStore =
             "Swagger"
         ],
         sections: [
-            {
-                title: "Product Browsing",
-                context:
-                    "Users can browse a wide range of ski products such as skis, snowboards, helmets, and apparel.",
-                    img:[img15, img17]
-            },
-            {
-                title: "Product Details & Media",
-                context:
-                    "Each product page contains detailed information, specifications, multiple images, and availability status.",
-                img: [img16, img18,]
-            },
-            {
-                title: "Shopping Cart & Checkout",
-                context:
-                    "Users can add products to a cart, update quantities.",
-                img: [img19, img20]
-            },
-            {
-                title: "User Authentication & Profiles",
-                context:
-                    "Customers can register and log in to manage their orders, wishlists, and personal information. JWT-based authentication ensures secure access and session management.",
-                img: [img13, img14, img21, img22]
-            }
+        { title: "User Authorization (JWT)" },
+        { title: "Product Browsing & Filtering" },
+        { title: "Product Management (Admin Panel)" },
+        { title: "Shopping Cart Functionality" },
+        { title: "Order Placement System" },
+        { title: "Backend API (REST, Swagger)" },
+        { title: "Database Integration (EF Core + PostgreSQL)" },
+        { title: "Dockerized Environment" },
+        { title: "Responsive UI (React + CSS)" },
+        { title: "Project Architecture & DTO Usage" }
         ],
+
         code:[
             {
                 title: "Models",
@@ -86,6 +73,10 @@ const skiStore =
                 title: "Controller",
                 images: [img9, img10, img11, img12]
             },
+        ],
+
+        images:[
+            img13, img14, img15, img16, img17, img18, img19, img20, img21, img22
         ]
     }
 

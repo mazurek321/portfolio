@@ -51,41 +51,11 @@ const bookStore = {
         "Clean Architecture",
     ],
     sections: [
-        {
-            title: "Clean Architecture Structure",
-            context:
-                "The project is divided into modular layers: Api, Application, Infrastructure, Core, Shared, and Shared.Abstractions — promoting separation of concerns and maintainability."
-        },
-        {
-            title: "Book & Category Management",
-            context:
-                "Includes core domain logic for managing books, categories, pricing, and availability with clear domain models and repository abstractions."
-        },
-        {
-            title: "Customer Reviews",
-            context:
-                "Implements review functionality allowing users to add ratings and feedback for books. Reviews are stored, validated, and associated with books through backend logic only."
-        },
-        {
-            title: "Outbox Pattern",
-            context:
-                "Uses the Outbox pattern to ensure consistent and reliable communication in asynchronous operations and integrations."
-        },
-        {
-            title: "Email Notifications",
-            context:
-                "Integrates with Resend to send transactional emails, such as user registration."
-        },
-        {
-            title: "Dependency Injection",
-            context:
-                "Fully configured dependency injection using built-in .NET DI container to wire services, repositories, and cross-layer dependencies."
-        },
-        {
-            title: "Admin Features",
-            context:
-                "Only admin can update a review created by user."
-        }
+      { title: "User Authorization" },
+      { title: "Bookstore Management" },
+      { title: "Review Management" },
+      { title: "Admin Panel" },
+      { title: "Email Sending Feature" }
     ],
     code:[
         {

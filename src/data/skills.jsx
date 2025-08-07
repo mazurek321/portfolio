@@ -5,7 +5,6 @@ import sql_icon from "../assets/icons/sql.png"
 import java_icon from "../assets/icons/java.png"
 import csh_icon from "../assets/icons/csh.png"
 import cpp_icon from "../assets/icons/cpp.png"
-import c_icon from "../assets/icons/c.png"
 import python_icon from "../assets/icons/python.png"
 import net_icon from "../assets/icons/net.png"
 import react_icon from "../assets/icons/react.png"
@@ -29,7 +28,6 @@ export const skills = [
             { name: "JavaScript", icon: js_icon },
             { name: "C#", icon: csh_icon },
             { name: "C++", icon: cpp_icon },
-            { name: "C", icon: c_icon },
             { name: "Java", icon: java_icon },
             { name: "SQL", icon: sql_icon },
             { name: "Python", icon: python_icon },
@@ -71,7 +69,6 @@ export const skillColors = {
     JavaScript: "#f0db4f",
     "C#": "#68217a",
     "C++": "#00599C",
-    C: "#555555",
     Java: "#b07219",
     SQL: "#336791",
     Python: "#3776AB",

@@ -1,31 +1,43 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from "../../Components/Navbar/Navbar"
-import Leftnav from './Leftnav/Leftnav'
-import Details from './Details/Details'
-import projects from '../../data/projects';
+import Projects from "../Projects/Projects"
+import { useLocation, useNavigate } from "react-router-dom"
+import "./ProjectsPage.css"
 
-const ProjectsPage = ({lightMode, setLightMode}) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+const ProjectsPage = ({ lightMode }) => {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const query = new URLSearchParams(location.search)
+  const selectedParam = query.get("selected")
+
+  const handleButtonClick = () => {
+    navigate(`/`)
+  }
+
+  const [selectedIndex, setSelectedIndex] = useState(selectedParam ? Number(selectedParam) : 0)
+
+  useEffect(() => {
+    if (selectedIndex != null) {
+      query.set("selected", selectedIndex)
+      navigate(`${location.pathname}?${query.toString()}`, { replace: true })
+    }
+  }, [selectedIndex])
 
   return (
-    <>
-       <Leftnav
-          lightMode = {lightMode}
-          setLightMode={setLightMode}
-          projectTitles={projects.map(p => p.title)}
-          onSelect={(index) => setSelectedIndex(index)}
-          selectedIndex = {selectedIndex}
-       />
-       <main>
-        <div className="background">
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-          </div>
-        <Details lightMode = {lightMode} project={projects[selectedIndex]}/>
-       </main>
-    </>
+    <main>
+      <div className="background">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
+      <button className='go-back' onClick={handleButtonClick}>Go back</button>
+      <Projects
+        lightMode={lightMode}
+        selectedIndex={selectedIndex}
+        onSelect={setSelectedIndex}
+        showDetailsOnTop={true}
+      />
+    </main>
   )
 }
 

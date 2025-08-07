@@ -41,7 +41,7 @@ function App() {
             />
           }
         />
-        <Route path="/projects" element={
+        <Route path="/all-projects" element={
           <ProjectsPage  
             lightMode={lightMode}
             setLightMode={setLightMode}

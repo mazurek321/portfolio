@@ -8,8 +8,16 @@ import Experience from "../../Components/Experience/Experience";
 import Projects from "../../Components/Projects/Projects";
 import Contact from "../../Components/Contact/Contact";
 import Footer from "../../Components/Footer/Footer";
+import { useNavigate } from 'react-router-dom';
 
 const Home = ({lightMode, setLightMode, setIsVisible, setNotification}) => {
+
+  const navigate = useNavigate()
+
+  const handleProjectClick = (index) => {
+    navigate(`/all-projects?selected=${index}`)
+  }
+
   return (
     <>
         <Navbar lightMode = {lightMode} setLightMode = {setLightMode}/>
@@ -24,7 +32,7 @@ const Home = ({lightMode, setLightMode, setIsVisible, setNotification}) => {
           <About lightMode={lightMode}/>
           <Skills lightMode={lightMode}/>
           <Experience lightMode={lightMode}/>
-          <Projects lightMode={lightMode}/>
+          <Projects lightMode={lightMode} pageSize = {6} onSelect={handleProjectClick}/>
           <Contact lightMode={lightMode} setIsVisible={setIsVisible} setNotification={setNotification}/>
           <Footer lightMode={lightMode}/>
         </main>
