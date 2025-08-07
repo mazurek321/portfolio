@@ -48,7 +48,7 @@ const Projects = ({ lightMode, pageSize, selectedIndex, onSelect, showDetailsOnT
             </div>
           
             <div className="image">
-              {selectedProject.mainImg && <img src={selectedProject.mainImg} alt={selectedProject.title} />}
+              {selectedProject.mainImg && <img loading='lazy' src={selectedProject.mainImg} alt={selectedProject.title} />}
             </div>
           </div>
 
@@ -93,7 +93,7 @@ const Projects = ({ lightMode, pageSize, selectedIndex, onSelect, showDetailsOnT
                       <details key={i}>
                         <summary>{cod.title}</summary>
                         {cod.images?.map((im, i) => (
-                          <img src={im} key={i} alt={`Code snippet ${i}`} />
+                          <img loading='lazy' src={im} key={i} alt={`Code snippet ${i}`} />
                         ))}
                       </details>
 
@@ -112,7 +112,7 @@ const Projects = ({ lightMode, pageSize, selectedIndex, onSelect, showDetailsOnT
                     <details>
                       <summary>View images</summary>
                       {selectedProject.images?.map((im, i) => (
-                        <img src={im} key={i} alt={`Image ${i}`} />
+                        <img loading='lazy' src={im} key={i} alt={`Image ${i}`} />
                       ))}
                     </details>
                 </div>
@@ -140,7 +140,7 @@ const Projects = ({ lightMode, pageSize, selectedIndex, onSelect, showDetailsOnT
                 ref={ref}
                 onClick={() => onSelect?.(projects.indexOf(item))}
               >
-                {item.mainImg && <img src={item.mainImg} alt={item.title} />}
+                {item.mainImg && <img loading='lazy' src={item.mainImg} alt={item.title} />}
                 <div className="text">
                   <h4>{item.title}</h4>
                   <p>{item.shortDescription}</p>
