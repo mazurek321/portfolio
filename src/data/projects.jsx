@@ -4,6 +4,7 @@ import islandOfWolves from "./projects/islandOfWolves"
 import skiStore from "./projects/skiStore"
 import taskmanagmentsystem  from "./projects/taskmanagmentsystem"
 import bookStore from "./projects/bookStore"
+import intelligentHome from "./projects/intelligent-home"
 
 const projects = [
     taskmanagmentsystem,
@@ -12,6 +13,7 @@ const projects = [
     carRepairShop,
     islandOfWolves,
     skiStore,
+    intelligentHome
 ]
 
 export default projects

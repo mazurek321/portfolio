@@ -20,6 +20,14 @@ import usertests4 from "../../assets/img/systemzarzadzania/userTests4.png"
 import usertests5 from "../../assets/img/systemzarzadzania/userTests5.png"
 import usertests6 from "../../assets/img/systemzarzadzania/userTests6.png"
 import usertests7 from "../../assets/img/systemzarzadzania/userTests7.png"
+import img1 from "../../assets/img/systemzarzadzania/img1.png"
+import img2 from "../../assets/img/systemzarzadzania/img2.png"
+import img3 from "../../assets/img/systemzarzadzania/img3.png"
+import img4 from "../../assets/img/systemzarzadzania/img4.png"
+import img5 from "../../assets/img/systemzarzadzania/img5.png"
+import img6 from "../../assets/img/systemzarzadzania/img6.png"
+import img7 from "../../assets/img/systemzarzadzania/img7.png"
+import img8 from "../../assets/img/systemzarzadzania/img8.png"
 
 const taskmanagmentsystem = {
   title: 'Task Management System',
@@ -94,6 +102,9 @@ const taskmanagmentsystem = {
       title: "Tests",
       images: [usertests, usertests2, usertests3, usertests4, usertests5, usertests6, usertests7]
     }
+  ],
+  images:[
+    img1, img2, img3, img4, mainImg, img6, img7
   ]
 }
 
