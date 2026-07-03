@@ -1,0 +1,220 @@
+.projects-section {
+    background: var(--bg-gradient-second2);
+}
+
+.projects-section > div{
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-section .top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 0;
+    width: 100%;
+}
+
+.skills-title {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+
+.project-card {
+    background: var(--bg-card2);
+    border: var(--border-card);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px var(--box-shadow-cyan);
+    border-color: var(--cyan);
+}
+
+.project-thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #121224;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    object-position: top;
+}
+
+.project-card:hover .project-thumb img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.project-title {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+}
+
+.project-description {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.project-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+}
+
+.btn-placeholder {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.btn-details {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #111827;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+}
+
+.btn-details:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.45);
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+}
+
+.icon {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-details:hover .icon {
+    transform: translateX(3px);
+}
+
+@media (max-width: 1240px) {
+    .projects-section {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 0 15px;
+    }
+
+    .projects-section .top-section {
+        margin: 1.5em 0;
+    }
+
+    .skills-title {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .project-thumb {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section .top-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+        margin: 1em 0 2em 0;
+    }
+
+    .skills-title {
+        font-size: 1.6rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-thumb {
+        height: 160px;
+    }
+}

@@ -1,0 +1,123 @@
+nav.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fefefe;
+    background: rgba(15, 15, 20, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.nav-left span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+nav.navbar ul li a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav.navbar ul li a:hover {
+    color: var(--cyan, #00f2fe);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 10000;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 2px;
+    background-color: #fefefe;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1400px) {
+    nav.navbar {
+        padding: 20px 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav.navbar {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-right {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(15, 15, 24, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-right.active {
+        right: 0;
+    }
+
+    nav.navbar ul {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    nav.navbar ul li a {
+        font-size: 1.3rem;
+    }
+
+    .hamburger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .hamburger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
