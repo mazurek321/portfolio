@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
@@ -6,29 +7,26 @@ import Hero from './components/Hero/Hero'
 import Navbar from './components/Navbar/Navbar'
 import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
+import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
 function App() {
+
+  const [loading, setLoading] = useState(false)
+
   return (
     <>
-      <div className="space-container">
-        <div className="space-scene">
-          <div className="grid-layer" />
-          <div className="stars-layer" />
-        </div>
-
-        <div className="nebula" />
-
+        {/* {loading && <WelcomeLoader/>} */}
+        {/* <WelcomeLoader/> */}
+    
         <Navbar/>
         <main>
-          <Hero/>
-          <About/>
+          <Hero loading = {loading}/>
+          <About setLoading = {setLoading}/>
           <Skills/>
           <Projects/>
           <Contact/>
         </main>  
         <Footer/>
-          
-      </div>
     </>
   )
 }

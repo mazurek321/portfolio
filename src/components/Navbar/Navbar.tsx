@@ -10,19 +10,25 @@ const Navbar: React.FC = () => {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string): void => {
     e.preventDefault();
-    setIsOpen(false); // Automatycznie zamyka menu mobilne po kliknięciu
+    setIsOpen(false); 
     
-    // Bezpieczne pobranie elementu i wywołanie płynnego scrolla
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
   };
 
+  const scrollToTop = (): void => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <span>Bartłomiej Mazurkiewicz</span>
+        <span onClick={scrollToTop}>Bartłomiej Mazurkiewicz</span>
       </div>
 
       <div className={`nav-right ${isOpen ? 'active' : ''}`}>

@@ -105,6 +105,7 @@ button.main-styled{
     padding: 12px 28px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 75ms linear all;
     
 }
 

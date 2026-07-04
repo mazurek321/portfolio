@@ -1,17 +1,23 @@
 import React from 'react'
 import "./Hero.css"
 import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa'; 
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; 
+import { FiMail } from 'react-icons/fi'; 
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  loading: boolean
+}
+
+const Hero: React.FC<HeroProps> = ({loading}) => {
+  
   const handleOpenCV = () => {
-    window.open('/data/__CV-Bartlomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer');
+    window.open('public/data/__CV-Bartlomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return (
     <section className='hero-section'>
         <div>
-          <div className="hero-left">
+          <div className={`hero-left ${loading && 'loading'}`}>
             <div className="upper-icon">
               ✦ Portfolio
             </div>
@@ -30,13 +36,18 @@ const Hero: React.FC = () => {
                 Wyświetl CV
               </button>
             </div>
+            <div className="social-links">
+              <a href="https://github.com/mazurek321" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+              <a href="https://linkedin.com/in/mazurek321" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+              <a href="mailto:mazurek321.93@wp.pl"><FiMail /></a>
+            </div>
           </div>
 
-          <div className="hero-right">
-            <div className="hero-orbit-container">
+          <div className={`hero-right ${loading && 'loading'}`}>
+            <div className='hero-orbit-container'>
                 <div className="orbit-line" />
                 <motion.a
-                  href="#"
+                  href="https://github.com/mazurek321"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="orbit-cube-wrapper"

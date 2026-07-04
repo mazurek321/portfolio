@@ -2,7 +2,7 @@ nav.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 8%;
+    padding: 20px 12%;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@ nav.navbar {
     color: #fefefe;
     background: rgba(15, 15, 20, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 9999;
+    z-index: 999;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-sizing: border-box;
@@ -46,6 +46,10 @@ nav.navbar ul li a {
 
 nav.navbar ul li a:hover {
     color: var(--cyan, #00f2fe);
+}
+
+nav.navbar .nav-left{
+    cursor: pointer;
 }
 
 .hamburger {

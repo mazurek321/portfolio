@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import "./About.css";
 import { FaUser, FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt, FaBriefcase, FaTimes, FaCertificate } from 'react-icons/fa';
-import modelData from "../../assets/modelEmpty.glb";
 
-const modelPath = modelData as string;
+
+
+const modelPath = new URL('../../assets/modelEmpty.glb', import.meta.url).href;
 const ModelViewer = 'model-viewer' as any;
 
 const cert1Thumb = new URL('../../assets/cert1.png', import.meta.url).href;
 const dyp1Thumb = new URL('../../assets/dyp1.png', import.meta.url).href;
 
-const About: React.FC = () => {
+
+interface AboutProps {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+
+const About: React.FC<AboutProps> = ({setLoading}) => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [isShining, setIsShining] = useState<boolean>(false);
 
@@ -25,6 +32,10 @@ const About: React.FC = () => {
     return age;
   };
 
+  const modelLoaded = () => {
+    console.log("Model załadowany")
+  }
+
   return (
     <section className='about-section' id="about-section">
         <div className="about-container">
@@ -39,6 +50,9 @@ const About: React.FC = () => {
                             src={modelPath}
                             interaction-prompt="none"
                             camera-orbit="0deg 75deg 105%"
+                            crossorigin="anonymous"
+                            loading="eager"
+                            // onload={() => setLoading(false)}
                         >
                             <div className="model-icon-slot">
                                 <div className="neon-user-icon">

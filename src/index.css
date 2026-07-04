@@ -1,18 +1,16 @@
 :root {
   --bg-light: rgb(52, 66, 107); 
-  --bg-gradient-top: linear-gradient(180deg, #3204467e 0%, #211f3a 70%);
-  --bg-gradient-bottom: linear-gradient(180deg, #211f3a 0%, #3204467e 100%);
+  --bg-gradient-top: linear-gradient(#16192b, #0f111aa0 70%);
+  --bg-gradient-bottom: linear-gradient(#0f111aa0 70%, #16192bc2);
 
   --bg-gradient-second: linear-gradient(
-        #211f3a 1%,
-        rgb(33, 42, 68),
-        rgb(52, 66, 107)
+        #0f111aa0 1%,
+        var(--bg-light)
     );
 
   --bg-gradient-second2: linear-gradient(
-        rgb(52, 66, 107) 1%,
-        rgb(33, 42, 68),
-        #211f3a
+        var(--bg-light) 1%,
+        #0f111aa0
     );
 
   --bg-card: rgba(187, 187, 187, 0.1);
@@ -33,9 +31,6 @@
   --grey-text-strong: rgba(255, 255, 255, 0.8);
 
 
-
-
-
   --orbit-center: radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, rgba(129, 140, 248, 0.3) 30%, rgba(167, 139, 250, 0.1) 60%, rgba(124, 58, 237, 0) 100%);
   --pulse: radial-gradient(circle, rgba(52, 211, 153, 0.8) 0%, rgba(99, 102, 241, 0.3) 25%, rgba(52, 211, 153, 0.08) 55%, rgba(124, 58, 237, 0) 100%);
 
@@ -46,6 +41,9 @@
   --cube-bg-flash: rgba(6, 182, 212, 0.95);
   --cube-shadow-flash: inset 0 0 20px rgba(255, 255, 255, 0.8), 0 4px 30px rgba(34, 211, 238, 0.8), 0 0 40px rgba(34, 211, 238, 0.6);
 
+
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
 }
 
 *{
