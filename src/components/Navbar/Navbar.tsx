@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import "./Navbar.css";
 
-const Navbar: React.FC = () => {
+
+interface NavbarProps {
+  loading: boolean
+}
+
+const Navbar: React.FC<NavbarProps> = ({loading}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = (): void => {
@@ -26,7 +31,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${loading && 'loading'}`}>
       <div className="nav-left">
         <span onClick={scrollToTop}>Bartłomiej Mazurkiewicz</span>
       </div>

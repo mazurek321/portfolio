@@ -1,11 +1,18 @@
 .hero-section {
     min-height: 100vh;
-    background: var(--bg-gradient-top);
+    background: transparent;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 1s linear all;
+    opacity: 0;
+}
+
+.hero-section.fade-in {
+    background: var(--bg-gradient-top);
+    opacity: 1;
 }
 
 .hero-section > div {
@@ -13,16 +20,21 @@
     grid-template-columns: 50% 50%;
     align-items: center;
     height: max-content;
-    z-index: 100;
     min-height: 100vh;
     max-width: 1200px;
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+    z-index: 10;
 }
 
-.hero-section > * {
-    z-index: 10;
+.hero-section .hero-left {
+    opacity: 0;
+    transition: 1s linear all;
+}
+
+.hero-section.fade-in .hero-left {
+    opacity: 1;
 }
 
 .hero-section .upper-icon {
@@ -43,16 +55,16 @@
     line-height: 1.25em;
 }
 
-.hero-section .desc {
-    margin: 30px 0;
-    color: #c7c7c7;
-    line-height: 25px;
-}
-
 .hero-section h1 span {
     background: var(--text-warm);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.hero-section .desc {
+    margin: 30px 0;
+    color: #c7c7c7;
+    line-height: 25px;
 }
 
 .social-links {
@@ -72,16 +84,17 @@
 }
 
 .hero-orbit-container {
-    position: relative;
-    width: 360px;
     height: 360px;
+    width: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-self: end;
     perspective: 1200px;
     transform-style: preserve-3d;
+    justify-self: end;
 }
+
+
 
 .orbit-line {
     position: absolute;
@@ -188,12 +201,12 @@
     z-index: 11;
 }
 
-.face-front   { transform: rotateY(0deg) translateZ(25px); }
-.face-back    { transform: rotateY(180deg) translateZ(25px); }
-.face-left    { transform: rotateY(-90deg) translateZ(25px); }
-.face-right   { transform: rotateY(90deg) translateZ(25px); }
-.face-top     { transform: rotateX(90deg) translateZ(25px); }
-.face-bottom  { transform: rotateX(-90deg) translateZ(25px); }
+.face-front { transform: rotateY(0deg) translateZ(25px); }
+.face-back { transform: rotateY(180deg) translateZ(25px); }
+.face-left { transform: rotateY(-90deg) translateZ(25px); }
+.face-right { transform: rotateY(90deg) translateZ(25px); }
+.face-top { transform: rotateX(90deg) translateZ(25px); }
+.face-bottom { transform: rotateX(-90deg) translateZ(25px); }
 
 @keyframes orbit-cube-rotate {
     0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
@@ -241,74 +254,21 @@
 }
 
 @media (min-width: 3000px) {
-    .hero-section {
-        min-height: 50vh;
-    }
-
-    .hero-section > div {
-        min-height: 50vh;
-    }
+    .hero-section { min-height: 50vh; }
+    .hero-section > div { min-height: 50vh; }
 }
 
 @media (max-width: 992px) {
-    .hero-section h1 {
-        font-size: 2.5em;
-    }
-    .hero-orbit-container {
-        width: 320px;
-        height: 320px;
-    }
+    .hero-section h1 { font-size: 2.5em; }
+    .hero-orbit-container { width: 320px; height: 320px; }
 }
 
 @media (max-width: 768px) {
-    .hero-section { 
-        height: auto; 
-        min-height: 100vh; 
-        padding: 100px 0 60px 0; 
-    }
-
-    .hero-section > div {
-        grid-template-columns: 1fr; 
-        gap: 50px; 
-        min-height: auto;
-        text-align: center;
-    }
-
-    .hero-section .upper-icon {
-        margin: 0 auto 30px auto;
-    }
-
-    .hero-section h1 { 
-        font-size: 2.2rem; 
-    }
-
-    .hero-orbit-container { 
-        width: 300px; 
-        height: 300px; 
-        justify-self: center; 
-        perspective: none;
-        transform: translateZ(0px);
-    }
-
-    .center-pulse {
-        transform: none;
-        animation: pulse-mobile 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-}
-
-
-
-
-
-.hero-right.loading{
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    lefT: 0;
-    background: red;
+    .hero-section { height: auto; min-height: 100vh; padding: 100px 0 60px 0; }
+    .hero-section > div { grid-template-columns: 1fr; gap: 50px; min-height: auto; text-align: center; }
+    .hero-section .upper-icon { margin: 0 auto 30px auto; }
+    .hero-section h1 { font-size: 2.2rem; }
+    .hero-orbit-container { position: relative !important; left: auto !important; top: auto !important; transform: none !important; width: 300px; height: 300px; justify-self: center; perspective: none; }
+    .center-pulse { transform: none; animation: pulse-mobile 6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .social-links { justify-content: center; }
 }

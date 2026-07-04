@@ -1,12 +1,101 @@
-.welcome-loader{
-  background: linear-gradient(#16192b, #0f111a 70%);
+.welcome-loader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
+  inset: 0;
+  background: #0d0b21;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  transition: 1s linear all;
+}
+
+.welcome-loader.fade-out {
+  opacity: 0;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.welcome-loader .content {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .header {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.fade-in-line-1 {
+  opacity: 1;
+}
+
+.fade-in-line-2 {
+  opacity: 1;
+}
+
+.fade-in-subtitle {
+  font-weight: normal;
+  opacity: 1;
+  animation: blink 2.5s infinite ease-in-out;
+}
+
+.content h2 {
+  color: rgb(199, 198, 198);
+  margin: 0.5em;
+  animation: blink 2.5s infinite ease-in-out;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.content h1.styled {
+  background: var(--text-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 1000;
+}
+
+@keyframes wave {
+  0%, 40%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 1.6rem;
+  }
+  
+  @keyframes wave {
+    0%, 40%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.25rem;
+  }
 }

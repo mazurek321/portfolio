@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./WelcomeLoader.css"
 
-const WelcomeLoader = () => {
+interface WelcomeLoaderProps {
+  loading: boolean
+}
+
+const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ loading }) => {
+  const [visible, setVisible] = useState(true)
+  const [fadeOut, setFadeOut] = useState(false)
+
+  useEffect(() => {
+    if (!loading) {
+      setFadeOut(true)
+
+      const t = setTimeout(() => {
+        setVisible(false)
+      }, 1200)
+
+      return () => clearTimeout(t)
+    }
+  }, [loading])
+
+  if (!visible) return null
+
   return (
-    <div className='welcome-loader'>
-
-      <div className="nebula" />
-
+    <div className={`welcome-loader ${fadeOut ? 'fade-out' : ''}`}>
       <div className="content">
-        <h1>Trwa wczytywanie portfolio.</h1>
+        <div className="header">
+          <h1>Witaj na mojej</h1>
+          <h1 className='styled'>stronie Internetowej</h1>
+        </div>
+
+        <h2>Trwa ładowanie portfolio</h2>
       </div>
     </div>
   )

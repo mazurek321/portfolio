@@ -1,70 +1,90 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Hero.css"
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; 
-import { FiMail } from 'react-icons/fi'; 
+import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FiMail } from 'react-icons/fi'
 
 interface HeroProps {
   loading: boolean
 }
 
-const Hero: React.FC<HeroProps> = ({loading}) => {
+const Hero: React.FC<HeroProps> = ({ loading }) => {
+
+
+  const [fadeIn, setFadeIn] = useState(false)
   
+    useEffect(() => {
+      if (!loading) {
+        setFadeIn(true)
+      }
+    }, [loading])
+
+
   const handleOpenCV = () => {
-    window.open('public/data/__CV-Bartlomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer');
-  };
+    window.open('data/__CV-Bartlomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer')
+  }
 
   return (
-    <section className='hero-section'>
-        <div>
-          <div className={`hero-left ${loading && 'loading'}`}>
-            <div className="upper-icon">
-              ✦ Portfolio
-            </div>
-            <h1>
-              Witaj na{" "}
-              <span>mojej</span>
-              {" "}stronie Internetowej  
-            </h1>
+    <section className={`hero-section ${fadeIn ? 'fade-in' : ''}`}>
+      <div className="nebula"></div>
+      <div className="hero-container">
 
-            <div className="desc">
-              To moje portfolio — znajdziesz tutaj projekty, które stworzyłem, technologie, z których korzystam na co dzień, oraz trochę informacji o mnie.
-            </div>
+        <div className="hero-left">
+          <div className="upper-icon">✦ Portfolio</div>
 
-            <div className="button">
-              <button className='main-styled warm' onClick={handleOpenCV}>
-                Wyświetl CV
-              </button>
-            </div>
-            <div className="social-links">
-              <a href="https://github.com/mazurek321" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-              <a href="https://linkedin.com/in/mazurek321" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <a href="mailto:mazurek321.93@wp.pl"><FiMail /></a>
-            </div>
+          <h1>
+            Witaj na <span>mojej</span> stronie Internetowej
+          </h1>
+
+          <div className="desc">
+            To moje portfolio — znajdziesz tutaj projekty, które stworzyłem, technologie,
+            z których korzystam na co dzień, oraz trochę informacji o mnie.
           </div>
 
-          <div className={`hero-right ${loading && 'loading'}`}>
-            <div className='hero-orbit-container'>
-                <div className="orbit-line" />
-                <motion.a
-                  href="https://github.com/mazurek321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="orbit-cube-wrapper"
-                >
-                  <div className="cube-face face-front"><FaGithub /></div>
-                  <div className="cube-face face-back"><FaGithub /></div>
-                  <div className="cube-face face-left"><FaGithub /></div>
-                  <div className="cube-face face-right"><FaGithub /></div>
-                  <div className="cube-face face-top"><FaGithub /></div>
-                  <div className="cube-face face-bottom"><FaGithub /></div>
-                </motion.a>
-                <div className="orbit-center">
-                  <div className="center-pulse" />
-                </div>
-              </div>
+          <div className="button">
+            <button className="main-styled warm" onClick={handleOpenCV}>
+              Wyświetl CV
+            </button>
+          </div>
+
+          <div className="social-links">
+            <a href="https://github.com/mazurek321" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/mazurek321" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+            <a href="mailto:mazurek321.93@wp.pl">
+              <FiMail />
+            </a>
           </div>
         </div>
+
+        <div className="hero-right">
+          <div className="hero-orbit-container">
+            <div className="orbit-line" />
+
+            <motion.a
+              href="https://github.com/mazurek321"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="orbit-cube-wrapper"
+            >
+              <div className="cube-face face-front"><FaGithub /></div>
+              <div className="cube-face face-back"><FaGithub /></div>
+              <div className="cube-face face-left"><FaGithub /></div>
+              <div className="cube-face face-right"><FaGithub /></div>
+              <div className="cube-face face-top"><FaGithub /></div>
+              <div className="cube-face face-bottom"><FaGithub /></div>
+            </motion.a>
+
+            <div className="orbit-center">
+              <div className="center-pulse" />
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
   )
 }

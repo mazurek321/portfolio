@@ -15,6 +15,7 @@ nav.navbar {
     -webkit-backdrop-filter: blur(12px);
     box-sizing: border-box;
     transition: background 0.3s ease;
+    opacity: 1;
 }
 
 .nav-left span {
@@ -124,4 +125,11 @@ nav.navbar .nav-left{
     .hamburger.toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+}
+
+
+
+.navbar.loading{
+    opacity: 0;
+    transition: 200ms linear all;
 }

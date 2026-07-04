@@ -14,8 +14,6 @@ createRoot(document.getElementById('root')).render(
           <div className="grid-layer" />
           <div className="stars-layer" />
         </div>
-
-        <div className="nebula" />
               <Routes>
 
                 <Route 

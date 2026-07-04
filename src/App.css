@@ -89,7 +89,6 @@ main > *{
     background: radial-gradient(circle, rgba(174, 110, 46, 0.3) 0%, rgba(214, 5, 54, 0.2) 50%, transparent 80%);
     filter: blur(100px);
     pointer-events: none;
-    z-index: 2;
     transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s ease;
 }
 

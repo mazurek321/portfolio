@@ -52,7 +52,7 @@ const About: React.FC<AboutProps> = ({setLoading}) => {
                             camera-orbit="0deg 75deg 105%"
                             crossorigin="anonymous"
                             loading="eager"
-                            // onload={() => setLoading(false)}
+                            onload={() => setLoading(false)}
                         >
                             <div className="model-icon-slot">
                                 <div className="neon-user-icon">
