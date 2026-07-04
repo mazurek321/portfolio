@@ -10,7 +10,7 @@ import Skills from './components/Skills/Skills'
 import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (loading) {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-        <WelcomeLoader loading={loading}/>
+        <WelcomeLoader loading={loading} setLoading={setLoading}/>
     
         <Navbar loading={loading}/>
         <main>

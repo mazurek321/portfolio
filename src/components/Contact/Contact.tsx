@@ -10,20 +10,19 @@ interface FormData {
 }
 
 const Contact = () => {
-  const [formData, setFormData] = useState<FormData>({ email: "", message: "", honeypot: "" });
-  const [status, setStatus] = useState<{ type: "success" | "error" | null; text: string }>({
-    type: null,
-    text: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
+    const [formData, setFormData] = useState<FormData>({ email: "", message: "", honeypot: "" });
+    const [status, setStatus] = useState<{ type: "success" | "error" | null; text: string }>({
+      type: null,
+      text: "",
+    });
+    const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  const handleManualSubmit = (e: React.FormEvent) => {
+    const handleManualSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (formData.honeypot) return;
 
     const cleanEmail = formData.email.trim();
@@ -35,6 +34,7 @@ const Contact = () => {
     }
 
     setIsLoading(true);
+    setStatus({ type: null, text: "" }); 
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
@@ -56,8 +56,10 @@ const Contact = () => {
         setStatus({ type: "error", text: "Wystąpił błąd, spróbuj ponownie." });
       })
       .finally(() => {
-        setIsLoading(false);
-      });
+        setIsLoading(false); 
+        
+        setTimeout(() => setStatus({ type: null, text: "" }), 5000);
+      }); 
   };
 
   return (

@@ -3,9 +3,10 @@ import "./WelcomeLoader.css"
 
 interface WelcomeLoaderProps {
   loading: boolean
+  setLoading: (value: boolean) => void
 }
 
-const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ loading }) => {
+const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ loading, setLoading }) => {
   const [visible, setVisible] = useState(true)
   const [fadeOut, setFadeOut] = useState(false)
 
