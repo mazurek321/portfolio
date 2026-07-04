@@ -10,7 +10,7 @@ import Skills from './components/Skills/Skills'
 import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (loading) {
