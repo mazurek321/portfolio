@@ -16,7 +16,7 @@ function App() {
   return (
     <>
         {/* {loading && <WelcomeLoader/>} */}
-        {/* <WelcomeLoader/> */}
+        <WelcomeLoader/>
     
         <Navbar/>
         <main>
