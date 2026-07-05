@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import emailjs from "@emailjs/browser";
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import "./Contact.css"
 
 interface FormData {
@@ -16,6 +17,8 @@ const Contact = () => {
       text: "",
     });
     const [isLoading, setIsLoading] = useState(false);
+    
+    const [sectionRef, isVisible] = useIntersectionObserver();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -64,72 +67,78 @@ const Contact = () => {
 
   return (
     <section className="contact-section" id="contact-section">
-      <h1 className='skills-title'>Kontakt</h1>
-      
-      <div className="contact-container">
-        <div className="contact-form-card">
-          <h2>Wyślij e-mail !</h2>
-          <form className="contact-form" onSubmit={handleManualSubmit}>
-            <input 
-              type="text" 
-              name="honeypot" 
-              style={{ display: 'none' }} 
-              value={formData.honeypot} 
-              onChange={handleChange} 
-            />
-            <div className="input-group">
+      <div 
+        className={`reveal-section ${isVisible ? 'animate-reveal' : ''}`}
+        ref={sectionRef}
+        style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      >
+        <h1 className='skills-title'>Kontakt</h1>
+        
+        <div className="contact-container">
+          <div className="contact-form-card">
+            <h2>Wyślij e-mail !</h2>
+            <form className="contact-form" onSubmit={handleManualSubmit}>
               <input 
-                type="email" 
-                name="email" 
-                placeholder="Twój e-mail" 
-                required 
-                value={formData.email}
-                onChange={handleChange}
+                type="text" 
+                name="honeypot" 
+                style={{ display: 'none' }} 
+                value={formData.honeypot} 
+                onChange={handleChange} 
               />
-            </div>
-            <div className="input-group">
-              <textarea 
-                name="message" 
-                placeholder="Wiadomość" 
-                rows={6} 
-                required 
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-            <button type="submit" className="btn-submit" disabled={isLoading}>
-              {isLoading ? "Wysyłanie..." : "WYŚLIJ"}
-            </button>
-            {status.text && (
-              <p className={`status-message ${status.type}`}>{status.text}</p>
-            )}
-          </form>
-        </div>
+              <div className="input-group">
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Twój e-mail" 
+                  required 
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="input-group">
+                <textarea 
+                  name="message" 
+                  placeholder="Wiadomość" 
+                  rows={6} 
+                  required 
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+              <button type="submit" className="main-styled cold" disabled={isLoading}>
+                {isLoading ? "Wysyłanie..." : "WYŚLIJ"}
+              </button>
+              {status.text && (
+                <p className={`status-message ${status.type}`}>{status.text}</p>
+              )}
+            </form>
+          </div>
 
-        <div className="contact-bento-grid">
-          <div className="bento-card image-card">
-            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=600" alt="Code"/>
-          </div>
-          <div className="bento-card title-card">
-            <h3>Skontaktuj się</h3>
-          </div>
-          <div className="bento-card info-card">
-            <div className="orange-icon"><FaEnvelope /></div>
-            <span className="label">Email</span>
-            <span className="value">mazurek321.93@wp.pl</span>
-          </div>
-          <div className="bento-card info-card">
-            <div className="orange-icon"><FaGithub /></div>
-            <span className="label">GitHub</span>
-            <span className="value">mazurek321</span>
-          </div>
-          <div className="bento-card info-card">
-            <div className="orange-icon"><FaLinkedin /></div>
-            <span className="label">LinkedIn</span>
-            <span className="value">mazurek321</span>
-          </div>
-          <div className="bento-card image-card">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="Earth"/>
+          <div className="contact-bento-grid">
+            <div className="bento-card image-card">
+              <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=600" alt="Code"/>
+            </div>
+            <div className="bento-card title-card">
+              <h3>Skontaktuj się</h3>
+            </div>
+            <div className="bento-card info-card">
+              <div className="orange-icon"><FaEnvelope /></div>
+              <span className="label">Email</span>
+              <span className="value">mazurek321.93@wp.pl</span>
+            </div>
+            <div className="bento-card info-card">
+              <div className="orange-icon"><FaGithub /></div>
+              <span className="label">GitHub</span>
+              <span className="value">mazurek321</span>
+            </div>
+            <div className="bento-card info-card">
+              <div className="orange-icon"><FaLinkedin /></div>
+              <span className="label">LinkedIn</span>
+              <span className="value">mazurek321</span>
+            </div>
+            <div className="bento-card image-card">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="Earth"/>
+            </div>
           </div>
         </div>
       </div>

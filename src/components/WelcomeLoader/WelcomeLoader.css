@@ -1,12 +1,14 @@
 .welcome-loader {
   position: fixed;
   inset: 0;
-  background: #0d0b21;
+  background: #0f111a;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
-  transition: 1s linear all;
+  transition: opacity 1s linear, transform 1s linear;
+  z-index: 9999;
+  overflow: hidden;
 }
 
 .welcome-loader.fade-out {
@@ -15,89 +17,159 @@
   pointer-events: none;
 }
 
+.cyber-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  perspective: 450px;
+  background: var(--bg-gradient-top);
+}
+
+.grid-lines {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: rotateX(65deg);
+  animation: gridMove 12s linear infinite;
+}
+
+.horizon-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(107, 33, 168, 0.15) 0%, rgba(15, 17, 26, 0) 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .welcome-loader .content {
-  z-index: 1000;
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.content .header {
-  font-size: 1.5em;
   text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.fade-in-line-1 {
-  opacity: 1;
+.content .header h1 {
+  font-size: 3.2rem;
+  line-height: 1.3;
+  margin-bottom: 35px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fadeInText 1s ease forwards;
 }
 
-.fade-in-line-2 {
-  opacity: 1;
+.content h1 span.styled {
+  background: var(--text-cold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  display: inline-block;
 }
 
-.fade-in-subtitle {
-  font-weight: normal;
-  opacity: 1;
-  animation: blink 2.5s infinite ease-in-out;
+.spinner-container {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: fadeInText 1s ease 0.2s forwards;
+}
+
+.spinner-svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateSpinner 2s linear infinite;
+  border-radius: 50%;
+}
+
+.spinner-track {
+  stroke: rgba(255, 255, 255, 0.03);
+}
+
+.spinner-circle {
+  stroke: var(--cyan);
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px var(--cyan));
+  animation: dashCircle 1.5s ease-in-out infinite;
 }
 
 .content h2 {
-  color: rgb(199, 198, 198);
-  margin: 0.5em;
-  animation: blink 2.5s infinite ease-in-out;
-  font-weight: normal;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0;
+  animation: fadeInText 1s ease 0.4s forwards;
 }
 
-
-
-@keyframes blink {
-  0%, 100% {
+@keyframes fadeInText {
+  to {
     opacity: 1;
   }
+}
+
+@keyframes rotateSpinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dashCircle {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
   50% {
-    opacity: 0;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }
 
-.content h1.styled {
-  background: var(--text-warm);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 1000;
-}
-
-@keyframes wave {
-  0%, 40%, 100% {
-    transform: translateY(0);
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
   }
-  20% {
-    transform: translateY(-10px);
+  100% {
+    background-position: 0 200px;
   }
 }
 
 @media (max-width: 1024px) {
-  .content h1 {
-    font-size: 2rem;
-  }
+  .content .header h1 { font-size: 2.6rem; }
 }
 
 @media (max-width: 768px) {
-  .content h1 {
-    font-size: 1.6rem;
-  }
-  
-  @keyframes wave {
-    0%, 40%, 100% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-6px);
-    }
-  }
+  .content .header h1 { font-size: 2rem; margin-bottom: 25px; }
+  .spinner-container { width: 50px; height: 50px; }
 }
 
 @media (max-width: 480px) {
-  .content h1 {
-    font-size: 1.25rem;
-  }
+  .content .header h1 { font-size: 1.6rem; line-height: 1.4; }
+  .content h2 { font-size: 0.75rem; letter-spacing: 0.15em; }
+}
+
+@media (max-height: 450px) {
+  .welcome-loader .content { padding-top: 10px; padding-bottom: 10px; }
+  .content .header h1 { font-size: 1.4rem; margin-bottom: 15px; }
 }

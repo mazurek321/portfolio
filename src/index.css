@@ -1,28 +1,23 @@
 :root {
   --bg-light: rgb(52, 66, 107); 
   --bg-gradient-top: linear-gradient(#16192b, #0f111aa0 70%);
-  --bg-gradient-bottom: linear-gradient(#0f111aa0 70%, #16192bc2);
 
   --bg-gradient-second: linear-gradient(
         #0f111aa0 1%,
         var(--bg-light)
     );
 
-  --bg-gradient-second2: linear-gradient(
-        var(--bg-light) 1%,
-        #0f111aa0
-    );
-
   --bg-card: rgba(187, 187, 187, 0.1);
   --border-card: 1px solid rgba(255, 255, 255, 0.06);
   
-  --bg-card2: linear-gradient(rgba(221, 221, 221, 0.1), rgba(28, 28, 28, 0.7));
   --border-card2: 1px solid rgba(255, 255, 255, 0.06);
 
-  --bg-card3: rgba(28, 28, 28, 0.7);
+  --bg-card3: rgba(28, 28, 28, 0.8);
 
   --orange: #ff6e20;
   --text-warm: linear-gradient(to right, #f59e0b, #fbbf24);
+
+  --text-cold: linear-gradient(135deg, #136dbc 40%, #6b21a8 100%);
 
   --cyan: #00f2fe;
   --box-shadow-cyan: 0 0 3px rgba(0, 242, 254, 0.6), inset 0 0 15px rgba(0, 242, 254, 0.4);

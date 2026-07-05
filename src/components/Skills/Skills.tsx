@@ -7,13 +7,14 @@ import { SiSpringboot, SiMysql } from 'react-icons/si';
 import { AiOutlineDotNet } from 'react-icons/ai';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { BiLogoPostgresql } from 'react-icons/bi';
-import { RiJavascriptLine } from 'react-icons/ri'; 
 import { SiTypescript } from 'react-icons/si';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import "./Skills.css";
 
 const Skills = () => {
     const filters = ["Wszystkie", "Frontend", "Backend", "Bazy danych", "Devops", "Systemy"];
     const [active, setActive] = useState("Wszystkie");
+    const [sectionRef, isVisible] = useIntersectionObserver();
 
     const skills = [
         { id: 1, name: "React", category: "Frontend", icon: <FaReact /> },
@@ -38,7 +39,11 @@ const Skills = () => {
         : skills.filter(s => s.category === active);
 
     return (
-        <section className='skills-section' id = "skills-section">
+        <section 
+            className={`skills-section reveal-section ${isVisible ? 'animate-reveal' : ''}`} 
+            id="skills-section"
+            ref={sectionRef}
+        >
             <h1 className='skills-title'>Umiejętności</h1>
             
             <div className="filters">

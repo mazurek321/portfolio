@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import "./About.css";
 import { FaUser, FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt, FaBriefcase, FaTimes, FaCertificate } from 'react-icons/fa';
-
-
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const modelPath = new URL('../../assets/modelEmpty.glb', import.meta.url).href;
 const ModelViewer = 'model-viewer' as any;
@@ -10,15 +9,14 @@ const ModelViewer = 'model-viewer' as any;
 const cert1Thumb = new URL('../../assets/cert1.png', import.meta.url).href;
 const dyp1Thumb = new URL('../../assets/dyp1.png', import.meta.url).href;
 
-
 interface AboutProps {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-
-const About: React.FC<AboutProps> = ({setLoading}) => {
+const About: React.FC<AboutProps> = ({ setLoading }) => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [isShining, setIsShining] = useState<boolean>(false);
+  const [sectionRef, isVisible] = useIntersectionObserver();
 
   const calculateAge = (birthDate: string): number => {
     const today = new Date();
@@ -32,13 +30,12 @@ const About: React.FC<AboutProps> = ({setLoading}) => {
     return age;
   };
 
-  const modelLoaded = () => {
-    console.log("Model załadowany")
-  }
-
   return (
     <section className='about-section' id="about-section">
-        <div className="about-container">
+        <div 
+          className={`about-container reveal-section ${isVisible ? 'animate-reveal' : ''}`}
+          ref={sectionRef}
+        >
             
             <div className="left-column">
                 <div className="personal-info">

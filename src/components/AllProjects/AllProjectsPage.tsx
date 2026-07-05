@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { ProjectsData } from "../../data/ProjectsData";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import "./AllProjectsPage.css";
 
 export interface Project {
@@ -18,6 +19,9 @@ export interface Project {
 export default function AllProjectsPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+
+  const [showcaseRef, showcaseVisible] = useIntersectionObserver();
+  const [otherProjectsRef, otherProjectsVisible] = useIntersectionObserver();
 
   const activeProject: Project =
     ProjectsData.find((p: Project): boolean => p.id === id) || ProjectsData[0];
@@ -66,7 +70,10 @@ export default function AllProjectsPage() {
         <span className="icon">←</span> Powrót do strony głównej
       </button>
 
-      <section className="active-project-showcase">
+      <section 
+        className={`active-project-showcase reveal-section ${showcaseVisible ? 'animate-reveal' : ''}`}
+        ref={showcaseRef}
+      >
         <div className="project-detail-left">
           <h1 className="project-detail-title">{activeProject.title}</h1>
 
@@ -171,7 +178,10 @@ export default function AllProjectsPage() {
 
       <hr className="section-divider" />
 
-      <section className="other-projects-section">
+      <section 
+        className={`other-projects-section reveal-section ${otherProjectsVisible ? 'animate-reveal' : ''}`}
+        ref={otherProjectsRef}
+      >
         <h2 className="other-projects-heading">Inne projekty</h2>
 
         <div className="projects-grid">

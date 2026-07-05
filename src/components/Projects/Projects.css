@@ -1,8 +1,9 @@
 .projects-section {
-    background: var(--bg-gradient-second2);
+    position: relative;
+    z-index: 100;
 }
 
-.projects-section > div{
+.projects-section > div {
     text-align: center;
     padding: 0 20px;
     max-width: 1200px;
@@ -33,7 +34,7 @@
 }
 
 .project-card {
-    background: var(--bg-card2);
+    background: var(--bg-card3);
     border: var(--border-card);
     border-radius: 12px;
     backdrop-filter: blur(20px);
@@ -70,7 +71,7 @@
 }
 
 .project-card:hover .project-thumb img {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .project-content {
@@ -97,7 +98,8 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-grow: 1;
+    flex-grow: 0;
+    width: 100%;
 }
 
 .project-actions {
