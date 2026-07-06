@@ -9,7 +9,7 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #00f2fe;
+    color: var(--accent);
     margin-bottom: 20px;
 }
 
@@ -27,23 +27,23 @@ button.filter-option {
     border-radius: 50px;
     cursor: pointer;
     background: rgba(37, 46, 73, 0.4);
-    border: 1px solid #00f2fe;
-    color: #00f2fe;
+    border: 1px solid var(--accent2);
+    color: var(--accent);
     font-weight: 500;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 button.filter-option:hover {
-    background: rgba(0, 242, 254, 0.2);
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    background: var(--upper-icon-bg);
+    box-shadow: 0 0 15px var(--accent2);
 }
 
 button.filter-option.active {
-    background: #00f2fe;
-    color: #0c1224;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
-    border-color: #00f2fe;
+    background: var(--accent2);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px var(--accent2);
+    border-color: var(--accent);
     font-weight: 600;
 }
 
@@ -82,14 +82,14 @@ button.filter-option.active {
 
 .skill-item:hover {
     background: #ffffff;
-    border-color: #00f2fe;
+    border-color: var(--accent);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 8px 20px var(--accent2);
     color: #000000;
 }
 
 .skill-item:hover .skill-icon {
-    color: #00f2fe;
+    color: var(--accent);
     transform: scale(1.1);
 }
 

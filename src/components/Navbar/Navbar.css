@@ -133,3 +133,17 @@ nav.navbar .nav-left{
     opacity: 0;
     transition: 200ms linear all;
 }
+
+.theme-toggle-btn {
+  background: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: inherit;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

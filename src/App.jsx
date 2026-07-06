@@ -10,7 +10,16 @@ import Skills from './components/Skills/Skills'
 import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+  const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    
+    const hour = new Date().getHours();
+    return hour >= 19 || hour < 6;
+  });
 
   useEffect(() => {
     if (loading) {
@@ -26,19 +35,33 @@ function App() {
     return () => document.body.classList.remove('no-scroll')
   }, [loading])
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-theme')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark-theme')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [isDarkMode])
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode)
+  }
+
   return (
     <>
-        <WelcomeLoader loading={loading} setLoading={setLoading}/>
+      <WelcomeLoader loading={loading} setLoading={setLoading}/>
     
-        <Navbar loading={loading}/>
-        <main>
-          <Hero loading={loading}/>
-          <About setLoading={setLoading}/>
-          <Skills/>
-          <Projects/>
-          <Contact/>
-        </main>  
-        <Footer/>
+      <Navbar loading={loading} isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
+      <main>
+        <Hero loading={loading}/>
+        <About setLoading={setLoading}/>
+        <Skills/>
+        <Projects/>
+        <Contact/>
+      </main>  
+      <Footer/>
     </>
   )
 }

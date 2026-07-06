@@ -1,7 +1,6 @@
 .welcome-loader {
   position: fixed;
   inset: 0;
-  background: #0f111a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +21,6 @@
   inset: 0;
   z-index: 1;
   perspective: 450px;
-  background: var(--bg-gradient-top);
 }
 
 .grid-lines {
@@ -74,7 +72,7 @@
 }
 
 .content h1 span.styled {
-  background: var(--text-cold);
+  background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -102,9 +100,9 @@
 }
 
 .spinner-circle {
-  stroke: var(--cyan);
+  stroke: var(--accent);
   stroke-linecap: round;
-  filter: drop-shadow(0 0 5px var(--cyan));
+  filter: drop-shadow(0 0 5px var(--accent));
   animation: dashCircle 1.5s ease-in-out infinite;
 }
 

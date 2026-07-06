@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import "./Navbar.css";
 
-
 interface NavbarProps {
-  loading: boolean
+  loading: boolean;
+  isDarkMode: boolean;
+  toggleTheme: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({loading}) => {
+const Navbar: React.FC<NavbarProps> = ({ loading, isDarkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = (): void => {
@@ -31,9 +33,9 @@ const Navbar: React.FC<NavbarProps> = ({loading}) => {
   };
 
   return (
-    <nav className={`navbar ${loading && 'loading'}`}>
+    <nav className={`navbar ${loading ? 'loading' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="nav-left">
-        <span onClick={scrollToTop}>Bartłomiej Mazurkiewicz</span>
+        <span onClick={scrollToTop} style={{ cursor: 'pointer' }}>Bartłomiej Mazurkiewicz</span>
       </div>
 
       <div className={`nav-right ${isOpen ? 'active' : ''}`}>
@@ -49,6 +51,11 @@ const Navbar: React.FC<NavbarProps> = ({loading}) => {
           </li>
           <li>
             <a href="#contact-section" onClick={(e) => handleScroll(e, 'contact-section')}>Kontakt</a>
+          </li>
+          <li>
+            <button className="theme-toggle-btn" onClick={toggleTheme}>
+              {isDarkMode ? <FaSun /> : <FaMoon />}
+            </button>
           </li>
         </ul>
       </div>

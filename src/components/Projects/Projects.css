@@ -50,8 +50,8 @@
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px var(--box-shadow-cyan);
-    border-color: var(--cyan);
+    box-shadow: 0 15px 35px var(--accent2);
+    border-color: var(--accent);
 }
 
 .project-thumb {
@@ -116,7 +116,7 @@
 }
 
 .btn-details {
-    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
     color: #111827;
     border: none;
     padding: 8px 20px;
@@ -128,13 +128,11 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
 }
 
 .btn-details:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.45);
-    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    box-shadow: 0 6px 10px var(--accent);
 }
 
 .icon {

@@ -60,7 +60,6 @@ const Contact = () => {
       })
       .finally(() => {
         setIsLoading(false); 
-        
         setTimeout(() => setStatus({ type: null, text: "" }), 5000);
       }); 
   };
@@ -105,7 +104,7 @@ const Contact = () => {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <button type="submit" className="main-styled cold" disabled={isLoading}>
+              <button type="submit" className="main-styled" disabled={isLoading}>
                 {isLoading ? "Wysyłanie..." : "WYŚLIJ"}
               </button>
               {status.text && (
@@ -114,29 +113,29 @@ const Contact = () => {
             </form>
           </div>
 
-          <div className="contact-bento-grid">
-            <div className="bento-card image-card">
+          <div className="contact-info-grid">
+            <div className="grid-card image-card image-hide-mobile">
               <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=600" alt="Code"/>
             </div>
-            <div className="bento-card title-card">
+            <div className="grid-card title-card">
               <h3>Skontaktuj się</h3>
             </div>
-            <div className="bento-card info-card">
-              <div className="orange-icon"><FaEnvelope /></div>
+            <div className="grid-card info-card">
+              <div className="icon"><FaEnvelope /></div>
               <span className="label">Email</span>
               <span className="value">mazurek321.93@wp.pl</span>
             </div>
-            <div className="bento-card info-card">
-              <div className="orange-icon"><FaGithub /></div>
+            <div className="grid-card info-card">
+              <div className="icon"><FaGithub /></div>
               <span className="label">GitHub</span>
               <span className="value">mazurek321</span>
             </div>
-            <div className="bento-card info-card">
-              <div className="orange-icon"><FaLinkedin /></div>
+            <div className="grid-card info-card">
+              <div className="icon"><FaLinkedin /></div>
               <span className="label">LinkedIn</span>
               <span className="value">mazurek321</span>
             </div>
-            <div className="bento-card image-card">
+            <div className="grid-card image-card image-hide-mobile">
               <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="Earth"/>
             </div>
           </div>

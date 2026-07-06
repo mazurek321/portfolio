@@ -35,7 +35,7 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--cyan);
+    color: var(--accent);
     margin-bottom: 8px;
 }
 
@@ -85,7 +85,7 @@
 
 .info-icon {
     font-size: 1.4rem;
-    color: var(--cyan);
+    color: var(--accent);
 }
 
 .info-label {
@@ -120,7 +120,7 @@
 }
 
 .education-title svg {
-    color: #00f2fe;
+    color: var(--accent);
 }
 
 .timeline {
@@ -151,14 +151,14 @@
 }
 
 .timeline-item.active .timeline-dot {
-    background: #00f2fe;
-    border-color: #00f2fe;
-    box-shadow: 0 0 12px #00f2fe;
+    background: var(--accent);
+    border-color: var(--accent2);
+    box-shadow: 0 0 12px var(--accent);
 }
 
 .timeline-date {
     font-size: 0.85rem;
-    color: #00f2fe;
+    color: var(--accent);
     font-weight: 600;
     margin-bottom: 6px;
 }
@@ -224,7 +224,7 @@
 }
 
 .lightbox-close:hover {
-    color: #00f2fe;
+    color: var(--accent);
 }
 
 .about-section .personal-info {
@@ -241,7 +241,7 @@
     max-width: 360px;
     overflow: hidden;
     animation: levitate 6s ease-in-out infinite;
-    filter: drop-shadow(0 0 3px var(--cyan));
+    filter: drop-shadow(0 0 3px var(--accent));
     border-radius: 50%;
 }
 
@@ -313,13 +313,13 @@ model-viewer {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: var(--box-shadow-cyan);
+    box-shadow: var(--button-gradient-shadow);
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--cyan);
     font-size: 3.5rem;
-    filter: drop-shadow(0 0 1px var(--cyan));
+    filter: drop-shadow(0 0 1px var(--accent));
 }
 
 .certificates-section {
@@ -337,7 +337,7 @@ model-viewer {
 }
 
 .certificates-title svg {
-    color: var(--cyan);
+    color: var(--accent);
 }
 
 .certificates-grid {
@@ -357,7 +357,7 @@ model-viewer {
 }
 
 .cert-card:hover {
-    border-color: var(--cyan);
+    border-color: var(--accent);
     transform: translateY(-2px);
 }
 

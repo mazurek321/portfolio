@@ -38,9 +38,9 @@
 }
 
 .hero-section .upper-icon {
-    background: rgba(208, 105, 49, 0.1);
-    color: var(--orange);
-    border: 1px solid var(--orange);
+    background: var(--upper-icon-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent2);
     border-radius: 20px;
     width: min-content;
     padding: 7px 20px;
@@ -56,7 +56,7 @@
 }
 
 .hero-section h1 span {
-    background: var(--text-warm);
+    background: var(--text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -258,17 +258,44 @@
     .hero-section > div { min-height: 50vh; }
 }
 
-@media (max-width: 992px) {
-    .hero-section h1 { font-size: 2.5em; }
-    .hero-orbit-container { width: 320px; height: 320px; }
+@media (max-width: 968px) {
+    .hero-section{
+        padding: 0 10px;
+    }
+
+    .hero-section > div {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 50px;
+        padding: 120px 0 60px 0;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-section .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-orbit-container {
+        justify-self: center;
+    }
 }
 
-@media (max-width: 768px) {
-    .hero-section { height: auto; min-height: 100vh; padding: 100px 0 60px 0; }
-    .hero-section > div { grid-template-columns: 1fr; gap: 50px; min-height: auto; text-align: center; }
-    .hero-section .upper-icon { margin: 0 auto 30px auto; }
-    .hero-section h1 { font-size: 2.2rem; }
-    .hero-orbit-container { position: relative !important; left: auto !important; top: auto !important; transform: none !important; width: 300px; height: 300px; justify-self: center; perspective: none; }
-    .center-pulse { transform: none; animation: pulse-mobile 6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .social-links { justify-content: center; }
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section .desc {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .hero-orbit-container {
+        transform: scale(0.85);
+        height: 300px;
+        width: 300px;
+    }
 }

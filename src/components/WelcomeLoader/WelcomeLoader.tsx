@@ -26,6 +26,7 @@ const WelcomeLoader: React.FC<WelcomeLoaderProps> = ({ loading, setLoading }) =>
 
   return (
     <div className={`welcome-loader ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="nebula"></div>
       <div className="cyber-grid-bg">
         <div className="grid-lines"></div>
         <div className="horizon-glow"></div>

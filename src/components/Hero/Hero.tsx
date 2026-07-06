@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ loading }) => {
           </div>
 
           <div className="button">
-            <button className="main-styled warm" onClick={handleOpenCV}>
+            <button className="main-styled" onClick={handleOpenCV}>
               Wyświetl CV
             </button>
           </div>
