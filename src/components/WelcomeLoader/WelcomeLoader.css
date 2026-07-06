@@ -1,3 +1,13 @@
+.welcome-loader .space-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .welcome-loader {
   position: fixed;
   inset: 0;
@@ -8,7 +18,9 @@
   transition: opacity 1s linear, transform 1s linear;
   z-index: 9999;
   overflow: hidden;
+  background: var(--bg-gradient-top);
 }
+
 
 .welcome-loader.fade-out {
   opacity: 0;
@@ -21,6 +33,8 @@
   inset: 0;
   z-index: 1;
   perspective: 450px;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-lines {

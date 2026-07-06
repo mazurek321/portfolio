@@ -10,9 +10,9 @@ import Skills from './components/Skills/Skills'
 import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [isDarkMode, setIsDarkMode] = useState(() => {
-  const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme === 'dark';
     }
@@ -22,12 +22,20 @@ function App() {
   });
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
     if (loading) {
       document.body.classList.add('no-scroll')
     } else {
       const scrollTimeout = setTimeout(() => {
         document.body.classList.remove('no-scroll')
-      }, 1800)
+      }, 1200)
 
       return () => clearTimeout(scrollTimeout)
     }
