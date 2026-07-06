@@ -46,7 +46,7 @@ nav.navbar ul li a {
 }
 
 nav.navbar ul li a:hover {
-    color: var(--cyan, #00f2fe);
+    color: var(--accent);
 }
 
 nav.navbar .nav-left{

@@ -61,7 +61,7 @@ export default function AllProjectsPage() {
 
   return (
     <div className="all-projects-container content-layer">
-      
+      <div className="nebula"></div>
       <button
         className="main-styled cold"
         onClick={() => navigate("/")}
