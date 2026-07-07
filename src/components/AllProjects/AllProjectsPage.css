@@ -113,6 +113,8 @@
   border-radius: 12px;
   display: block;
   object-position: top;
+  max-height: 750px;
+  object-fit: contain;
 }
 
 .gallery-nav-btn {

@@ -1,4 +1,5 @@
 import ProjectInterface from "./ProjectInterface"
+import inProgress from "../assets/img/inProgress.jpg";
 import taskManagmentSystem from "../assets/img/taskManagmentSystem.png";
 import skiStore from "../assets/img/skiStore.png";
 import reportApplication from "../assets/img/reportApplication.png";
@@ -10,6 +11,7 @@ import bookStore from "../assets/img/bookStore.png";
 import secureShare from "../assets/img/secureShare/secureShare.png";
 import helpDesk from "../assets/img/helpDesk.png";
 import rocksVsMines from "../assets/img/rocksVsMines.png";
+import medConnect from "../assets/img/medConnect.jpg";
 
 import secureShare1 from "../assets/img/secureShare/secureShare1.png"
 import secureShare2 from "../assets/img/secureShare/secureShare2.png"
@@ -17,7 +19,74 @@ import secureShare3 from "../assets/img/secureShare/secureShare3.png"
 import secureShare4 from "../assets/img/secureShare/secureShare4.png"
 import secureShare5 from "../assets/img/secureShare/secureShare5.png"
 
+import medConnect1 from "../assets/img/medConnect/img1.jpg"
+import medConnect2 from "../assets/img/medConnect/img2.jpg"
+import medConnect3 from "../assets/img/medConnect/img3.jpg"
+import medConnect4 from "../assets/img/medConnect/img4.jpg"
+import medConnect5 from "../assets/img/medConnect/img5.jpg"
+import medConnect6 from "../assets/img/medConnect/img6.jpg"
+
+
+
 export const ProjectsData : ProjectInterface[] = [
+
+  {
+    id: "microservices-ecommerce-platform",
+    title: "Enterprise Microservices E-Commerce Platform",
+    img: inProgress, 
+    technologies: [
+      "C#",
+      "ASP.NET Core",
+      "Microservices",
+      "API Gateway",
+      "GraphQL",
+      "REST Api",
+      "WebSockets",
+      "JWT",
+      "RabbitMQ",
+      "Redis",
+      "PostgreSQL",
+      "MongoDB",
+      "Docker"
+    ],
+    description: "Skalowalna, rozproszona platforma e-commerce typu full-stack oparta na architekturze mikroserwisów. Projekt demonstruje integrację wielu niezależnych usług biznesowych, systemów bazodanowych oraz asynchronicznych wzorców komunikacji, zapewniając pełną obsługę procesów sprzedażowych w czasie rzeczywistym.",
+    features: [
+      "Zdecentralizowana architektura mikroserwisów zarządzana przez centralny komponent API Gateway (routing, rate limiting, walidacja tokenów)",
+      "System uwierzytelniania i autoryzacji oparty na tokenach JWT z precyzyjną kontrolą dostępu na poziomie ról użytkowników",
+      "Asynchroniczna komunikacja zdarzeniowa (Event-Driven Architecture) pomiędzy autonomicznymi serwisami za pomocą brokera RabbitMQ",
+      "Hybrydowe API wykorzystujące standard REST do obsługi operacji transakcyjnych oraz GraphQL do wydajnego i elastycznego pobierania danych",
+      "Komunikacja dwukierunkowa w czasie rzeczywistym realizowana przez protokół WebSockets do obsługi powiadomień oraz interaktywnych modułów użytkownika",
+      "Wykorzystanie bazy Redis jako rozproszonej pamięci podręcznej (cache), mechanizmu blokad stanów magazynowych oraz warstwy Pub/Sub dla instancji WebSocket",
+      "Kompletny potok przetwarzania zamówień zintegrowany z zewnętrznym systemem płatności (obsługa Webhooks) oraz automatyczną wysyłką powiadomień e-mail"
+    ]
+  },
+
+  {
+    id: "medconnect",
+    title: "MedConnect",
+    img: medConnect,
+    screenshots: [medConnect1, medConnect2, medConnect3, medConnect4, medConnect5, medConnect6],
+    github: "https://github.com/mazurek321/MedConnect",
+    technologies: [
+      "C#",
+      "ASP.NET Core",
+      "GraphQL",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "JWT"
+    ],
+    description: "System medyczny typu full-stack służący do monitorowania pacjentów i zarządzania personelem w placówkach zdrowia. Projekt składa się z backendu ASP.NET Core opartego na standardzie GraphQL oraz wieloplatformowej aplikacji mobilnej React Native (Expo), umożliwiając natychmiastową synchronizację danych i mobilną obsługę systemu przez personel.",
+    features: [
+      "Implementacja API w standardzie GraphQL (Query, Mutation, Subscription)",
+      "Wieloplatformowa aplikacja mobilna zbudowana w React Native i Expo (TypeScript)",
+      "System monitorowania pacjentów z funkcją natychmiastowej zmiany statusu zdrowia z poziomu interfejsu mobilnego",
+      "Moduł powiadomień i alertów w czasie rzeczywistym realizowany poprzez subskrypcje GraphQL",
+      "Panel administracyjny służący do dodawania nowego personelu medycznego",
+      "Bezpieczna autoryzacja użytkowników (JWT) z precyzyjnym podziałem na role i uprawnienia"
+    ]
+  },
+
   {
     id: "secureshare-frontend",
     title: "SecureShare",
@@ -28,15 +97,15 @@ export const ProjectsData : ProjectInterface[] = [
       "NextJs",
       "React",
       "TypeScript",
-      "TailwindCSS",
-      "React Router",
+      "TailwindCSS"
     ],
-    description: "Aplikacja kliencka współpracująca z dedykowanym API, stworzona do bezpiecznego i szyfrowanego udostępniania plików oraz poufnych wiadomości. Projekt kładzie nacisk na prywatność użytkowników oraz intuicyjny interfejs, eliminując ryzyko przechwycenia wrażliwych danych.",
+    description: "Nowoczesna aplikacja kliencka dedykowana do bezpiecznego zarządzania i udostępniania zasobów. Projekt skupia się na implementacji bezpiecznej architektury BFF (Backend For Frontend), zaawansowanej ochronie sesji użytkownika oraz intuicyjnych panelach dostępu. Interfejs precyzyjnie rozdziela uprawnienia między zwykłych użytkowników a administratorów, dbając o najwyższe standardy UX i bezpieczeństwa danych po stronie klienta.",
     features: [
-      "Bezpieczne przesyłanie i udostępnianie plików oraz notatek",
-      "Integracja z dedykowanym API (REST) i autoryzacja użytkowników",
-      "Zarządzanie czasem wygasania generowanych linków",
-      "Nowoczesny interfejs użytkownika (TailwindCSS)"
+      "Architektura BFF (Backend For Frontend) z obsługą bezpiecznych ciasteczek HttpOnly",
+      "Kompletny moduł uwierzytelniania: rejestracja, logowanie i ochrona tras (Protected Routes)",
+      "Dedykowany widok użytkownika z systemem wnioskowania (requestów) o dostęp do zablokowanych plików",
+      "Panel administracyjny (Admin Dashboard) do zarządzania uprawnieniami i weryfikacji próśb o dostęp",
+      "Responsywny, dopracowany interfejs zbudowany w oparciu o TailwindCSS"
     ]
   },
   
@@ -51,18 +120,17 @@ export const ProjectsData : ProjectInterface[] = [
       "Tailwind CSS",
       "NextAuth.js",
       "Supabase",
-      "PostgreSQL",
-      "API Routes"
+      "PostgreSQL"
     ],
-    description: "Nowoczesny system zgłoszeń serwisowych typu Single Page Application, zbudowany w oparciu o architekturę Next.js App Router. Aplikacja oferuje kompleksowy workflow zarządzania problemami technicznymi — od momentu rejestracji zgłoszenia przez użytkownika, przez dynamiczną zmianę statusów i przypisywanie pomocników, aż po ostateczne rozwiązanie incydentu.",
+    description: "System zgłoszeń serwisowych oparty na Next.js App Router. Aplikacja pozwala na pełną obsługę problemów technicznych – od rejestracji zgłoszenia przez użytkownika, przez zarządzanie jego statusem i przypisywanie techników, aż po zamknięcie wątku.",
     features: [
-      "Bezpieczna autoryzacja z podziałem na role (User, Helpdesk, Admin) przez NextAuth",
-      "Tworzenie, filtrowanie i dynamiczna aktualizacja ticketów w czasie rzeczywistym",
-      "Panel zarządzania zgłoszeniami dla personelu technicznego z obsługą modalną",
-      "Trwałe i bezpieczne przechowywanie danych w chmurowej bazie Supabase (PostgreSQL)"
+      "Autoryzacja użytkowników z podziałem na role (User, Helpdesk, Admin) za pomocą NextAuth.js",
+      "Tworzenie, zaawansowane filtrowanie oraz dynamiczna aktualizacja statusów zgłoszeń",
+      "Dedykowany panel zarządzania dla personelu technicznego",
+      "Integracja z chmurową bazą danych Supabase (PostgreSQL)"
     ]
   },
-  
+
   {
     id: "task-management-system",
     title: "System Zarządzania Zadaniami",
@@ -75,7 +143,6 @@ export const ProjectsData : ProjectInterface[] = [
       "Entity Framework Core",
       "REST Api",
       "MySql",
-      "MVC",
       "Outbox pattern",
       "SignalR",
       "Quartz.NET",
@@ -84,14 +151,15 @@ export const ProjectsData : ProjectInterface[] = [
       "OAuth2",
       "Swagger"
     ],
-    description: "Kompleksowe narzędzie zwiększające produktywność, przeznaczone do efektywnego organizowania pracy. Aplikacja pozwala na pełną kontrolę nad cyklem życia zadań w zespołach, oferując powiadomienia w czasie rzeczywistym oraz automatyzację powtarzalnych procesów.",
+    description: "Aplikacja full-stack do organizacji pracy zespołowej i zarządzania cyklem życia zadań. Oferuje komunikację w czasie rzeczywistym oraz automatyzację powtarzalnych procesów w tle.",
     features: [
-      "Autoryzacja i uwierzytelnianie (JWT & OAuth2)",
-      "Automatyczne wysyłanie powiadomień e-mail",
-      "Zarządzanie użytkownikami i rolami",
-      "Tworzenie, przypisywanie i monitorowanie zadań"
+      "Bezpieczne uwierzytelnianie użytkowników przy użyciu tokenów JWT oraz protokołu OAuth2",
+      "Powiadomienia i aktualizacje stanów zadań w czasie rzeczywistym dzięki SignalR",
+      "Automatyzacja zadań cyklicznych i wysyłki powiadomień e-mail przy użyciu Quartz.NET",
+      "Implementacja wzorca Outbox Pattern zapewniająca spójność danych przy operacjach asynchronicznych"
     ]
   },
+
   {
     id: "ski-store",
     title: "Sklep Narciarski",
@@ -100,8 +168,6 @@ export const ProjectsData : ProjectInterface[] = [
     githubFrontend: "https://github.com/mazurek321/SkiStore_frontend",
     technologies: [
       "React",
-      "HTML",
-      "CSS",
       "C#",
       "ASP.NET Core",
       "REST Api",
@@ -111,20 +177,16 @@ export const ProjectsData : ProjectInterface[] = [
       "JWT",
       "Swagger"
     ],
-    description: "Nowoczesna aplikacja e-commerce do przeglądania, kupowania i zarządzania asortymentem sklepu narciarskiego, zapewniająca płynne i intuicyjne doświadczenie użytkownika. Projekt jest w fazie rozwoju – niektóre funkcjonalności są jeszcze w trakcie wdrażania.",
+    description: "Aplikacja e-commerce dla sklepu narciarskiego z podziałem na część kliencką oraz panel zarządzania asortymentem. Projekt koncentruje się na architekturze REST API i czystym przepływie danych (projekt w stałym rozwoju).",
     features: [
-      "Autoryzacja użytkowników (JWT)",
-      "Przeglądanie i filtrowanie produktów",
-      "Zarządzanie produktami (Panel Administratora)",
-      "Funkcjonalność koszyka zakupowego",
-      "System składania i procesowania zamówień",
-      "Backend API (REST, Swagger)",
-      "Integracja z bazą danych (EF Core + PostgreSQL)",
-      "Zkonteneryzowane środowisko deweloperskie (Docker)",
-      "Responsywny interfejs użytkownika (React + CSS)",
-      "Przemyślana architektura projektu z wykorzystaniem obiektów DTO"
+      "Autoryzacja użytkowników za pomocą JWT oraz obsługa ról",
+      "Katalog produktów z systemem wyszukiwania i filtrowania parametrów",
+      "Pełny proces zakupowy z obsługą koszyka i składaniem zamówień",
+      "Panel administratora do zarządzania bazą produktów i zamówień",
+      "Zkonteneryzowane środowisko deweloperskie przy użyciu Dockera"
     ]
   },
+
   {
     id: "report-application",
     title: "Aplikacja Raportowa",
@@ -133,19 +195,17 @@ export const ProjectsData : ProjectInterface[] = [
     githubFrontend: "https://github.com/mazurek321/reportApplication",
     technologies: [
       "React",
-      "HTML",
-      "CSS",
       "ASP.NET Core",
       "C#",
       "SQL",
       "REST Api",
       "Oracle"
     ],
-    description: "Webowe narzędzie raportujące, które pobiera i wizualizuje dane z relacyjnej bazy danych Oracle. Aplikacja umożliwia użytkownikom monitorowanie kluczowych wskaźników biznesowych za pomocą interaktywnych pulpitów nawigacyjnych oraz generowanie niestandardowych zestawień.",
+    description: "Aplikacja webowa służąca do pobierania, agregacji i wizualizacji danych z relacyjnej bazy danych Oracle. Umożliwia monitorowanie wskaźników biznesowych poprzez interaktywne zestawienia.",
     features: [
-      "Panel główny (Dashboard) z podsumowaniem danych",
-      "Interaktywne wykresy i wizualizacje raportowe",
-      "Zaawansowane filtrowanie i sortowanie danych"
+      "Główny pulpit nawigacyjny prezentujący podsumowania kluczowych metryk",
+      "Generowanie interaktywnych wykresów i dynamicznych tabel raportowych",
+      "Zaawansowane filtrowanie, sortowanie i eksportowanie prezentowanych danych"
     ]
   },
   {
@@ -158,18 +218,16 @@ export const ProjectsData : ProjectInterface[] = [
       "SFML",
       "OOP Design"
     ],
-    description: "Dynamiczna gra symulacyjna prezentująca uproszczony model ekosystemu, w którym drapieżniki (wilki) i ofiary (króliki) wchodzą w bezpośrednie interakcje. Projekt kładzie nacisk na algorytmy zachowań oraz programowanie obiektowe.",
+    description: "Projekt symulacji 2D przedstawiający uproszczony model ekosystemu drapieżników i ofiar. Nacisk położono na zasady programowania obiektowego (OOP) oraz optymalizację algorytmów zachowań jednostek.",
     features: [
-      "Pełne dostosowywanie początkowych ustawień symulacji",
-      "Dynamiczne sterowanie w czasie rzeczywistym (prędkość, reset, dodawanie jednostek)",
-      "Logika zachowania wilków oraz królików",
-      "Mechanizm zarządzania energią (wilki zyskują żywotność po złapaniu królika)",
-      "System reprodukcji i podtrzymywania gatunku przy spotkaniu osobników",
-      "Wydajna detekcja kolizji obiektów",
-      "Płynne renderowanie jednostek w grafice 2D przy użyciu biblioteki SFML",
-      "Zarządzanie pełnym cyklem życia i wymieraniem populacji"
+      "Sterowanie parametrami symulacji w czasie rzeczywistym (zmiana prędkości, reset, dodawanie obiektów)",
+      "Zaimplementowana logika sztucznej inteligencji dla zachowań wilków i królików",
+      "Mechanika zarządzania energią, reprodukcji i naturalnego wymierania populacji",
+      "Wydajny system detekcji kolizji obiektów na mapie",
+      "Płynne renderowanie grafiki dwuwymiarowej przy użyciu biblioteki SFML"
     ]
   },
+
   {
     id: "intelligent-home",
     title: "Inteligentny Dom",
@@ -179,17 +237,16 @@ export const ProjectsData : ProjectInterface[] = [
       "C++",
       "Qt"
     ],
-    description: "Aplikacja desktopowa służąca do zarządzania urządzeniami w sieci automatyki domowej. System automatycznie wykrywa podłączenie nowego sprzętu, pozwalając użytkownikowi na personalizację ustawień i sterowanie parametrami środowiskowymi w czasie rzeczywistym.",
+    description: "Aplikacja desktopowa do zarządzania urządzeniami w sieci automatyki domowej. System wspiera dynamiczne wykrywanie sprzętu oraz pozwala na konfigurację parametrów środowiskowych.",
     features: [
-      "Dynamiczne dodawanie i rejestracja nowych urządzeń w sieci",
-      "Przypisywanie unikalnych nazw i identyfikatorów sprzętu",
-      "Kontrola i symulacja zmian temperatury w pomieszczeniach",
-      "Sterowanie oświetleniem (płynna regulacja jasności oraz palety kolorów)",
-      "Zarządzanie roletami wraz z wizualizacją stopnia ich otwarcia",
-      "Przejrzyste główne okno aplikacji z podglądem całej sieci domowej",
-      "Wielooknowy interfejs (dedykowane panele sterowania dla każdego urządzenia)"
+      "Dynamiczne wykrywanie, rejestracja i nadawanie identyfikatorów nowym urządzeniom",
+      "Sterowanie i symulacja zmian temperatury w czasie rzeczywistym",
+      "Moduł kontroli oświetlenia (regulacja jasności oraz zmiana barw z palety kolorów)",
+      "Obsługa rolet okiennych wraz z graficzną wizualizacją stopnia ich otwarcia",
+      "Wielooknowy interfejs z dedykowanymi panelami kontrolnymi dla każdego typu urządzenia"
     ]
   },
+
   {
     id: "friend-tag",
     title: "Aplikacja Mobilna \"FriendTag\"",
@@ -206,20 +263,17 @@ export const ProjectsData : ProjectInterface[] = [
       "MySQL",
       "Swagger"
     ],
-    description: "Nowoczesna platforma społecznościowa stworzona dla osób ceniących spontaniczność, relacje w świecie rzeczywistym oraz łatwość organizacji wydarzeń. Ułatwia szybkie zwoływanie znajomych lub dołączanie do lokalnych inicjatyw w okolicy.",
+    description: "Platforma społecznościowa w formie aplikacji mobilnej, ułatwiająca organizację lokalnych wydarzeń oraz szybkie zwoływanie znajomych w świecie rzeczywistym.",
     features: [
-      "Bezpieczna autoryzacja i rejestracja użytkowników",
-      "Personalizacja i zarządzanie profilem użytkownika",
-      "Tworzenie, edycja i moderowanie ogłoszeń oraz wydarzeń",
-      "Zaawansowany system znajomych (wysyłanie zaproszeń, relacje)",
-      "Zarządzanie listą obecności i uczestnictwem w wydarzeniach",
-      "Wbudowane wsparcie dla geolokalizacji i map",
-      "Bezpośrednia integracja z aparatem fotograficznym smartfona",
-      "Dostęp do galerii zdjęć i pamięci masowej urządzenia",
-      "Komunikator internetowy w czasie rzeczywistym (czat)",
-      "System weryfikacji i zatwierdzania zgłoszeń chętnych uczestników"
+      "Moduł rejestracji, uwierzytelniania oraz personalizacji profilu użytkownika",
+      "Tworzenie, moderowanie i aplikowanie do lokalnych wydarzeń",
+      "System relacji i zarządzania listą znajomych",
+      "Integracja z mapami i geolokalizacją urządzenia do wyszukiwania aktywności w okolicy",
+      "Wbudowany komunikator (czat) do rozmów w czasie rzeczywistym",
+      "Dostęp do aparatu i galerii zdjęć z poziomu kodu Flutter"
     ]
   },
+
   {
     id: "car-repair-shop",
     title: "Warsztat Samochodowy",
@@ -230,17 +284,15 @@ export const ProjectsData : ProjectInterface[] = [
       "HTML",
       "CSS"
     ],
-    description: "Dopracowany wizualnie, responsywny koncept interfejsu użytkownika (UI) warsztatu samochodowego. Projekt skupia się na dostarczeniu intuicyjnych paneli do zarządzania usługami mechanicznymi, rezerwacjami terminów oraz komunikacją z klientem.",
+    description: "Projekt interfejsu webowego (UI) dla warsztatu samochodowego. Skupia się na dostarczeniu intuicyjnych widoków dla klientów zamawiających naprawy oraz panelu dla obsługi warsztatu.",
     features: [
-      "Estetyczna i nowoczesna strona główna",
-      "Intuicyjny formularz rezerwacji wizyt i wyboru usług",
-      "Przejrzysta lista oczekujących i zaplanowanych napraw",
-      "Archiwum i wykaz zakończonych zleceń",
-      "Panel administracyjny (Dashboard) agregujący statystyki",
-      "Pełna historia serwisowa pojazdów",
-      "Zintegrowany panel do sprawnego zarządzania rezerwacjami"
+      "Formularz rezerwacji terminów online z wyborem konkretnych usług mechanicznych",
+      "Widok listy zaplanowanych napraw oraz archiwum zakończonych zleceń",
+      "Panel administracyjny (Dashboard) agregujący statusy prac i historię serwisową pojazdów",
+      "W pełni responsywny układ stron dopasowany do urządzeń mobilnych"
     ]
   },
+
   {
     id: "book-store",
     title: "Księgarnia Internetowa",
@@ -253,22 +305,20 @@ export const ProjectsData : ProjectInterface[] = [
       "EF Core",
       "Docker",
       "PostgreSQL",
-      "MVC",
       "Outbox Pattern",
       "Dependency Injection",
-      "Email Sending (Resend)",
-      "Dotnetboilerplate",
       "Clean Architecture"
     ],
-    description: "Zaawansowana aplikacja .NET skupiająca się na architekturze backendowej, zbudowana na bazie profesjonalnego szablonu dotnetboilerplate. Projekt rygorystycznie przestrzega zasad Czystej Architektury (Clean Architecture) z podziałem na moduły, gwarantując łatwą skalowalność.",
+    description: "Modułowy projekt backendowy .NET rozwijany zgodnie z zasadami Clean Architecture. Architektura aplikacji została oparta o szablon dotnetboilerplate w celu zapewnienia wysokiej skalowalności.",
     features: [
-      "Bezpieczny system autoryzacji i nadawania uprawnień",
-      "Zarządzanie stanem magazynowym oraz katalogiem produktów księgarni",
-      "Kompleksowy system dodawania, moderacji i agregacji recenzji oraz opinii",
-      "Zaawansowany panel administratora do nadzoru nad platformą",
-      "Niezawodna integracja z zewnętrznym dostawcą powiadomień e-mail (Resend API)"
+      "Implementacja systemu uwierzytelniania i kontroli dostępu opartej na uprawnieniach",
+      "Zarządzanie katalogiem produktów, kategoriami oraz stanem magazynowym księgarni",
+      "System dodawania, moderacji i agregacji recenzji użytkowników",
+      "Integracja z zewnętrznym API (Resend) do niezawodnej wysyłki powiadomień e-mail",
+      "Wykorzystanie wzorca Outbox Pattern do zapewnienia spójności transakcyjnej"
     ]
   },
+  
   {
     id: "rocks-vs-mines",
     title: "Rocks vs Mines Prediction",
@@ -280,15 +330,14 @@ export const ProjectsData : ProjectInterface[] = [
       "Pandas",
       "NumPy",
       "Machine Learning",
-      "Logistic Regression",
-      "Data Preprocessing"
+      "Logistic Regression"
     ],
-    description: "Projekt z zakresu uczenia maszynowego (Machine Learning) dedykowany klasyfikacji obiektów podwodnych na podstawie sygnałów sonarowych. Model analizuje dane częstotliwościowe i z odbicia fal dźwiękowych, aby precyzyjnie odróżnić naturalne przeszkody (skały) od obiektów militarnych bądź niebezpiecznych (miny morskie).",
+    description: "Projekt z zakresu uczenia maszynowego skupiony na klasyfikacji obiektów podwodnych na podstawie sygnałów sonarowych. Model analizuje cechy częstotliwościowe, by odróżnić skały od min morskich.",
     features: [
-      "Przetwarzanie i czyszczenie surowych danych sonarowych z repozytorium UCI",
-      "Trening binarnych modeli klasyfikacyjnych (np. regresja logistyczna)",
-      "Analiza korelacji cech oraz ewaluacja skuteczności modelu (Accuracy, Precision)",
-      "Pipeline predykcyjny pozwalający na klasyfikację nowych próbek w czasie rzeczywistym"
+      "Przetwarzanie, czyszczenie i standaryzacja surowych danych sonarowych z repozytorium UCI",
+      "Trening i optymalizacja binarnych modeli klasyfikacyjnych (Regresja Logistyczna)",
+      "Ewaluacja skuteczności modelu przy użyciu metryk Accuracy, Precision oraz Recall",
+      "Skrypt predykcyjny umożliwiający szybką klasyfikację nowych próbek testowych"
     ]
   }
-];
+]

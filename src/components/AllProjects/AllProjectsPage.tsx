@@ -80,6 +80,19 @@ export default function AllProjectsPage() {
           <p className="project-detail-desc">{activeProject.description}</p>
 
           <div className="project-links-box">
+
+            {activeProject.github && (
+              <a
+                href={activeProject.github}
+                target="_blank"
+                rel="noreferrer"
+                className="repo-link"
+              >
+                <span className="dot-icon" />
+                Kod projektu
+              </a>
+            )}
+
             {activeProject.githubBackend && (
               <a
                 href={activeProject.githubBackend}
