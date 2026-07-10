@@ -48,10 +48,10 @@ const Hero: React.FC<HeroProps> = ({ loading }) => {
           </div>
 
           <div className="social-links">
-            <a href="https://github.com/mazurek321" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/xbaruz" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/mazurek321" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/xbaruz" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
             <a href="mailto:mazurek321.93@wp.pl">
@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({ loading }) => {
             <div className="orbit-line" />
 
             <motion.a
-              href="https://github.com/mazurek321"
+              href="https://github.com/xbaruz"
               target="_blank"
               rel="noopener noreferrer"
               className="orbit-cube-wrapper"

@@ -128,12 +128,12 @@ const Contact = () => {
             <div className="grid-card info-card">
               <div className="icon"><FaGithub /></div>
               <span className="label">GitHub</span>
-              <span className="value">mazurek321</span>
+              <span className="value">xbaruz</span>
             </div>
             <div className="grid-card info-card">
               <div className="icon"><FaLinkedin /></div>
               <span className="label">LinkedIn</span>
-              <span className="value">mazurek321</span>
+              <span className="value">xbaruz</span>
             </div>
             <div className="grid-card image-card image-hide-mobile">
               <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="Earth"/>

@@ -23,10 +23,10 @@ const Footer: React.FC = () => {
             <a href="mailto:mazurek321.93@wp.pl" className="social-link" title="Email">
               <FaEnvelope />
             </a>
-            <a href="https://github.com/mazurek321" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
+            <a href="https://github.com/xbaruz" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/mazurek321" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/xbaruz" target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
               <FaLinkedin />
             </a>
           </div>
