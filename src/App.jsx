@@ -12,25 +12,24 @@ import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 function App() {
   const [loading, setLoading] = useState(true)
   const [minTimeDone, setMinTimeDone] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    let useDark = false;
-
-    if (savedTheme) {
-      useDark = savedTheme === 'dark';
-    } else {
-      const hour = new Date().getHours();
-      useDark = hour >= 19 || hour < 6;
-    }
-
-    if (useDark) {
-      document.documentElement.classList.add('dark-theme');
-    } else {
-      document.documentElement.classList.remove('dark-theme');
-    }
-
-    return useDark;
-  });
+   const [isDarkMode, setIsDarkMode] = useState(() => {
+      const savedTheme = localStorage.getItem('theme');
+      let useDark = true;
+  
+      if (savedTheme) {
+        useDark = savedTheme === 'dark';
+      } else {
+        useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+  
+      if (useDark) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+  
+      return useDark;
+    });
 
   useEffect(() => {
     const timer = setTimeout(() => {
