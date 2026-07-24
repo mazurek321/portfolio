@@ -49,7 +49,14 @@ function App() {
       sessionStorage.setItem('hasSeenLoader', 'true');
     }, 2000);
 
-    return () => clearTimeout(timer);
+    const fallbackTimer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(fallbackTimer);
+    };
   }, [hasLoadedBefore]);
 
   const showLoader = !hasLoadedBefore && (loading || !minTimeDone);
@@ -84,15 +91,6 @@ function App() {
 
   return (
     <>
-      <div style={{ position: 'absolute', width: 1, height: 1, opacity: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-        <model-viewer 
-          src={modelPreloadPath}
-          loading="eager" 
-          reveal="auto"
-          cache-policy="use-cache"
-        />
-      </div>
-
       {showLoader && (
         <WelcomeLoader loading={showLoader} setLoading={setLoading} />
       )}

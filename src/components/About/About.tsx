@@ -51,17 +51,17 @@ const About: React.FC<AboutProps> = ({ setLoading }) => {
                             reveal="auto"
                             cache-policy="use-cache"
                             onload={() => setLoading(false)}
-                            >
+                        >
                             <div className="model-icon-slot">
                                 <div className="neon-user-icon">
-                                <FaUser />
+                                  <FaUser />
                                 </div>
                             </div>
                             <div 
                                 className={`shine-overlay ${isShining ? 'animate-shine' : ''}`}
                                 onAnimationEnd={() => setIsShining(false)}
                             ></div>
-                            </ModelViewer>
+                        </ModelViewer>
                     </div>
                 </div>
 
