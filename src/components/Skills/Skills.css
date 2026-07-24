@@ -1,157 +1,108 @@
 .skills-section {
-    margin: 7em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 7em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .skills-title {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--accent);
-    margin-bottom: 20px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .filters {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 button.filter-option {
-    padding: 10px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    background: rgba(37, 46, 73, 0.4);
-    border: 1px solid var(--accent2);
-    color: var(--accent);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+  padding: 10px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--bg-card3);
+  border: var(--border-card2);
+  color: var(--card-text-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 button.filter-option:hover {
-    background: var(--upper-icon-bg);
-    box-shadow: 0 0 15px var(--accent2);
+  background: var(--upper-icon-bg);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 button.filter-option.active {
-    background: var(--accent2);
-    color: var(--text-primary);
-    box-shadow: 0 0 20px var(--accent2);
-    border-color: var(--accent);
-    font-weight: 600;
+  background: var(--button-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--button-gradient-shadow);
+  border-color: transparent;
 }
 
 .skills-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #f1f5f9;
-    border: 1px solid #ffffff;
-    padding: 12px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    color: #1e293b;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card3);
+  border: var(--border-card2);
+  box-shadow: var(--card-shadow);
+  padding: 12px 22px;
+  border-radius: 12px;
+  color: var(--card-text-main);
+  font-weight: 700;
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
 }
 
 .skill-icon {
-    display: flex;
-    align-items: center;
-    font-size: 1.3rem;
-    color: #475569;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
 }
 
 .skill-item:hover {
-    background: #ffffff;
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--accent2);
-    color: #000000;
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(7, 12, 20, 0.4);
 }
 
 .skill-item:hover .skill-icon {
-    color: var(--accent);
-    transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 @media (max-width: 768px) {
-    .skills-section {
-        margin: 4em 0;
-        padding: 0 15px;
-    }
-
-    .filters {
-        gap: 10px;
-        margin-bottom: 30px;
-    }
-
-    button.filter-option {
-        padding: 8px 18px;
-        font-size: 0.95rem;
-    }
-
-    .skills-cloud {
-        gap: 10px;
-        padding: 0;
-    }
-
-    .skill-item {
-        padding: 10px 16px;
-        font-size: 0.85rem;
-        gap: 8px;
-        border-radius: 10px;
-    }
-
-    .skill-icon {
-        font-size: 1.15rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-section {
-        margin: 3em 0;
-    }
-
-    .skills-title {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-
-    .filters {
-        gap: 8px;
-    }
-
-    button.filter-option {
-        padding: 6px 14px;
-        font-size: 0.8rem;
-    }
-
-    .skill-item {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        gap: 6px;
-    }
-
-    .skill-icon {
-        font-size: 1.05rem;
-    }
+  .skills-section { margin: 4em 0; padding: 0 15px; }
+  .filters { gap: 8px; margin-bottom: 30px; }
+  button.filter-option { padding: 8px 16px; font-size: 0.85rem; }
+  .skills-cloud { gap: 10px; padding: 0; }
+  .skill-item { padding: 10px 16px; font-size: 0.85rem; gap: 8px; border-radius: 10px; }
+  .skill-icon { font-size: 1.15rem; }
 }

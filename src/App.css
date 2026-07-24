@@ -1,182 +1,165 @@
-main > *{
+main > * {
   padding: 0 12%;
 }
 
 .space-container {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .content-layer {
-    position: relative;
-    z-index: 10;
-    width: 100%;
+  position: relative;
+  z-index: 10;
+  width: 100%;
 }
 
 .space-scene {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    perspective: 1200px;
-    perspective-origin: center center;
-    pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  perspective: 1200px;
+  perspective-origin: center center;
+  pointer-events: none;
+  display: none;
+}
+
+.dark-theme .space-scene {
+  display: block;
 }
 
 .space-scene::after {
-    background: radial-gradient(circle, transparent 0%, rgba(5, 5, 15, 0.1) 100%);
-    position: absolute;
-    inset: 0;
-    content: "";
-    z-index: 5;
-    pointer-events: none;
-    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  background: radial-gradient(circle, transparent 0%, rgba(5, 5, 15, 0.1) 100%);
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: 5;
+  pointer-events: none;
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .grid-layer {
-    position: absolute;
-    inset: -30%;
-    transform-style: preserve-3d;
-    background-image: radial-gradient(circle at 50% 20%, rgba(181, 156, 90, 0.1) 0%, transparent 60%);  transform: rotateX(25deg);
-    transition: background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  inset: -30%;
+  transform-style: preserve-3d;
+  background-image: radial-gradient(circle at 50% 20%, rgba(181, 156, 90, 0.1) 0%, transparent 60%);
+  transform: rotateX(25deg);
+  transition: background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stars-layer {
   position: absolute;
-    inset: -60%;
-    transform-style: preserve-3d;
-    background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 1) 1.5px, transparent 1.5px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.2px, transparent 1.2px),
-        radial-gradient(circle, rgba(167, 139, 250, 0.6) 2.5px, transparent 2.5px);
-    background-size: 220px 220px, 340px 340px, 280px 280px;
-    background-position: 0 0, 70px 40px, 120px 180px;
-    animation: cosmicOrbit 180s linear infinite;
-    transition: background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes cosmicOrbit {
-    0% {
-        transform: rotateX(50deg) rotateY(-15deg) rotateZ(0deg) translateZ(-400px) scale(0.65);
-        opacity: 0.4;
-    }
-    25% {
-        transform: rotateX(50deg) rotateY(-15deg) rotateZ(90deg) translateZ(-150px) scale(0.85);
-        opacity: 0.6;
-    }
-    50% {
-        transform: rotateX(50deg) rotateY(-15deg) rotateZ(180deg) translateZ(250px) scale(1.35);
-        opacity: 0.8;
-    }
-    75% {
-        transform: rotateX(50deg) rotateY(-15deg) rotateZ(270deg) translateZ(-150px) scale(0.85);
-        opacity: 0.6;
-    }
-    100% {
-        transform: rotateX(50deg) rotateY(-15deg) rotateZ(360deg) translateZ(-400px) scale(0.65);
-        opacity: 0.4;
-    }
+  inset: -60%;
+  transform-style: preserve-3d;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 1) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.2px, transparent 1.2px),
+    radial-gradient(circle, rgba(167, 139, 250, 0.6) 2.5px, transparent 2.5px);
+  background-size: 220px 220px, 340px 340px, 280px 280px;
+  background-position: 0 0, 70px 40px, 120px 180px;
+  animation: cosmicOrbit 180s linear infinite;
+  transition: background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nebula {
-    position: absolute;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1600px;
-    height: 650px;
-    background: var(--nebula);
-    filter: blur(100px);
-    pointer-events: none;
-    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s ease;
-    z-index: 1;
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1600px;
+  height: 650px;
+  background: var(--nebula);
+  filter: blur(100px);
+  pointer-events: none;
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s ease;
+  z-index: 1;
 }
 
-button.main-styled{
-    padding: 15px 40px;
-    border-radius: 15px;
-    border: none;
-    outline:  none;
-    color: #ffffff;
-    border: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 12px 28px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 75ms linear all;
+@keyframes cosmicOrbit {
+  0% {
+    transform: rotateX(50deg) rotateY(-15deg) rotateZ(0deg) translateZ(-400px) scale(0.65);
+    opacity: 0.4;
+  }
+  25% {
+    transform: rotateX(50deg) rotateY(-15deg) rotateZ(90deg) translateZ(-150px) scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotateX(50deg) rotateY(-15deg) rotateZ(180deg) translateZ(250px) scale(1.35);
+    opacity: 0.8;
+  }
+  75% {
+    transform: rotateX(50deg) rotateY(-15deg) rotateZ(270deg) translateZ(-150px) scale(0.85);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(-15deg) rotateZ(360deg) translateZ(-400px) scale(0.65);
+    opacity: 0.4;
+  }
 }
-
-
-
-
-
-
 
 button {
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    font-weight: 600;
-    font-family: inherit;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 button.main-styled {
-    background: var(--button-gradient);
-    box-shadow: 0 4px 15px var(--button-gradient-shadow);
-    color: white;
-    padding: 12px 28px;
-    transition: 
-        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-        box-shadow 0.4s ease, 
-        filter 0.4s ease;
+  background: var(--button-gradient);
+  box-shadow: 0 4px 15px var(--button-gradient-shadow);
+  color: white;
+  padding: 12px 28px;
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    box-shadow 0.4s ease, 
+    filter 0.4s ease;
 }
-
 
 button.main-styled:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 30px var(--button-gradient-hover);
-    filter: brightness(110%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 30px var(--button-gradient-hover);
+  filter: brightness(110%);
 }
 
-
 button.main-styled::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 20%;
-    height: 200%;
-    background: linear-gradient(
-        90deg, 
-        rgba(255, 255, 255, 0) 0%, 
-        rgba(255, 255, 255, 0.6) 50%, 
-        rgba(255, 255, 255, 0) 100%
-    );
-    transform: rotate(25deg);
-    transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
 }
 
 button.main-styled:hover::after {
-    left: 140%;
+  left: 140%;
 }
 
 .reveal-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease;
 }
 
 .reveal-section.animate-reveal {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }

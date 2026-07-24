@@ -9,81 +9,105 @@ import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
 import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
 
+const modelPreloadPath = new URL('/modelEmpty.glb', import.meta.url).href;
+
 function App() {
-  const [loading, setLoading] = useState(true)
-  const [minTimeDone, setMinTimeDone] = useState(false)
-   const [isDarkMode, setIsDarkMode] = useState(() => {
-      const savedTheme = localStorage.getItem('theme');
-      let useDark = true;
+  const [hasLoadedBefore] = useState(() => {
+    return sessionStorage.getItem('hasSeenLoader') === 'true';
+  });
+
+  const [loading, setLoading] = useState(!hasLoadedBefore);
+  const [minTimeDone, setMinTimeDone] = useState(hasLoadedBefore);
   
-      if (savedTheme) {
-        useDark = savedTheme === 'dark';
-      } else {
-        useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      }
-  
-      if (useDark) {
-        document.documentElement.classList.add('dark-theme');
-      } else {
-        document.documentElement.classList.remove('dark-theme');
-      }
-  
-      return useDark;
-    });
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    return true;
+  });
 
   useEffect(() => {
+    if ('caches' in window) {
+      caches.open('3d-models-cache').then((cache) => {
+        cache.match(modelPreloadPath).then((response) => {
+          if (!response) {
+            fetch(modelPreloadPath).then((fetchResponse) => {
+              cache.put(modelPreloadPath, fetchResponse);
+            });
+          }
+        });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (hasLoadedBefore) return;
+
     const timer = setTimeout(() => {
-      setMinTimeDone(true)
-    }, 2000)
+      setMinTimeDone(true);
+      sessionStorage.setItem('hasSeenLoader', 'true');
+    }, 2000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, [hasLoadedBefore]);
 
-  const showLoader = loading || !minTimeDone
+  const showLoader = !hasLoadedBefore && (loading || !minTimeDone);
 
   useEffect(() => {
     if (showLoader) {
-      document.body.classList.add('no-scroll')
+      document.body.classList.add('no-scroll');
     } else {
       const scrollTimeout = setTimeout(() => {
-        document.body.classList.remove('no-scroll')
-      }, 1200)
+        document.body.classList.remove('no-scroll');
+      }, 1200);
 
-      return () => clearTimeout(scrollTimeout)
+      return () => clearTimeout(scrollTimeout);
     }
 
-    return () => document.body.classList.remove('no-scroll')
-  }, [showLoader])
+    return () => document.body.classList.remove('no-scroll');
+  }, [showLoader]);
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark-theme')
-      localStorage.setItem('theme', 'dark')
+      document.documentElement.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark-theme')
-      localStorage.setItem('theme', 'light')
+      document.documentElement.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
     }
-  }, [isDarkMode])
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-  }
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <>
-      <WelcomeLoader loading={showLoader} setLoading={setLoading}/>
+      <div style={{ position: 'absolute', width: 1, height: 1, opacity: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+        <model-viewer 
+          src={modelPreloadPath}
+          loading="eager" 
+          reveal="auto"
+          cache-policy="use-cache"
+        />
+      </div>
+
+      {showLoader && (
+        <WelcomeLoader loading={showLoader} setLoading={setLoading} />
+      )}
     
-      <Navbar loading={showLoader} isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
+      <Navbar loading={showLoader} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
-        <Hero loading={showLoader}/>
-        <About setLoading={setLoading}/>
-        <Skills/>
-        <Projects/>
-        <Contact/>
+        <Hero loading={showLoader} />
+        <About setLoading={setLoading} />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>  
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

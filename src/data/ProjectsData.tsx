@@ -1,72 +1,98 @@
 import ProjectInterface from "./ProjectInterface"
-import inProgress from "../assets/img/inProgress.jpg";
-import taskManagmentSystem from "../assets/img/taskManagmentSystem.png";
-import skiStore from "../assets/img/skiStore.png";
-import reportApplication from "../assets/img/reportApplication.png";
-import wolfIsland from "../assets/img/wolfIsland.png";
-import intelligentHome from "../assets/img/intelligentHome.png";
-import friendTag from "../assets/img/friendTag.png";
-import carRepairShop from "../assets/img/carRepairShop.png";
-import bookStore from "../assets/img/bookStore.png";
-import secureShare from "../assets/img/secureShare/secureShare.png";
-import helpDesk from "../assets/img/helpDesk.png";
-import rocksVsMines from "../assets/img/rocksVsMines.png";
+import taskManagmentSystem from "../assets/img/taskManagmentSystem.jpg";
+import skiStore from "../assets/img/skiStore.jpg";
+import reportApplication from "../assets/img/reportApplication.jpg";
+import wolfIsland from "../assets/img/wolfIsland.jpg";
+import intelligentHome from "../assets/img/intelligentHome.jpg";
+import friendTag from "../assets/img/friendTag.jpg";
+import carRepairShop from "../assets/img/carRepairShop.jpg";
+import bookStore from "../assets/img/bookStore.jpg";
+import secureShare from "../assets/img/secureShare/secureShare.jpg";
+import helpDesk from "../assets/img/helpDesk.jpg";
+import rocksVsMines from "../assets/img/rocksVsMines.jpg";
 import medConnect from "../assets/img/medConnect.jpg";
 
-import secureShare1 from "../assets/img/secureShare/secureShare1.png"
-import secureShare2 from "../assets/img/secureShare/secureShare2.png"
-import secureShare3 from "../assets/img/secureShare/secureShare3.png"
-import secureShare4 from "../assets/img/secureShare/secureShare4.png"
-import secureShare5 from "../assets/img/secureShare/secureShare5.png"
+import secureShare1 from "../assets/img/secureShare/secureShare1.jpg";
+import secureShare2 from "../assets/img/secureShare/secureShare2.jpg";
+import secureShare3 from "../assets/img/secureShare/secureShare3.jpg";
+import secureShare4 from "../assets/img/secureShare/secureShare4.jpg";
+import secureShare5 from "../assets/img/secureShare/secureShare5.jpg";
 
-import medConnect1 from "../assets/img/medConnect/img1.jpg"
-import medConnect2 from "../assets/img/medConnect/img2.jpg"
-import medConnect3 from "../assets/img/medConnect/img3.jpg"
-import medConnect4 from "../assets/img/medConnect/img4.jpg"
-import medConnect5 from "../assets/img/medConnect/img5.jpg"
-import medConnect6 from "../assets/img/medConnect/img6.jpg"
+import medConnect1 from "../assets/img/medConnect/img1.jpg";
+import medConnect2 from "../assets/img/medConnect/img2.jpg";
+import medConnect3 from "../assets/img/medConnect/img3.jpg";
+import medConnect4 from "../assets/img/medConnect/img4.jpg";
+import medConnect5 from "../assets/img/medConnect/img5.jpg";
+import medConnect6 from "../assets/img/medConnect/img6.jpg";
 
-
+import hybridShop0 from "../assets/img/hybridshop/0.jpg";
+import hybridShop1 from "../assets/img/hybridshop/1.jpg";
+import hybridShop2 from "../assets/img/hybridshop/2.jpg";
+import hybridShop3 from "../assets/img/hybridshop/3.jpg";
+import hybridShop4 from "../assets/img/hybridshop/4.jpg";
+import hybridShop5 from "../assets/img/hybridshop/5.jpg";
+import hybridShop6 from "../assets/img/hybridshop/6.jpg";
+import hybridShop7 from "../assets/img/hybridshop/7.jpg";
+import hybridShop8 from "../assets/img/hybridshop/8.jpg";
+import hybridShop9 from "../assets/img/hybridshop/9.jpg";
+import hybridShop10 from "../assets/img/hybridshop/10.jpg";
 
 export const ProjectsData : ProjectInterface[] = [
-
   {
-    id: "microservices-ecommerce-platform",
-    title: "Enterprise Microservices E-Commerce Platform",
-    img: inProgress, 
+    id: "hybridshop",
+    title: "HybridShop - Platforma E-Commerce",
+    img: hybridShop0, 
+    github: "https://github.com/xBaruz/HybridShop",
+    screenshots: [
+      hybridShop1,
+      hybridShop2,
+      hybridShop3,
+      hybridShop4,
+      hybridShop5,
+      hybridShop6,
+      hybridShop7,
+      hybridShop8,
+      hybridShop9,
+      hybridShop10
+    ],
     technologies: [
       "C#",
       "ASP.NET Core",
+      "EF Core",
       "Microservices",
-      "API Gateway",
+      "API Gateway (YARP)",
+      "gRPC",
       "GraphQL",
       "REST Api",
-      "WebSockets",
+      "SignalR",
       "JWT",
       "RabbitMQ",
+      "Outbox Pattern",
       "Redis",
       "PostgreSQL",
       "MongoDB",
+      "MinIO (S3)",
+      "Mailpit",
       "Docker"
     ],
-    description: "Skalowalna, rozproszona platforma e-commerce typu full-stack oparta na architekturze mikroserwisów. Projekt demonstruje integrację wielu niezależnych usług biznesowych, systemów bazodanowych oraz asynchronicznych wzorców komunikacji, zapewniając pełną obsługę procesów sprzedażowych w czasie rzeczywistym.",
+    description: "Zaawansowany system sklepu internetowego podzielony na niezależne mikroserwisy. Każdy moduł (np. koszyk, powiadomienia, katalog produktów) działa osobno i komunikuje się z resztą za pomocą szyny danych oraz gRPC.",
     features: [
-      "Zdecentralizowana architektura mikroserwisów zarządzana przez centralny komponent API Gateway (routing, rate limiting, walidacja tokenów)",
-      "System uwierzytelniania i autoryzacji oparty na tokenach JWT z precyzyjną kontrolą dostępu na poziomie ról użytkowników",
-      "Asynchroniczna komunikacja zdarzeniowa (Event-Driven Architecture) pomiędzy autonomicznymi serwisami za pomocą brokera RabbitMQ",
-      "Hybrydowe API wykorzystujące standard REST do obsługi operacji transakcyjnych oraz GraphQL do wydajnego i elastycznego pobierania danych",
-      "Komunikacja dwukierunkowa w czasie rzeczywistym realizowana przez protokół WebSockets do obsługi powiadomień oraz interaktywnych modułów użytkownika",
-      "Wykorzystanie bazy Redis jako rozproszonej pamięci podręcznej (cache), mechanizmu blokad stanów magazynowych oraz warstwy Pub/Sub dla instancji WebSocket",
-      "Kompletny potok przetwarzania zamówień zintegrowany z zewnętrznym systemem płatności (obsługa Webhooks) oraz automatyczną wysyłką powiadomień e-mail"
+      "Brama API Gateway (YARP) zarządzająca ruchem i przekierowaniami",
+      "Logowanie i autoryzacja za pomocą tokenów JWT z podziałem na role",
+      "Szybka komunikacja międzyserwisowa przez gRPC oraz asynchroniczna przez RabbitMQ",
+      "Elastyczne odpytywanie o dane produktów dzięki GraphQL (HotChocolate)",
+      "Powiadomienia i czat na żywo wykorzystujące WebSockets / SignalR",
+      "Szybki cache dla koszyka i blokad magazynowych w bazie Redis",
+      "Przechowywanie zdjęć produktów w chmurze obiektowej MinIO (S3 Compatible)",
+      "Automatyczne wysyłanie e-maili i obsługa procesu zamówień z wykorzystaniem Mailpit"
     ]
   },
-
   {
     id: "medconnect",
     title: "MedConnect",
     img: medConnect,
     screenshots: [medConnect1, medConnect2, medConnect3, medConnect4, medConnect5, medConnect6],
-    github: "https://github.com/mazurek321/MedConnect",
+    github: "https://github.com/xBaruz/MedConnect",
     technologies: [
       "C#",
       "ASP.NET Core",
@@ -76,44 +102,42 @@ export const ProjectsData : ProjectInterface[] = [
       "TypeScript",
       "JWT"
     ],
-    description: "System medyczny typu full-stack służący do monitorowania pacjentów i zarządzania personelem w placówkach zdrowia. Projekt składa się z backendu ASP.NET Core opartego na standardzie GraphQL oraz wieloplatformowej aplikacji mobilnej React Native (Expo), umożliwiając natychmiastową synchronizację danych i mobilną obsługę systemu przez personel.",
+    description: "System dla placówek medycznych ułatwiający opiekę nad pacjentami. Składa się z backendu w .NET i aplikacji mobilnej, dzięki której lekarze i pielęgniarki mają natychmiastowy dostęp do danych z dowolnego miejsca.",
     features: [
-      "Implementacja API w standardzie GraphQL (Query, Mutation, Subscription)",
-      "Wieloplatformowa aplikacja mobilna zbudowana w React Native i Expo (TypeScript)",
-      "System monitorowania pacjentów z funkcją natychmiastowej zmiany statusu zdrowia z poziomu interfejsu mobilnego",
-      "Moduł powiadomień i alertów w czasie rzeczywistym realizowany poprzez subskrypcje GraphQL",
-      "Panel administracyjny służący do dodawania nowego personelu medycznego",
-      "Bezpieczna autoryzacja użytkowników (JWT) z precyzyjnym podziałem na role i uprawnienia"
+      "API zbudowane w technologii GraphQL",
+      "Aplikacja mobilna na iOS i Androida (React Native + Expo)",
+      "Szybka zmiana statusu zdrowia pacjenta z poziomu telefonu",
+      "Powiadomienia o pilnych zdarzeniach w czasie rzeczywistym",
+      "Panel do dodawania i zarządzania personelem medycznym",
+      "Bezpieczne logowanie z podziałem na role i uprawnienia"
     ]
   },
-
   {
     id: "secureshare-frontend",
     title: "SecureShare",
     img: secureShare,
     screenshots: [secureShare1, secureShare2, secureShare3, secureShare4, secureShare5], 
-    githubFrontend: "https://github.com/mazurek321/SecureShare-frontend",
+    githubFrontend: "https://github.com/xBaruz/SecureShare-frontend",
     technologies: [
       "NextJs",
       "React",
       "TypeScript",
       "TailwindCSS"
     ],
-    description: "Nowoczesna aplikacja kliencka dedykowana do bezpiecznego zarządzania i udostępniania zasobów. Projekt skupia się na implementacji bezpiecznej architektury BFF (Backend For Frontend), zaawansowanej ochronie sesji użytkownika oraz intuicyjnych panelach dostępu. Interfejs precyzyjnie rozdziela uprawnienia między zwykłych użytkowników a administratorów, dbając o najwyższe standardy UX i bezpieczeństwa danych po stronie klienta.",
+    description: "Aplikacja do bezpiecznego udostępniania i zarządzania plikami. Skupia się na wygodnym interfejsie oraz natychmiastowej weryfikacji uprawnień użytkowników i administratorów.",
     features: [
-      "Architektura BFF (Backend For Frontend) z obsługą bezpiecznych ciasteczek HttpOnly",
-      "Kompletny moduł uwierzytelniania: rejestracja, logowanie i ochrona tras (Protected Routes)",
-      "Dedykowany widok użytkownika z systemem wnioskowania (requestów) o dostęp do zablokowanych plików",
-      "Panel administracyjny (Admin Dashboard) do zarządzania uprawnieniami i weryfikacji próśb o dostęp",
-      "Responsywny, dopracowany interfejs zbudowany w oparciu o TailwindCSS"
+      "Bezpieczne logowanie z wykorzystaniem ciasteczek HttpOnly (architektura BFF)",
+      "Pełny moduł rejestracji, logowania oraz ochrona prywatnych stron",
+      "Wysyłanie prośby o dostęp do zablokowanych plików przez użytkownika",
+      "Panel administratora do akceptowania lub odrzucania wniosków o dostęp",
+      "Nowoczesny, w pełni responsywny wygląd napisany w TailwindCSS"
     ]
   },
-  
   {
     id: "helpdesk-ticket-system",
     title: "Helpdesk Ticket System",
     img: helpDesk,
-    githubFrontend: "https://github.com/mazurek321/helpdeskCloud",
+    github: "https://github.com/xBaruz/helpdeskCloud",
     technologies: [
       "Next.js",
       "React",
@@ -122,21 +146,20 @@ export const ProjectsData : ProjectInterface[] = [
       "Supabase",
       "PostgreSQL"
     ],
-    description: "System zgłoszeń serwisowych oparty na Next.js App Router. Aplikacja pozwala na pełną obsługę problemów technicznych – od rejestracji zgłoszenia przez użytkownika, przez zarządzanie jego statusem i przypisywanie techników, aż po zamknięcie wątku.",
+    description: "System do zgłaszania i rozwiązywania problemów technicznych. Pozwala użytkownikom opisać usterkę, a serwisantom sprawnie przydzielać zadania i zmieniać ich statusy.",
     features: [
-      "Autoryzacja użytkowników z podziałem na role (User, Helpdesk, Admin) za pomocą NextAuth.js",
-      "Tworzenie, zaawansowane filtrowanie oraz dynamiczna aktualizacja statusów zgłoszeń",
-      "Dedykowany panel zarządzania dla personelu technicznego",
-      "Integracja z chmurową bazą danych Supabase (PostgreSQL)"
+      "Logowanie z podziałem na zwykłych użytkowników, serwisantów i adminów",
+      "Tworzenie zgłoszeń, ich filtrowanie i zmiana statusów na żywo",
+      "Wygodny panel roboczy dla pracowników wsparcia technicznego",
+      "Baza danych podłączona do chmury Supabase (PostgreSQL)"
     ]
   },
-
   {
     id: "task-management-system",
     title: "System Zarządzania Zadaniami",
     img: taskManagmentSystem,
-    githubBackend: "https://github.com/mazurek321/SystemZarzadzania",
-    githubFrontend: "https://github.com/mazurek321/SystemZarzadzaniaFrontend",
+    githubBackend: "https://github.com/xBaruz/SystemZarzadzania",
+    githubFrontend: "https://github.com/xBaruz/SystemZarzadzaniaFrontend",
     technologies: [
       "Angular",
       "ASP.NET Core",
@@ -148,24 +171,22 @@ export const ProjectsData : ProjectInterface[] = [
       "Quartz.NET",
       "SMTP",
       "JWT",
-      "OAuth2",
       "Swagger"
     ],
-    description: "Aplikacja full-stack do organizacji pracy zespołowej i zarządzania cyklem życia zadań. Oferuje komunikację w czasie rzeczywistym oraz automatyzację powtarzalnych procesów w tle.",
+    description: "Aplikacja dla zespołów do planowania i rozliczania codziennej pracy. Pozwala na bieżąco śledzić postępy w projektach i automatyzuje przypomnienia.",
     features: [
-      "Bezpieczne uwierzytelnianie użytkowników przy użyciu tokenów JWT oraz protokołu OAuth2",
-      "Powiadomienia i aktualizacje stanów zadań w czasie rzeczywistym dzięki SignalR",
-      "Automatyzacja zadań cyklicznych i wysyłki powiadomień e-mail przy użyciu Quartz.NET",
-      "Implementacja wzorca Outbox Pattern zapewniająca spójność danych przy operacjach asynchronicznych"
+      "Logowanie przez konto w systemie lub konto Google (OAuth2 / JWT)",
+      "Powiadomienia o zmianach w zadaniach na żywo dzięki SignalR",
+      "Automatyczne wysyłanie e-maili i przypomnień w tle (Quartz.NET)",
+      "Zabezpieczenie przed utratą danych podczas wysyłania wiadomości (Outbox Pattern)"
     ]
   },
-
   {
     id: "ski-store",
     title: "Sklep Narciarski",
     img: skiStore,
-    githubBackend: "https://github.com/mazurek321/SkiStore",
-    githubFrontend: "https://github.com/mazurek321/SkiStore_frontend",
+    githubBackend: "https://github.com/xBaruz/SkiStore",
+    githubFrontend: "https://github.com/xBaruz/SkiStore_frontend",
     technologies: [
       "React",
       "C#",
@@ -177,82 +198,80 @@ export const ProjectsData : ProjectInterface[] = [
       "JWT",
       "Swagger"
     ],
-    description: "Aplikacja e-commerce dla sklepu narciarskiego z podziałem na część kliencką oraz panel zarządzania asortymentem. Projekt koncentruje się na architekturze REST API i czystym przepływie danych (projekt w stałym rozwoju).",
+    description: "Klasyczny sklep internetowy ze sprzętem narciarskim, wyposażony w koszyk, przeglądanie produktów oraz panel administracyjny do zarządzania asortymentem.",
     features: [
-      "Autoryzacja użytkowników za pomocą JWT oraz obsługa ról",
-      "Katalog produktów z systemem wyszukiwania i filtrowania parametrów",
-      "Pełny proces zakupowy z obsługą koszyka i składaniem zamówień",
-      "Panel administratora do zarządzania bazą produktów i zamówień",
-      "Zkonteneryzowane środowisko deweloperskie przy użyciu Dockera"
+      "Logowanie i rejestracja klientów oraz obsługa konta admina",
+      "Katalog produktów z wyszukiwarką i filtrowaniem po parametrach",
+      "Dodawanie produktów do koszyka i składanie zamówień",
+      "Panel administratora do edycji produktów i sprawdzania zamówień",
+      "Całość przygotowana do szybkiego uruchomienia w Dockerze"
     ]
   },
-
   {
     id: "report-application",
     title: "Aplikacja Raportowa",
     img: reportApplication,
-    githubBackend: "https://github.com/mazurek321/reportApplication",
-    githubFrontend: "https://github.com/mazurek321/reportApplication",
+    githubBackend: "https://github.com/xBaruz/reportApplication",
+    githubFrontend: "https://github.com/xBaruz/reportApplication",
     technologies: [
       "React",
       "ASP.NET Core",
       "C#",
       "SQL",
       "REST Api",
-      "Oracle"
+      "Oracle Database",
+      "ADO.NET"
     ],
-    description: "Aplikacja webowa służąca do pobierania, agregacji i wizualizacji danych z relacyjnej bazy danych Oracle. Umożliwia monitorowanie wskaźników biznesowych poprzez interaktywne zestawienia.",
+    description: "Narzędzie do pobierania i czytelnego przedstawiania danych z bazy Oracle. Pomaga analizować wyniki i statystyki firmowe w formie wykresów i tabel.",
     features: [
-      "Główny pulpit nawigacyjny prezentujący podsumowania kluczowych metryk",
-      "Generowanie interaktywnych wykresów i dynamicznych tabel raportowych",
-      "Zaawansowane filtrowanie, sortowanie i eksportowanie prezentowanych danych"
+      "Główny pulpit z najważniejszymi statystykami i podsumowaniami",
+      "Interaktywne wykresy oraz tabele z danymi",
+      "Filtrowanie, sortowanie oraz eksport gotowych raportów"
     ]
   },
   {
     id: "island-of-wolves",
     title: "Gra Symulacyjna \"Wyspa Wilków\"",
     img: wolfIsland,
-    githubBackend: "https://github.com/mazurek321/wyspawilkow",
+    github: "https://github.com/xBaruz/wyspawilkow",
     technologies: [
       "C++",
       "SFML",
       "OOP Design"
     ],
-    description: "Projekt symulacji 2D przedstawiający uproszczony model ekosystemu drapieżników i ofiar. Nacisk położono na zasady programowania obiektowego (OOP) oraz optymalizację algorytmów zachowań jednostek.",
+    description: "Dwuwymiarowa symulacja ekosystemu, pokazująca zależności między drapieżnikami a ich ofiarami. Projekt stworzony w C++ z grafiką SFML.",
     features: [
-      "Sterowanie parametrami symulacji w czasie rzeczywistym (zmiana prędkości, reset, dodawanie obiektów)",
-      "Zaimplementowana logika sztucznej inteligencji dla zachowań wilków i królików",
-      "Mechanika zarządzania energią, reprodukcji i naturalnego wymierania populacji",
-      "Wydajny system detekcji kolizji obiektów na mapie",
-      "Płynne renderowanie grafiki dwuwymiarowej przy użyciu biblioteki SFML"
+      "Możliwość zmiany prędkości symulacji, resetowania i dodawania zwierząt",
+      "Prosta sztuczna inteligencja odpowiadająca za ruch i zachowanie wilków i królików",
+      "Mechanizm głodu, rozmnażania i starzenia się zwierząt",
+      "Sprawdzanie kolizji i kontaktów między obiektami na mapie",
+      "Płynna oprawa graficzna w 2D"
     ]
   },
-
   {
     id: "intelligent-home",
     title: "Inteligentny Dom",
     img: intelligentHome,
-    githubBackend: "https://github.com/mazurek321/Intelligent-Home",
+    github: "https://github.com/xBaruz/Intelligent-Home",
     technologies: [
       "C++",
       "Qt"
     ],
-    description: "Aplikacja desktopowa do zarządzania urządzeniami w sieci automatyki domowej. System wspiera dynamiczne wykrywanie sprzętu oraz pozwala na konfigurację parametrów środowiskowych.",
+    description: "Program na komputer do sterowania urządzeniami domowymi. Pozwala symulować i zmieniać ustawienia m.in. temperatury, oświetlenia czy rolet.",
     features: [
-      "Dynamiczne wykrywanie, rejestracja i nadawanie identyfikatorów nowym urządzeniom",
-      "Sterowanie i symulacja zmian temperatury w czasie rzeczywistym",
-      "Moduł kontroli oświetlenia (regulacja jasności oraz zmiana barw z palety kolorów)",
-      "Obsługa rolet okiennych wraz z graficzną wizualizacją stopnia ich otwarcia",
-      "Wielooknowy interfejs z dedykowanymi panelami kontrolnymi dla każdego typu urządzenia"
+      "Automatyczne wykrywanie i podłączanie nowych urządzeń",
+      "Ustawianie temperatury i symulowanie jej zmian w czasie",
+      "Włączanie światła, zmiana jego jasności oraz koloru",
+      "Podnoszenie i opuszczanie rolet z wizualizacją ich stanu",
+      "Przejrzysty interfejs z osobnym okienkiem dla każdego sprzętu"
     ]
   },
-
   {
     id: "friend-tag",
     title: "Aplikacja Mobilna \"FriendTag\"",
     img: friendTag,
-    githubFrontend: "https://github.com/mazurek321/FriendTag",
-    githubBackend: "https://github.com/mazurek321/FriendTagBackend",
+    githubFrontend: "https://github.com/xBaruz/FriendTag",
+    githubBackend: "https://github.com/xBaruz/FriendTagBackend",
     technologies: [
       "Flutter",
       "Dart",
@@ -263,36 +282,34 @@ export const ProjectsData : ProjectInterface[] = [
       "MySQL",
       "Swagger"
     ],
-    description: "Platforma społecznościowa w formie aplikacji mobilnej, ułatwiająca organizację lokalnych wydarzeń oraz szybkie zwoływanie znajomych w świecie rzeczywistym.",
+    description: "Aplikacja mobilna pomagająca w umawianiu się ze znajomymi na wspólne wyjścia i organizowaniu wydarzeń w okolicy.",
     features: [
-      "Moduł rejestracji, uwierzytelniania oraz personalizacji profilu użytkownika",
-      "Tworzenie, moderowanie i aplikowanie do lokalnych wydarzeń",
-      "System relacji i zarządzania listą znajomych",
-      "Integracja z mapami i geolokalizacją urządzenia do wyszukiwania aktywności w okolicy",
-      "Wbudowany komunikator (czat) do rozmów w czasie rzeczywistym",
-      "Dostęp do aparatu i galerii zdjęć z poziomu kodu Flutter"
+      "Tworzenie własnego profilu i rejestracja konta",
+      "Tworzenie wydarzeń i dołączanie do wyjść organizowanych przez innych",
+      "Dodawanie znajomych i zarządzanie ich listą",
+      "Używanie GPS i mapy do szukania wydarzeń w pobliżu",
+      "Wbudowany czat do rozmawiania na żywo",
+      "Możliwość dodawania zdjęć z aparatu lub galerii telefonu"
     ]
   },
-
   {
     id: "car-repair-shop",
     title: "Warsztat Samochodowy",
     img: carRepairShop,
-    githubFrontend: "https://github.com/mazurek321/CarRepairShop",
+    githubFrontend: "https://github.com/xBaruz/CarRepairShop",
     technologies: [
       "React",
       "HTML",
       "CSS"
     ],
-    description: "Projekt interfejsu webowego (UI) dla warsztatu samochodowego. Skupia się na dostarczeniu intuicyjnych widoków dla klientów zamawiających naprawy oraz panelu dla obsługi warsztatu.",
+    description: "Strona internetowa dla warsztatu samochodowego. Pozwala klientom wygodnie zarezerwować wizytę, a mechanikom zarządzać grafikiem napraw.",
     features: [
-      "Formularz rezerwacji terminów online z wyborem konkretnych usług mechanicznych",
-      "Widok listy zaplanowanych napraw oraz archiwum zakończonych zleceń",
-      "Panel administracyjny (Dashboard) agregujący statusy prac i historię serwisową pojazdów",
-      "W pełni responsywny układ stron dopasowany do urządzeń mobilnych"
+      "Formularz rezerwacji wizyty online z wyborem usługi",
+      "Lista zaplanowanych napraw oraz historia wykonanych usług",
+      "Panel dla mechanika do sprawdzania i zmiany statusu naprawy",
+      "Wygodne działanie zarówno na komputerze, jak i na telefonie"
     ]
   },
-
   {
     id: "book-store",
     title: "Księgarnia Internetowa",
@@ -309,21 +326,20 @@ export const ProjectsData : ProjectInterface[] = [
       "Dependency Injection",
       "Clean Architecture"
     ],
-    description: "Modułowy projekt backendowy .NET rozwijany zgodnie z zasadami Clean Architecture. Architektura aplikacji została oparta o szablon dotnetboilerplate w celu zapewnienia wysokiej skalowalności.",
+    description: "Projekt backendowy księgarni napisany zgodnie z najlepszymi praktykami programistycznymi (Clean Architecture), zapewniający łatwe rozbudowywanie kodu.",
     features: [
-      "Implementacja systemu uwierzytelniania i kontroli dostępu opartej na uprawnieniach",
-      "Zarządzanie katalogiem produktów, kategoriami oraz stanem magazynowym księgarni",
-      "System dodawania, moderacji i agregacji recenzji użytkowników",
-      "Integracja z zewnętrznym API (Resend) do niezawodnej wysyłki powiadomień e-mail",
-      "Wykorzystanie wzorca Outbox Pattern do zapewnienia spójności transakcyjnej"
+      "System logowania i sprawdzania uprawnień użytkowników",
+      "Zarządzanie książkami, kategoriami oraz stanem w magazynie",
+      "Dodawanie opinii o książkach i liczenie średniej ocen",
+      "Wysyłanie powiadomień e-mail po zakupie (przez API Resend)",
+      "Zabezpieczenie spójności bazy danych przy wysyłce zdarzeń"
     ]
   },
-  
   {
     id: "rocks-vs-mines",
     title: "Rocks vs Mines Prediction",
     img: rocksVsMines,
-    githubBackend: "https://github.com/mazurek321/RocksVsMines",
+    github: "https://github.com/xBaruz/RocksVsMines",
     technologies: [
       "Python",
       "Scikit-learn",
@@ -332,12 +348,12 @@ export const ProjectsData : ProjectInterface[] = [
       "Machine Learning",
       "Logistic Regression"
     ],
-    description: "Projekt z zakresu uczenia maszynowego skupiony na klasyfikacji obiektów podwodnych na podstawie sygnałów sonarowych. Model analizuje cechy częstotliwościowe, by odróżnić skały od min morskich.",
+    description: "Projekt z zakresu uczenia maszynowego. Model analizuje sygnały z sonaru i ocenia, czy dany obiekt pod wodą to zwykła skała, czy mina morska.",
     features: [
-      "Przetwarzanie, czyszczenie i standaryzacja surowych danych sonarowych z repozytorium UCI",
-      "Trening i optymalizacja binarnych modeli klasyfikacyjnych (Regresja Logistyczna)",
-      "Ewaluacja skuteczności modelu przy użyciu metryk Accuracy, Precision oraz Recall",
-      "Skrypt predykcyjny umożliwiający szybką klasyfikację nowych próbek testowych"
+      "Przygotowanie i czyszczenie danych z sygnałów sonarowych",
+      "Wytrenowanie i dopracowanie modelu uczenia maszynowego",
+      "Sprawdzenie dokładności i skuteczności wykrywania obiektów",
+      "Gotowy skrypt do szybkiej oceny nowych próbek danych"
     ]
   }
 ]

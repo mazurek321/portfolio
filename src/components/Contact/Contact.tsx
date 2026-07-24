@@ -25,43 +25,43 @@ const Contact = () => {
     };
 
     const handleManualSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.honeypot) return;
+      e.preventDefault();
+      if (formData.honeypot) return;
 
-    const cleanEmail = formData.email.trim();
-    const cleanMessage = formData.message.trim();
+      const cleanEmail = formData.email.trim();
+      const cleanMessage = formData.message.trim();
 
-    if (!cleanEmail || !cleanMessage) {
-      setStatus({ type: "error", text: "Wszystkie pola są wymagane." });
-      return;
-    }
+      if (!cleanEmail || !cleanMessage) {
+        setStatus({ type: "error", text: "Wszystkie pola są wymagane." });
+        return;
+      }
 
-    setIsLoading(true);
-    setStatus({ type: null, text: "" }); 
+      setIsLoading(true);
+      setStatus({ type: null, text: "" }); 
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
 
-    const templateParams = {
-      email: cleanEmail,
-      message: cleanMessage,
-      to_name: "Portfolio",
-    };
+      const templateParams = {
+        email: cleanEmail,
+        message: cleanMessage,
+        to_name: "Portfolio",
+      };
 
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then(() => {
-        setStatus({ type: "success", text: "Wiadomość została wysłana!" });
-        setFormData({ email: "", message: "", honeypot: "" });
-      })
-      .catch(() => {
-        setStatus({ type: "error", text: "Wystąpił błąd, spróbuj ponownie." });
-      })
-      .finally(() => {
-        setIsLoading(false); 
-        setTimeout(() => setStatus({ type: null, text: "" }), 5000);
-      }); 
+      emailjs
+        .send(serviceId, templateId, templateParams, publicKey)
+        .then(() => {
+          setStatus({ type: "success", text: "Wiadomość została wysłana!" });
+          setFormData({ email: "", message: "", honeypot: "" });
+        })
+        .catch(() => {
+          setStatus({ type: "error", text: "Wystąpił błąd, spróbuj ponownie." });
+        })
+        .finally(() => {
+          setIsLoading(false); 
+          setTimeout(() => setStatus({ type: null, text: "" }), 5000);
+        }); 
   };
 
   return (
@@ -71,7 +71,7 @@ const Contact = () => {
         ref={sectionRef}
         style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
       >
-        <h1 className='skills-title'>Kontakt</h1>
+        <h2 className='skills-title'>Kontakt</h2>
         
         <div className="contact-container">
           <div className="contact-form-card">
@@ -120,21 +120,21 @@ const Contact = () => {
             <div className="grid-card title-card">
               <h3>Skontaktuj się</h3>
             </div>
-            <div className="grid-card info-card">
+            <a href="mailto:mazurek321.93@wp.pl" className="grid-card info-card">
               <div className="icon"><FaEnvelope /></div>
               <span className="label">Email</span>
               <span className="value">mazurek321.93@wp.pl</span>
-            </div>
-            <div className="grid-card info-card">
+            </a>
+            <a href="https://github.com/xbaruz" target="_blank" rel="noopener noreferrer" className="grid-card info-card">
               <div className="icon"><FaGithub /></div>
               <span className="label">GitHub</span>
               <span className="value">xbaruz</span>
-            </div>
-            <div className="grid-card info-card">
+            </a>
+            <a href="https://linkedin.com/in/xbaruz" target="_blank" rel="noopener noreferrer" className="grid-card info-card">
               <div className="icon"><FaLinkedin /></div>
               <span className="label">LinkedIn</span>
               <span className="value">xbaruz</span>
-            </div>
+            </a>
             <div className="grid-card image-card image-hide-mobile">
               <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="Earth"/>
             </div>

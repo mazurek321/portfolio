@@ -3,7 +3,6 @@ import "./About.css";
 import { FaUser, FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt, FaBriefcase, FaTimes, FaCertificate } from 'react-icons/fa';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
-const modelPath = new URL('../../assets/modelEmpty.glb', import.meta.url).href;
 const ModelViewer = 'model-viewer' as any;
 
 const cert1Thumb = new URL('../../assets/cert1.png', import.meta.url).href;
@@ -44,23 +43,25 @@ const About: React.FC<AboutProps> = ({ setLoading }) => {
                         onMouseEnter={() => !isShining && setIsShining(true)}
                     >
                         <ModelViewer 
-                            src={modelPath}
+                            src={`${import.meta.env.BASE_URL}modelEmpty.glb`}
                             interaction-prompt="none"
                             camera-orbit="0deg 75deg 105%"
                             crossorigin="anonymous"
                             loading="eager"
+                            reveal="auto"
+                            cache-policy="use-cache"
                             onload={() => setLoading(false)}
-                        >
+                            >
                             <div className="model-icon-slot">
                                 <div className="neon-user-icon">
-                                    <FaUser />
+                                <FaUser />
                                 </div>
                             </div>
                             <div 
                                 className={`shine-overlay ${isShining ? 'animate-shine' : ''}`}
                                 onAnimationEnd={() => setIsShining(false)}
                             ></div>
-                        </ModelViewer>
+                            </ModelViewer>
                     </div>
                 </div>
 
@@ -71,13 +72,13 @@ const About: React.FC<AboutProps> = ({ setLoading }) => {
                     <div className="certificates-grid">
                         <div className="cert-card" onClick={() => setActiveImage(cert1Thumb)}>
                             <div className="cert-img-wrapper">
-                                <img src={cert1Thumb} alt="Certyfikat 1" />
+                                <img src={cert1Thumb} alt="Dyplom kwalifikacji zawodowych" />
                             </div>
                             <span>Dyplom kwalifikacji zawodowych</span>
                         </div>
                         <div className="cert-card" onClick={() => setActiveImage(dyp1Thumb)}>
                             <div className="cert-img-wrapper">
-                                <img src={dyp1Thumb} alt="Certyfikat 2" />
+                                <img src={dyp1Thumb} alt="Dyplom Inżyniera" />
                             </div>
                             <span>Dyplom Inżyniera</span>
                         </div>
@@ -165,7 +166,7 @@ const About: React.FC<AboutProps> = ({ setLoading }) => {
 
         {activeImage && (
             <div className="lightbox-overlay" onClick={() => setActiveImage(null)}>
-                <button className="lightbox-close" onClick={() => setActiveImage(null)}>
+                <button className="lightbox-close" onClick={() => setActiveImage(null)} aria-label="Zamknij">
                     <FaTimes />
                 </button>
                 <img src={activeImage} alt="Powiększony certyfikat" onClick={(e) => e.stopPropagation()} />

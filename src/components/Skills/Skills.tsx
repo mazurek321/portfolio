@@ -44,7 +44,7 @@ const Skills = () => {
             id="skills-section"
             ref={sectionRef}
         >
-            <h1 className='skills-title'>Umiejętności</h1>
+            <h2 className='skills-title'>Umiejętności</h2>
             
             <div className="filters">
                 {filters.map((f) => (

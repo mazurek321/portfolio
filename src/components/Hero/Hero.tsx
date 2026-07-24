@@ -9,19 +9,16 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ loading }) => {
-
-
   const [fadeIn, setFadeIn] = useState(false)
   
-    useEffect(() => {
-      if (!loading) {
-        setFadeIn(true)
-      }
-    }, [loading])
-
+  useEffect(() => {
+    if (!loading) {
+      setFadeIn(true)
+    }
+  }, [loading])
 
   const handleOpenCV = () => {
-    window.open('data/__CV-Bartlomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer')
+    window.open('data/__CV-Bartłomiej-Mazurkiewicz.pdf', '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -48,13 +45,13 @@ const Hero: React.FC<HeroProps> = ({ loading }) => {
           </div>
 
           <div className="social-links">
-            <a href="https://github.com/xbaruz" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/xbaruz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/xbaruz" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/xbaruz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a href="mailto:mazurek321.93@wp.pl">
+            <a href="mailto:mazurek321.93@wp.pl" aria-label="Email">
               <FiMail />
             </a>
           </div>

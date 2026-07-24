@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router";
+import { FaGithub, FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { ProjectsData } from "../../data/ProjectsData";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import "./AllProjectsPage.css";
@@ -10,6 +11,7 @@ export interface Project {
   description: string;
   img: string;
   screenshots?: string[];
+  github?: string;
   githubBackend?: string;
   githubFrontend?: string;
   technologies: string[];
@@ -28,10 +30,12 @@ export default function AllProjectsPage() {
 
   const [prevId, setPrevId] = useState<string | undefined>(id);
   const [activeImg, setActiveImg] = useState<string>(activeProject.img);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   if (id !== prevId) {
     setPrevId(id);
     setActiveImg(activeProject.img);
+    setIsModalOpen(false);
   }
 
   useEffect(() => {
@@ -43,21 +47,44 @@ export default function AllProjectsPage() {
     ...(activeProject.screenshots || [])
   ];
 
-  const handlePrevImg = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.stopPropagation();
-    const currentIndex: number = allScreenshots.indexOf(activeImg);
-    const prevIndex: number =
-      currentIndex === 0 ? allScreenshots.length - 1 : currentIndex - 1;
-    setActiveImg(allScreenshots[prevIndex]);
-  };
+  const handlePrevImg = useCallback((e?: React.MouseEvent): void => {
+    e?.stopPropagation();
+    setActiveImg((currentImg) => {
+      const currentIndex = allScreenshots.indexOf(currentImg);
+      const prevIndex = currentIndex <= 0 ? allScreenshots.length - 1 : currentIndex - 1;
+      return allScreenshots[prevIndex];
+    });
+  }, [allScreenshots]);
 
-  const handleNextImg = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.stopPropagation();
-    const currentIndex: number = allScreenshots.indexOf(activeImg);
-    const nextIndex: number =
-      currentIndex === allScreenshots.length - 1 ? 0 : currentIndex + 1;
-    setActiveImg(allScreenshots[nextIndex]);
-  };
+  const handleNextImg = useCallback((e?: React.MouseEvent): void => {
+    e?.stopPropagation();
+    setActiveImg((currentImg) => {
+      const currentIndex = allScreenshots.indexOf(currentImg);
+      const nextIndex = currentIndex === allScreenshots.length - 1 ? 0 : currentIndex + 1;
+      return allScreenshots[nextIndex];
+    });
+  }, [allScreenshots]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isModalOpen) return;
+
+      if (e.key === "Escape") {
+        setIsModalOpen(false);
+      } else if (e.key === "ArrowLeft") {
+        handlePrevImg();
+      } else if (e.key === "ArrowRight") {
+        handleNextImg();
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isModalOpen, handlePrevImg, handleNextImg]);
 
   return (
     <div className="all-projects-container content-layer">
@@ -80,7 +107,6 @@ export default function AllProjectsPage() {
           <p className="project-detail-desc">{activeProject.description}</p>
 
           <div className="project-links-box">
-
             {activeProject.github && (
               <a
                 href={activeProject.github}
@@ -88,7 +114,7 @@ export default function AllProjectsPage() {
                 rel="noreferrer"
                 className="repo-link"
               >
-                <span className="dot-icon" />
+                <FaGithub style={{ fontSize: "1.1rem" }} />
                 Kod projektu
               </a>
             )}
@@ -100,7 +126,7 @@ export default function AllProjectsPage() {
                 rel="noreferrer"
                 className="repo-link"
               >
-                <span className="dot-icon" />
+                <FaGithub style={{ fontSize: "1.1rem" }} />
                 Kod backendu
               </a>
             )}
@@ -112,7 +138,7 @@ export default function AllProjectsPage() {
                 rel="noreferrer"
                 className="repo-link"
               >
-                <span className="dot-icon" />
+                <FaGithub style={{ fontSize: "1.1rem" }} />
                 Kod frontendu
               </a>
             )}
@@ -144,7 +170,7 @@ export default function AllProjectsPage() {
         <div className="project-detail-right">
           <div className="mockup-wrapper">
             {allScreenshots.length > 1 && (
-              <button className="gallery-nav-btn prev" onClick={handlePrevImg}>
+              <button className="gallery-nav-btn prev" onClick={handlePrevImg} aria-label="Poprzednie zdjęcie">
                 &#10094;
               </button>
             )}
@@ -152,11 +178,12 @@ export default function AllProjectsPage() {
             <img
               src={activeImg}
               alt={activeProject.title}
-              className="mockup-img"
+              className="mockup-img clickable"
+              onClick={() => setIsModalOpen(true)}
             />
 
             {allScreenshots.length > 1 && (
-              <button className="gallery-nav-btn next" onClick={handleNextImg}>
+              <button className="gallery-nav-btn next" onClick={handleNextImg} aria-label="Następne zdjęcie">
                 &#10095;
               </button>
             )}
@@ -170,7 +197,7 @@ export default function AllProjectsPage() {
                 }`}
                 onClick={() => setActiveImg(activeProject.img)}
               >
-                <img src={activeProject.img} alt="Main preview" />
+                <img src={activeProject.img} alt="Podgląd główny" />
               </div>
 
               {activeProject.screenshots.map((screen: string, index: number) => (
@@ -181,13 +208,48 @@ export default function AllProjectsPage() {
                   }`}
                   onClick={() => setActiveImg(screen)}
                 >
-                  <img src={screen} alt={`Screenshot ${index + 1}`} />
+                  <img src={screen} alt={`Zrzut ekranu ${index + 1}`} />
                 </div>
               ))}
             </div>
           )}
         </div>
       </section>
+
+      {isModalOpen && (
+        <div className="image-modal-backdrop" onClick={() => setIsModalOpen(false)}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="image-modal-close"
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Zamknij podgląd"
+            >
+              <FaTimes />
+            </button>
+
+            {allScreenshots.length > 1 && (
+              <>
+                <button
+                  className="modal-nav-btn prev"
+                  onClick={handlePrevImg}
+                  aria-label="Poprzednie zdjęcie"
+                >
+                  <FaChevronLeft />
+                </button>
+                <button
+                  className="modal-nav-btn next"
+                  onClick={handleNextImg}
+                  aria-label="Następne zdjęcie"
+                >
+                  <FaChevronRight />
+                </button>
+              </>
+            )}
+
+            <img src={activeImg} alt={activeProject.title} className="image-modal-img" />
+          </div>
+        </div>
+      )}
 
       <hr className="section-divider" />
 
