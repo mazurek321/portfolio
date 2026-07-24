@@ -9,10 +9,10 @@ const cert1Thumb = new URL('../../assets/cert1.png', import.meta.url).href;
 const dyp1Thumb = new URL('../../assets/dyp1.png', import.meta.url).href;
 
 interface AboutProps {
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setModelLoaded: () => void;
 }
 
-const About: React.FC<AboutProps> = ({ setLoading }) => {
+const About: React.FC<AboutProps> = ({ setModelLoaded }) => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [isShining, setIsShining] = useState<boolean>(false);
   const [sectionRef, isVisible] = useIntersectionObserver();
@@ -50,7 +50,7 @@ const About: React.FC<AboutProps> = ({ setLoading }) => {
                             loading="eager"
                             reveal="auto"
                             cache-policy="use-cache"
-                            onload={() => setLoading(false)}
+                            onload={() => setModelLoaded()}
                         >
                             <div className="model-icon-slot">
                                 <div className="neon-user-icon">

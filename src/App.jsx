@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import About from './components/About/About'
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer'
-import Hero from './components/Hero/Hero'
-import Navbar from './components/Navbar/Navbar'
-import Projects from './components/Projects/Projects'
-import Skills from './components/Skills/Skills'
-import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader'
+import { useEffect, useState } from 'react';
+import './App.css';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Hero from './components/Hero/Hero';
+import Navbar from './components/Navbar/Navbar';
+import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
+import WelcomeLoader from './components/WelcomeLoader/WelcomeLoader';
 
 const modelPreloadPath = new URL('/modelEmpty.glb', import.meta.url).href;
 
 function App() {
-  const [hasLoadedBefore] = useState(() => {
-    return sessionStorage.getItem('hasSeenLoader') === 'true';
+  const [isCached, setIsCached] = useState(() => {
+    return localStorage.getItem('model_cached') === 'true';
   });
-
-  const [loading, setLoading] = useState(!hasLoadedBefore);
-  const [minTimeDone, setMinTimeDone] = useState(hasLoadedBefore);
   
+  const [modelLoaded, setModelLoaded] = useState(isCached);
+  const [minTimeDone, setMinTimeDone] = useState(isCached);
+
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -31,35 +31,47 @@ function App() {
     if ('caches' in window) {
       caches.open('3d-models-cache').then((cache) => {
         cache.match(modelPreloadPath).then((response) => {
-          if (!response) {
+          if (response) {
+            setIsCached(true);
+            setModelLoaded(true);
+            setMinTimeDone(true);
+            localStorage.setItem('model_cached', 'true');
+          } else {
             fetch(modelPreloadPath).then((fetchResponse) => {
-              cache.put(modelPreloadPath, fetchResponse);
+              if (fetchResponse.ok) {
+                cache.put(modelPreloadPath, fetchResponse.clone());
+                localStorage.setItem('model_cached', 'true');
+              }
+            }).catch(() => {
+              setModelLoaded(true);
             });
           }
         });
       });
+    } else {
+      setModelLoaded(true);
     }
   }, []);
 
   useEffect(() => {
-    if (hasLoadedBefore) return;
+    if (isCached) return;
 
     const timer = setTimeout(() => {
       setMinTimeDone(true);
-      sessionStorage.setItem('hasSeenLoader', 'true');
-    }, 2000);
+    }, 1500);
 
     const fallbackTimer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
+      setModelLoaded(true);
+      setMinTimeDone(true);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);
       clearTimeout(fallbackTimer);
     };
-  }, [hasLoadedBefore]);
+  }, [isCached]);
 
-  const showLoader = !hasLoadedBefore && (loading || !minTimeDone);
+  const showLoader = !isCached && (!modelLoaded || !minTimeDone);
 
   useEffect(() => {
     if (showLoader) {
@@ -67,11 +79,9 @@ function App() {
     } else {
       const scrollTimeout = setTimeout(() => {
         document.body.classList.remove('no-scroll');
-      }, 1200);
-
+      }, 500);
       return () => clearTimeout(scrollTimeout);
     }
-
     return () => document.body.classList.remove('no-scroll');
   }, [showLoader]);
 
@@ -92,13 +102,16 @@ function App() {
   return (
     <>
       {showLoader && (
-        <WelcomeLoader loading={showLoader} setLoading={setLoading} />
+        <WelcomeLoader loading={showLoader} setLoading={() => {}} />
       )}
     
       <Navbar loading={showLoader} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
         <Hero loading={showLoader} />
-        <About setLoading={setLoading} />
+        <About setModelLoaded={() => {
+          setModelLoaded(true);
+          localStorage.setItem('model_cached', 'true');
+        }} />
         <Skills />
         <Projects />
         <Contact />

@@ -28,6 +28,13 @@
   z-index: 10;
 }
 
+.hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .hero-section .hero-left {
   opacity: 0;
   transform: translateY(20px);
@@ -115,7 +122,7 @@
   justify-content: center;
   perspective: 1200px;
   transform-style: preserve-3d;
-  justify-self: end;
+  margin-left: auto; 
 }
 
 .orbit-line {
